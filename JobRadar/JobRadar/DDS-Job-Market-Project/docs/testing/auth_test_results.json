@@ -1,0 +1,180 @@
+{
+  "summary": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0
+  },
+  "tests": {
+    "1_unauthenticated_visitor_dashboard": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/login",
+        "state": {
+          "from": {
+            "pathname": "/dashboard",
+            "search": ""
+          }
+        },
+        "replace": true
+      }
+    },
+    "2_unauthenticated_visitor_jobs": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/login",
+        "state": {
+          "from": {
+            "pathname": "/jobs",
+            "search": "?role=data"
+          }
+        },
+        "replace": true
+      }
+    },
+    "3_unauthenticated_visitor_skills": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/login",
+        "state": {
+          "from": {
+            "pathname": "/skills",
+            "search": ""
+          }
+        },
+        "replace": true
+      }
+    },
+    "4_unauthenticated_visitor_profile": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/login",
+        "state": {
+          "from": {
+            "pathname": "/profile",
+            "search": ""
+          }
+        },
+        "replace": true
+      }
+    },
+    "5_successful_login": {
+      "status": "PASS",
+      "details": {
+        "savedToken": "mock_secure_bearer_token_xyz123",
+        "username": "aarav_ds"
+      }
+    },
+    "6_invalid_login": {
+      "status": "PASS",
+      "details": {
+        "success": false,
+        "error": "Invalid username or password"
+      }
+    },
+    "7_successful_registration_and_onboarding_enforcement": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/onboarding",
+        "replace": true
+      }
+    },
+    "8_session_persistence_after_refresh": {
+      "status": "PASS",
+      "details": {
+        "reloadedUser": {
+          "id": "usr-new-02",
+          "name": "Priya Tech",
+          "username": "priya_tech",
+          "email": "priya@example.com",
+          "targetRole": "Data Scientist",
+          "hasCompletedOnboarding": false
+        }
+      }
+    },
+    "9_expired_session_handling": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/login",
+        "state": {
+          "from": {
+            "pathname": "/dashboard",
+            "search": ""
+          }
+        },
+        "replace": true
+      }
+    },
+    "10_logout_and_subsequent_protected_access": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/login",
+        "state": {
+          "from": {
+            "pathname": "/profile",
+            "search": ""
+          }
+        },
+        "replace": true
+      }
+    },
+    "11_authenticated_visitor_opening_login": {
+      "status": "PASS",
+      "details": {
+        "publicRouteLogin": {
+          "action": "REDIRECT",
+          "target": "/dashboard",
+          "replace": true
+        },
+        "publicRouteRegister": {
+          "action": "REDIRECT",
+          "target": "/dashboard",
+          "replace": true
+        }
+      }
+    },
+    "12_direct_navigation_to_requested_page_after_login": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/jobs?role=Data+Scientist",
+        "replace": true
+      }
+    },
+    "13_browser_back_navigation_blocks_unauthenticated_cache": {
+      "status": "PASS",
+      "details": {
+        "action": "REDIRECT",
+        "target": "/login",
+        "state": {
+          "from": {
+            "pathname": "/dashboard",
+            "search": ""
+          }
+        },
+        "replace": true
+      }
+    },
+    "14_authentication_api_failures": {
+      "status": "PASS",
+      "details": {
+        "netError": {
+          "success": false,
+          "error": "Network connection failure",
+          "status": 0
+        },
+        "timeoutError": {
+          "success": false,
+          "error": "Request timeout after 15s",
+          "status": 408
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "summary": {
+    "total": 29,
+    "passed": 29,
+    "failed": 0
+  },
+  "tests": {
+    "fe_build_html_exists": {
+      "status": "PASS",
+      "details": {
+        "htmlSize": 1526
+      }
+    },
+    "fe_build_js_bundle": {
+      "status": "PASS",
+      "details": {
+        "name": "index-CBTGCYiS.js",
+        "size": 854228
+      }
+    },
+    "fe_build_css_bundle": {
+      "status": "PASS",
+      "details": {
+        "name": "index-D8jTBHQS.css",
+        "size": 40289
+      }
+    },
+    "fe_load_client": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "API_BASE",
+          "ApiError",
+          "request"
+        ]
+      }
+    },
+    "fe_load_analytics": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "analyticsApi"
+        ]
+      }
+    },
+    "fe_load_jobs": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "jobsApi"
+        ]
+      }
+    },
+    "fe_load_skills": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "skillsApi"
+        ]
+      }
+    },
+    "fe_load_salary": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "salaryApi"
+        ]
+      }
+    },
+    "fe_load_recommendations": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "recommendationsApi"
+        ]
+      }
+    },
+    "fe_load_auth": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "authApi"
+        ]
+      }
+    },
+    "fe_load_component_DashboardPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "DashboardPage"
+        ]
+      }
+    },
+    "fe_load_component_SkillsPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "SkillsPage"
+        ]
+      }
+    },
+    "fe_load_component_JobsPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "JobsPage"
+        ]
+      }
+    },
+    "fe_load_component_SkillGapPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "SkillGapPage"
+        ]
+      }
+    },
+    "fe_load_component_MindMapPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "MindMapPage"
+        ]
+      }
+    },
+    "fe_load_component_OnboardingPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "OnboardingPage"
+        ]
+      }
+    },
+    "fe_load_component_ProfilePage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "ProfilePage"
+        ]
+      }
+    },
+    "fe_load_component_LoginPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "LoginPage"
+        ]
+      }
+    },
+    "fe_load_component_RegisterPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "RegisterPage"
+        ]
+      }
+    },
+    "fe_load_component_NotFoundPage": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "NotFoundPage"
+        ]
+      }
+    },
+    "fe_load_component_SalaryPredictorWidget": {
+      "status": "PASS",
+      "details": {
+        "exports": [
+          "SalaryPredictorWidget"
+        ]
+      }
+    },
+    "fe_client_api_error_structure": {
+      "status": "PASS",
+      "details": {
+        "name": "ApiError",
+        "status": 422,
+        "detail": [
+          {
+            "loc": [
+              "body",
+              "exp"
+            ],
+            "msg": "Invalid"
+          }
+        ]
+      }
+    },
+    "fe_client_api_base_url": {
+      "status": "PASS",
+      "details": {
+        "API_BASE": "http://127.0.0.1:8000"
+      }
+    },
+    "fe_client_timeout_abort_handling": {
+      "status": "PASS",
+      "details": "Timeout or connection abort handled safely"
+    },
+    "fe_client_network_down_error": {
+      "status": "PASS",
+      "details": "Refused connection wrapped in ApiError"
+    },
+    "fe_jobs_api_service_structure": {
+      "status": "PASS",
+      "details": {
+        "methods": [
+          "getJobs",
+          "getJobById"
+        ]
+      }
+    },
+    "fe_skills_api_service_structure": {
+      "status": "PASS",
+      "details": {
+        "methods": [
+          "getTopSkills",
+          "getSkillsByRole",
+          "getEmergingSkills"
+        ]
+      }
+    },
+    "fe_salary_api_service_structure": {
+      "status": "PASS",
+      "details": {
+        "methods": [
+          "predictSalary",
+          "getModelMetadata"
+        ]
+      }
+    },
+    "fe_recommendations_api_service_structure": {
+      "status": "PASS",
+      "details": {
+        "methods": [
+          "extractResumeSkills",
+          "getCareerRecommendations",
+          "getSkillGapAnalysis",
+          "generateLearningRoadmap",
+          "getSupportedRoles",
+          "getRecommendedJobs",
+          "getLearningForSkill",
+          "getAllLearningSkills"
+        ]
+      }
+    }
+  },
+  "build_artifacts": {
+    "html": {
+      "path": "dist/index.html",
+      "sizeBytes": 1526
+    },
+    "js": {
+      "name": "index-CBTGCYiS.js",
+      "size": 854228
+    },
+    "css": {
+      "name": "index-D8jTBHQS.css",
+      "size": 40289
+    }
+  },
+  "components_verified": [
+    "DashboardPage",
+    "SkillsPage",
+    "JobsPage",
+    "SkillGapPage",
+    "MindMapPage",
+    "OnboardingPage",
+    "ProfilePage",
+    "LoginPage",
+    "RegisterPage",
+    "NotFoundPage",
+    "SalaryPredictorWidget"
+  ],
+  "api_modules_verified": [
+    {
+      "module": "/src/api/client.js",
+      "exports": [
+        "API_BASE",
+        "ApiError",
+        "request"
+      ]
+    },
+    {
+      "module": "/src/api/analytics.js",
+      "exports": [
+        "analyticsApi"
+      ]
+    },
+    {
+      "module": "/src/api/jobs.js",
+      "exports": [
+        "jobsApi"
+      ]
+    },
+    {
+      "module": "/src/api/skills.js",
+      "exports": [
+        "skillsApi"
+      ]
+    },
+    {
+      "module": "/src/api/salary.js",
+      "exports": [
+        "salaryApi"
+      ]
+    },
+    {
+      "module": "/src/api/recommendations.js",
+      "exports": [
+        "recommendationsApi"
+      ]
+    },
+    {
+      "module": "/src/api/auth.js",
+      "exports": [
+        "authApi"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "total_rows_processed": 97682,
+  "rows_with_tags": 97111,
+  "rows_without_tags": 571,
+  "rows_with_description": 97662,
+  "rows_without_description": 20,
+  "total_skill_rows": 210043,
+  "unique_normalized_skills": 104,
+  "jobs_with_skills": 68004,
+  "skill_source_counts": {
+    "jobDescription": 85294,
+    "tagsAndSkills": 83076,
+    "both": 41673
+  },
+  "category_counts": {
+    "Other": 56587,
+    "Tools": 28175,
+    "Programming Language": 26978,
+    "DevOps": 18535,
+    "Framework": 16019,
+    "Data/ML": 15301,
+    "Web": 15163,
+    "Database": 14882,
+    "Cloud": 12054,
+    "BI/Visualization": 6349
+  },
+  "categorized_rows": 153456,
+  "uncategorized_rows": 56587,
+  "top_20_skills_by_demand": {
+    "Communication Skills": 10709,
+    "Python": 7520,
+    "Customer Service": 7445,
+    "SAP": 7213,
+    "SQL": 6654,
+    "Project Management": 6350,
+    "Marketing": 6329,
+    "Java": 5608,
+    "Agile": 5324,
+    "CSS": 4901,
+    "IT": 4637,
+    "JavaScript": 4517,
+    "REST": 4310,
+    "AWS": 4275,
+    "Excel": 4221,
+    "Microsoft Azure": 4206,
+    "Troubleshooting": 4193,
+    "Accounting": 3901,
+    "C#": 3457,
+    "Oracle": 3275
+  }
+}

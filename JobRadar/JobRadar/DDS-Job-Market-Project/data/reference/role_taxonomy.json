@@ -1,0 +1,88 @@
+{
+  "schema_version": "role-taxonomy-v1",
+  "purpose": "Human annotation taxonomy for JobRadar Phase 4. Labels are gold labels only after a human reviewer completes them.",
+  "label_column": "human_verified_role_label",
+  "role_families": [
+    {
+      "id": "data_scientist_advanced_analytics",
+      "name": "Data Scientist & Advanced Analytics",
+      "description": "Uses statistics, experimentation, forecasting, or advanced analytical methods to answer business or research questions."
+    },
+    {
+      "id": "machine_learning_ai_engineer",
+      "name": "Machine Learning & AI Engineer",
+      "description": "Builds, deploys, evaluates, or operates machine-learning, AI, computer-vision, NLP, LLM, or generative-AI systems."
+    },
+    {
+      "id": "data_engineer_big_data_platform",
+      "name": "Data Engineer & Big Data Platform",
+      "description": "Builds data pipelines, warehouses, ETL/ELT workflows, streaming systems, or data-platform infrastructure."
+    },
+    {
+      "id": "data_analyst_business_intelligence",
+      "name": "Data Analyst & Business Intelligence",
+      "description": "Produces reports, dashboards, SQL analysis, metrics, and business insights without primary responsibility for advanced modeling."
+    },
+    {
+      "id": "backend_core_software_engineering",
+      "name": "Backend & Core Software Engineering",
+      "description": "Builds APIs, services, application logic, databases, integrations, or general software systems."
+    },
+    {
+      "id": "frontend_full_stack_engineering",
+      "name": "Frontend & Full Stack Engineering",
+      "description": "Builds user interfaces, web or mobile clients, or end-to-end applications with a meaningful frontend responsibility."
+    },
+    {
+      "id": "cloud_devops_sre",
+      "name": "Cloud, DevOps & SRE",
+      "description": "Operates cloud infrastructure, CI/CD, reliability, observability, deployment, security automation, or platform operations."
+    },
+    {
+      "id": "qa_automation_testing",
+      "name": "QA & Automation Testing",
+      "description": "Validates software quality through manual testing, test automation, performance testing, or quality engineering."
+    },
+    {
+      "id": "product_technical_project_management",
+      "name": "Product & Technical Project Management",
+      "description": "Owns product direction, requirements, delivery coordination, project planning, or technical program management."
+    },
+    {
+      "id": "non_tech_corporate_operations",
+      "name": "Non-Tech / Corporate & Operations",
+      "description": "Covers HR, sales, finance, support, administration, recruiting, legal, healthcare operations, and other non-technical work."
+    },
+    {
+      "id": "other_unclassified",
+      "name": "Other / Unclassified",
+      "description": "Use only when the available title and description do not support one of the other role families."
+    }
+  ],
+  "frontend_filter_mapping": {
+    "Data Scientist": {
+      "role_family_ids": ["data_scientist_advanced_analytics"],
+      "note": "Exact role-family mapping."
+    },
+    "Machine Learning Engineer": {
+      "role_family_ids": ["machine_learning_ai_engineer"],
+      "note": "Exact role-family mapping."
+    },
+    "Data Analyst": {
+      "role_family_ids": ["data_analyst_business_intelligence"],
+      "note": "The current taxonomy intentionally combines analyst and BI work."
+    },
+    "Data Engineer": {
+      "role_family_ids": ["data_engineer_big_data_platform"],
+      "note": "Exact role-family mapping."
+    },
+    "Generative AI Engineer": {
+      "role_family_ids": ["machine_learning_ai_engineer"],
+      "note": "A future specialization rule can identify generative-AI work within this broader family; Stage 1 does not create a separate gold label."
+    },
+    "Business Intelligence": {
+      "role_family_ids": ["data_analyst_business_intelligence"],
+      "note": "The current taxonomy intentionally combines BI and analyst work."
+    }
+  }
+}

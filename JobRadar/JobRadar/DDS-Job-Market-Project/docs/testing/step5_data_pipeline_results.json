@@ -1,0 +1,119 @@
+{
+  "tests": {
+    "pipeline_text_clean_html_whitespace": {
+      "status": "PASS",
+      "details": {
+        "cleaned": "Senior Software Engineer with Python"
+      }
+    },
+    "pipeline_location_comma_standardization": {
+      "status": "PASS",
+      "details": {
+        "cleaned": "Bengaluru, Karnataka, India"
+      }
+    },
+    "pipeline_skills_deduplication_clean": {
+      "status": "PASS",
+      "details": {
+        "cleaned_tags": "Python, Django, SQL, PostgreSQL"
+      }
+    },
+    "pipeline_experience_parsing": {
+      "status": "PASS",
+      "details": {
+        "range": [
+          3.0,
+          5.0
+        ],
+        "single": [
+          0.0,
+          0.0
+        ],
+        "bad": null
+      }
+    },
+    "pipeline_salary_status_categorization": {
+      "status": "PASS",
+      "details": {
+        "salary_statuses": {
+          "j1": "valid",
+          "j2": "not_disclosed",
+          "j3": "zero_unknown",
+          "j4": "invalid_range"
+        }
+      }
+    },
+    "pipeline_experience_cleaning": {
+      "status": "PASS",
+      "details": {
+        "minimum_experiences": {
+          "j1": 2.0,
+          "j2": NaN,
+          "j3": 1.0,
+          "j4": NaN
+        }
+      }
+    },
+    "pipeline_skill_maps_loaded": {
+      "status": "PASS",
+      "details": {
+        "alias_count": 205,
+        "category_count": 120
+      }
+    },
+    "pipeline_skill_normalization_aliases": {
+      "status": "PASS",
+      "details": {
+        "python3": "Python",
+        "k8s": "Kubernetes",
+        "aws": "AWS",
+        "react.js": "React"
+      }
+    },
+    "pipeline_tagged_skills_extraction": {
+      "status": "PASS",
+      "details": {
+        "extracted_norm_names": [
+          "Python",
+          "Kubernetes",
+          "AWS",
+          "Docker"
+        ]
+      }
+    },
+    "pipeline_emerging_momentum_index": {
+      "status": "PASS",
+      "details": {
+        "skill": "PyTorch",
+        "momentum_index": 50.0,
+        "tier": "Moderate Momentum",
+        "recency_share": 0.8
+      }
+    },
+    "pipeline_adzuna_credential_sanitization": {
+      "status": "PASS",
+      "details": {
+        "sanitized_url": "https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=%2A%2A%2A&app_key=%2A%2A%2A&what=developer"
+      }
+    },
+    "pipeline_migration_key_idempotency": {
+      "status": "PASS",
+      "details": {
+        "key": "9c25adb3b05fe292bf2a469eb624508e586c8b2d1c30a8d393fd7c4d021aeb29"
+      }
+    },
+    "pipeline_stage_counts_reconciliation": {
+      "status": "PASS",
+      "details": {
+        "cleaned_rows": 97682,
+        "audit_rows": 97682
+      }
+    }
+  },
+  "metrics": {},
+  "summary": {
+    "passed": 13,
+    "failed": 0,
+    "total": 13
+  }
+}

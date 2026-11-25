@@ -1,0 +1,935 @@
+[
+  {
+    "endpoint": "/api/health",
+    "method": "GET",
+    "scenario": "Health check & diagnostic telemetry",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'healthy', 'service': 'JobRadar API', 'version': '1.0.0', 'dataset': {'total_jobs_processed': 97682, 'total_skill_mentions': 210043, 'unique_skills': 104, 'jobs_with_skills': 68004}, 'database': {'connected': True, 'engine': 'sqlite', 'tot...",
+    "latency_ms": 38.89,
+    "notes": "Verifies system health, DB connection, and model loading status"
+  },
+  {
+    "endpoint": "/api/analytics/overview",
+    "method": "GET",
+    "scenario": "Consolidated real-time market overview",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'success', 'summary': {'totalJobsAnalyzed': 97682, 'averageSalaryLPA': 7.57, 'medianSalaryLPA': 4.25, 'topSkill': 'Communication Skills', 'topSkillDemandPct': 11.0, 'activeHiringCompanies': 18617, 'topHiringCity': 'Bengaluru', 'momGrowthPc...",
+    "latency_ms": 19.16,
+    "notes": "Validates precomputed market summary, location hubs, and distributions"
+  },
+  {
+    "endpoint": "/api/analytics/market-overview",
+    "method": "GET",
+    "scenario": "Market overview alias endpoint",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'success', 'summary': {'totalJobsAnalyzed': 97682, 'averageSalaryLPA': 7.57, 'medianSalaryLPA': 4.25, 'topSkill': 'Communication Skills', 'topSkillDemandPct': 11.0, 'activeHiringCompanies': 18617, 'topHiringCity': 'Bengaluru', 'momGrowthPc...",
+    "latency_ms": 2.94,
+    "notes": "Ensures route alias compatibility"
+  },
+  {
+    "endpoint": "/api/analytics/salary",
+    "method": "GET",
+    "scenario": "Disclosed salary distribution & analytics",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'success', 'scope': 'valid_disclosed_salaries_only', 'total_jobs_processed': 97682, 'disclosed_jobs_count': 33138, 'undisclosed_jobs_count': 64544, 'disclosure_rate_pct': 33.9, 'average_salary_lpa': 7.57, 'median_salary_lpa': 4.25, 'min_sa...",
+    "latency_ms": 27.8,
+    "notes": "Verifies statistics strictly computed from valid disclosed salaries"
+  },
+  {
+    "endpoint": "/api/skills/top",
+    "method": "GET",
+    "scenario": "Default top skills (limit 20)",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[{'skill': 'Communication Skills', 'category': 'Other', 'demand_job_count': 10709}, {'skill': 'Python', 'category': 'Programming Language', 'demand_job_count': 7520}, {'skill': 'Customer Service', 'category': 'Other', 'demand_job_count': 7445}, {'ski...",
+    "latency_ms": 18.24,
+    "notes": "Returns top 20 skills ranked by demand count"
+  },
+  {
+    "endpoint": "/api/skills/top",
+    "method": "GET",
+    "scenario": "Custom limit filter (limit 5)",
+    "category": "Valid",
+    "payload_or_params": {
+      "limit": 5
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[{'skill': 'Communication Skills', 'category': 'Other', 'demand_job_count': 10709}, {'skill': 'Python', 'category': 'Programming Language', 'demand_job_count': 7520}, {'skill': 'Customer Service', 'category': 'Other', 'demand_job_count': 7445}, {'ski...",
+    "latency_ms": 7.29,
+    "notes": "Verifies descending demand ordering and exact count limit"
+  },
+  {
+    "endpoint": "/api/skills/top",
+    "method": "GET",
+    "scenario": "Valid category filter",
+    "category": "Valid",
+    "payload_or_params": {
+      "category": "Programming Language"
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[{'skill': 'Python', 'category': 'Programming Language', 'demand_job_count': 7520}, {'skill': 'Java', 'category': 'Programming Language', 'demand_job_count': 5608}, {'skill': 'JavaScript', 'category': 'Programming Language', 'demand_job_count': 4517}...",
+    "latency_ms": 3.17,
+    "notes": "Ensures category subsetting works correctly"
+  },
+  {
+    "endpoint": "/api/skills/top",
+    "method": "GET",
+    "scenario": "Non-existent category filter",
+    "category": "Boundary",
+    "payload_or_params": {
+      "category": "UnknownCategory123"
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[]",
+    "latency_ms": 3.28,
+    "notes": "Returns empty array without error"
+  },
+  {
+    "endpoint": "/api/skills/top",
+    "method": "GET",
+    "scenario": "Oversized limit boundary (>200)",
+    "category": "Invalid Input",
+    "payload_or_params": {
+      "limit": 500
+    },
+    "expected_status": 422,
+    "actual_status": 422,
+    "status": "PASS",
+    "response_summary": "{'detail': [{'type': 'less_than_equal', 'loc': ['query', 'limit'], 'msg': 'Input should be less than or equal to 200', 'input': '500', 'ctx': {'le': 200}}]}",
+    "latency_ms": 32.58,
+    "notes": "Enforces Pydantic Query constraint le=200"
+  },
+  {
+    "endpoint": "/api/skills/categories",
+    "method": "GET",
+    "scenario": "Skill categories with aggregate demand",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[{'category': 'Other', 'skill_count': 15, 'total_demand': 56583}, {'category': 'Tools', 'skill_count': 13, 'total_demand': 28175}, {'category': 'Programming Language', 'skill_count': 16, 'total_demand': 26978}, {'category': 'DevOps', 'skill_count': 1...",
+    "latency_ms": 2.79,
+    "notes": "Verifies skill counts and total demand across domains"
+  },
+  {
+    "endpoint": "/api/skills/by-role",
+    "method": "GET",
+    "scenario": "Valid target role name",
+    "category": "Valid",
+    "payload_or_params": {
+      "role": "Data Scientist"
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'success': True, 'role_id': 'data_scientist_advanced_analytics', 'role_name': 'Data Scientist & Advanced Analytics', 'skills': [{'skill': 'Data Science', 'pct': 82.2, 'priority': 'CRITICAL'}, {'skill': 'Machine Learning', 'pct': 72.6, 'priority': 'C...",
+    "latency_ms": 4.89,
+    "notes": "Retrieves empirical benchmark skills for Data Scientist"
+  },
+  {
+    "endpoint": "/api/skills/by-role",
+    "method": "GET",
+    "scenario": "Valid canonical role ID",
+    "category": "Valid",
+    "payload_or_params": {
+      "role": "backend_core_software_engineering"
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'success': True, 'role_id': 'backend_core_software_engineering', 'role_name': 'Backend & Core Software Engineering', 'skills': [{'skill': 'Java', 'pct': 26.8, 'priority': 'RECOMMENDED'}, {'skill': 'SQL', 'pct': 23.5, 'priority': 'RECOMMENDED'}, {'sk...",
+    "latency_ms": 16.71,
+    "notes": "Accepts exact canonical technical role ID"
+  },
+  {
+    "endpoint": "/api/skills/by-role",
+    "method": "GET",
+    "scenario": "Unsupported non-technical role",
+    "category": "Invalid Input",
+    "payload_or_params": {
+      "role": "Astronaut"
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': \"Target role 'Astronaut' is not a supported technical role. Supported roles: ['data_scientist_advanced_analytics', 'machine_learning_ai_engineer', 'data_engineer_big_data_platform', 'data_analyst_business_intelligence', 'backend_core_softw...",
+    "latency_ms": 17.81,
+    "notes": "Rejects unsupported role with 400 Bad Request"
+  },
+  {
+    "endpoint": "/api/skills/by-role",
+    "method": "GET",
+    "scenario": "Omitted role parameter",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'success': True, 'role_id': 'data_scientist_advanced_analytics', 'role_name': 'Data Scientist & Advanced Analytics', 'skills': [{'skill': 'Data Science', 'pct': 82.2, 'priority': 'CRITICAL'}, {'skill': 'Machine Learning', 'pct': 72.6, 'priority': 'C...",
+    "latency_ms": 1.96,
+    "notes": "Applies default query value 'Data Scientist'"
+  },
+  {
+    "endpoint": "/api/skills/emerging",
+    "method": "GET",
+    "scenario": "Default emerging skills ranking",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[{'skill': 'PyTorch', 'category': 'Data/ML', 'total_jobs': 393, 'recent_jobs': 137, 'recency_share': 0.3486, 'recency_score': 63.9, 'salary_sample_count': 55, 'median_salary': 2250000.0, 'salary_premium_ratio': 5.2941, 'salary_score': 100.0, 'avg_min...",
+    "latency_ms": 26.68,
+    "notes": "Ranks skills by Hiring Momentum & Salary Premium Index"
+  },
+  {
+    "endpoint": "/api/skills/emerging",
+    "method": "GET",
+    "scenario": "Tier filter (EXPONENTIAL_BREAKOUT)",
+    "category": "Valid",
+    "payload_or_params": {
+      "tier": "EXPONENTIAL_BREAKOUT"
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[]",
+    "latency_ms": 15.19,
+    "notes": "Filters skills strictly in breakout momentum tier"
+  },
+  {
+    "endpoint": "/api/skills/emerging",
+    "method": "GET",
+    "scenario": "Custom limit filter (limit 3)",
+    "category": "Valid",
+    "payload_or_params": {
+      "limit": 3
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[{'skill': 'PyTorch', 'category': 'Data/ML', 'total_jobs': 393, 'recent_jobs': 137, 'recency_share': 0.3486, 'recency_score': 63.9, 'salary_sample_count': 55, 'median_salary': 2250000.0, 'salary_premium_ratio': 5.2941, 'salary_score': 100.0, 'avg_min...",
+    "latency_ms": 14.28,
+    "notes": "Respects maximum result count limit"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Default job search and pagination",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 97679, 'page': 1, 'limit': 20, 'total_pages': 4884, 'jobs': [{'id': '100125012854', 'title': 'Business Development Manager', 'company': 'Southern Trading Co', 'companyLogoText': 'SO', 'location': 'Madurai, Chennai, Coimbatore', 'salary_min'...",
+    "latency_ms": 122.09,
+    "notes": "Returns paginated job postings (page 1, limit 20)"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Keyword search across postings ('python')",
+    "category": "Valid",
+    "payload_or_params": {
+      "search": "python",
+      "limit": 10
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 7622, 'page': 1, 'limit': 10, 'total_pages': 763, 'jobs': [{'id': '100925023006', 'title': 'Ansible or Python+EKS/Terraform', 'company': 'Cloudxtreme', 'companyLogoText': 'CL', 'location': 'Hybrid - Chennai, Bengaluru', 'salary_min': None, ...",
+    "latency_ms": 480.96,
+    "notes": "Filters jobs matching title, company, or skills"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Metropolitan location filter ('Bengaluru')",
+    "category": "Valid",
+    "payload_or_params": {
+      "location": "Bengaluru",
+      "limit": 5
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 25958, 'page': 1, 'limit': 5, 'total_pages': 5192, 'jobs': [{'id': '100225017633', 'title': 'Equity Dealer : Equity Advisor : PCG Advisor @ Hyderabad', 'company': 'GR Recruitments', 'companyLogoText': 'GR', 'location': 'Hyderabad, Chennai, ...",
+    "latency_ms": 146.34,
+    "notes": "Filters postings by metropolitan cluster"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Minimum disclosed salary filter (>= 15 LPA)",
+    "category": "Valid",
+    "payload_or_params": {
+      "min_salary": 15.0,
+      "limit": 5
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 6174, 'page': 1, 'limit': 5, 'total_pages': 1235, 'jobs': [{'id': '100925027152', 'title': 'Channel Sales Manager', 'company': 'Zolostays', 'companyLogoText': 'ZO', 'location': 'Hyderabad, Chennai, Bengaluru', 'salary_min': 7.0, 'salary_max...",
+    "latency_ms": 16.09,
+    "notes": "Filters only listings with disclosed compensation exceeding threshold"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Work type filter ('Remote')",
+    "category": "Valid",
+    "payload_or_params": {
+      "work_type": "Remote",
+      "limit": 5
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 1958, 'page': 1, 'limit': 5, 'total_pages': 392, 'jobs': [{'id': '100625019045', 'title': 'Workspace ONE SME', 'company': 'Akana Services', 'companyLogoText': 'AK', 'location': 'Remote', 'salary_min': None, 'salary_max': None, 'salary_displ...",
+    "latency_ms": 40.63,
+    "notes": "Filters remote working opportunities"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Sort by salary descending",
+    "category": "Valid",
+    "payload_or_params": {
+      "sort_by": "salary_desc",
+      "limit": 5
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 97679, 'page': 1, 'limit': 5, 'total_pages': 19536, 'jobs': [{'id': '250925921353', 'title': 'Deputy Manager', 'company': 'Bombay Coated And Special Steels', 'companyLogoText': 'BO', 'location': 'Neemrana', 'salary_min': 700.0, 'salary_max'...",
+    "latency_ms": 101.41,
+    "notes": "Orders jobs highest disclosed salary first"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Page number exceeding max total pages",
+    "category": "Boundary",
+    "payload_or_params": {
+      "page": 999999
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 97679, 'page': 4884, 'limit': 20, 'total_pages': 4884, 'jobs': [{'id': '31025503477', 'title': 'Marketing Intern', 'company': 'Bitsware', 'companyLogoText': 'BI', 'location': 'Ahmedabad', 'salary_min': None, 'salary_max': None, 'salary_disp...",
+    "latency_ms": 109.29,
+    "notes": "Clamps page index gracefully to total_pages"
+  },
+  {
+    "endpoint": "/api/jobs",
+    "method": "GET",
+    "scenario": "Oversized page limit (>100)",
+    "category": "Invalid Input",
+    "payload_or_params": {
+      "limit": 500
+    },
+    "expected_status": 422,
+    "actual_status": 422,
+    "status": "PASS",
+    "response_summary": "{'detail': [{'type': 'less_than_equal', 'loc': ['query', 'limit'], 'msg': 'Input should be less than or equal to 100', 'input': '500', 'ctx': {'le': 100}}]}",
+    "latency_ms": 21.33,
+    "notes": "Rejects limit > 100 with HTTP 422 Unprocessable Entity"
+  },
+  {
+    "endpoint": "/api/jobs/{job_id}",
+    "method": "GET",
+    "scenario": "Valid single job record retrieval",
+    "category": "Valid",
+    "payload_or_params": {
+      "job_id": "100125012854"
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'id': '100125012854', 'title': 'Business Development Manager', 'company': 'Southern Trading Co', 'companyLogoText': 'SO', 'location': 'Madurai, Chennai, Coimbatore', 'salary_min': None, 'salary_max': None, 'salary_display': 'Not Disclosed', 'experie...",
+    "latency_ms": 24.43,
+    "notes": "Returns complete job details including skills and company initials"
+  },
+  {
+    "endpoint": "/api/jobs/{job_id}",
+    "method": "GET",
+    "scenario": "Non-existent job record ID",
+    "category": "Error Handling",
+    "payload_or_params": {
+      "job_id": "NON_EXISTENT_ID_99999999"
+    },
+    "expected_status": 404,
+    "actual_status": 404,
+    "status": "PASS",
+    "response_summary": "{'detail': \"Job ID 'NON_EXISTENT_ID_99999999' not found.\"}",
+    "latency_ms": 31.5,
+    "notes": "Returns HTTP 404 Not Found"
+  },
+  {
+    "endpoint": "/api/classify/job",
+    "method": "POST",
+    "scenario": "Valid backend job classification",
+    "category": "Valid",
+    "payload_or_params": {
+      "title": "Staff Backend Engineer",
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "Microservices",
+        "Docker"
+      ],
+      "description": "Design and architect highly scalable backend distributed systems."
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'predicted_role': 'backend_core_software_engineering', 'predicted_role_name': 'Backend & Core Software Engineering', 'confidence': 0.5312, 'confidence_tier': 'HIGH', 'is_fallback': False, 'confidence_margin': 0.4241, 'runner_up_role': 'other_unclass...",
+    "latency_ms": 37.09,
+    "notes": "Accurately maps title and skills to backend career family"
+  },
+  {
+    "endpoint": "/api/classify/job",
+    "method": "POST",
+    "scenario": "Valid data scientist job classification",
+    "category": "Valid",
+    "payload_or_params": {
+      "title": "Senior Data Scientist",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "PyTorch",
+        "Statistics"
+      ],
+      "description": "Develop and deploy deep neural network models in production."
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'predicted_role': 'data_scientist_advanced_analytics', 'predicted_role_name': 'Data Scientist & Advanced Analytics', 'confidence': 0.3974, 'confidence_tier': 'MEDIUM', 'is_fallback': False, 'confidence_margin': 0.2532, 'runner_up_role': 'machine_lea...",
+    "latency_ms": 17.98,
+    "notes": "Accurately classifies data science profile"
+  },
+  {
+    "endpoint": "/api/classify/job",
+    "method": "POST",
+    "scenario": "Empty job payload fallback",
+    "category": "Boundary",
+    "payload_or_params": {},
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'predicted_role': 'other_unclassified', 'predicted_role_name': 'Other / Unclassified', 'confidence': 0.3615, 'confidence_tier': 'MEDIUM', 'is_fallback': False, 'confidence_margin': 0.2269, 'runner_up_role': 'non_tech_corporate_operations', 'runner_u...",
+    "latency_ms": 2.78,
+    "notes": "Safely handles empty payload and returns fallback role"
+  },
+  {
+    "endpoint": "/api/classify/job",
+    "method": "POST",
+    "scenario": "Malformed payload types (string instead of list)",
+    "category": "Invalid Input",
+    "payload_or_params": {
+      "skills": "NotAList"
+    },
+    "expected_status": 422,
+    "actual_status": 422,
+    "status": "PASS",
+    "response_summary": "{'detail': [{'type': 'list_type', 'loc': ['body', 'skills'], 'msg': 'Input should be a valid list', 'input': 'NotAList'}]}",
+    "latency_ms": 26.56,
+    "notes": "Rejects invalid schema with HTTP 422"
+  },
+  {
+    "endpoint": "/api/classify/batch",
+    "method": "POST",
+    "scenario": "Valid batch classification (3 items)",
+    "category": "Valid",
+    "payload_or_params": {
+      "jobs": 3
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'total': 3, 'model_version': '0.1.0', 'is_provisional': True, 'predictions': [{'id': 'b1', 'predicted_role': 'cloud_devops_sre', 'predicted_role_name': 'Cloud, DevOps & SRE', 'confidence': 0.8576, 'confidence_tier': 'HIGH', 'is_fallback': False, 'ru...",
+    "latency_ms": 17.51,
+    "notes": "Preserves client IDs and returns batched role predictions"
+  },
+  {
+    "endpoint": "/api/classify/batch",
+    "method": "POST",
+    "scenario": "Empty batch rejection",
+    "category": "Error Handling",
+    "payload_or_params": {
+      "jobs": []
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': 'Batch cannot be empty.'}",
+    "latency_ms": 12.98,
+    "notes": "Rejects empty batch list with HTTP 400 Bad Request"
+  },
+  {
+    "endpoint": "/api/classify/batch",
+    "method": "POST",
+    "scenario": "Oversized batch (>100 items)",
+    "category": "Boundary",
+    "payload_or_params": {
+      "jobs": 101
+    },
+    "expected_status": 400,
+    "actual_status": 422,
+    "status": "PASS",
+    "response_summary": "{'detail': [{'type': 'too_long', 'loc': ['body', 'jobs'], 'msg': 'List should have at most 100 items after validation, not 101', 'input': [{'id': 'job_0', 'title': 'Engineer'}, {'id': 'job_1', 'title': 'Engineer'}, {'id': 'job_2', 'title': 'Engineer'...",
+    "latency_ms": 15.39,
+    "notes": "Enforces documented 100-job batch limit"
+  },
+  {
+    "endpoint": "/api/classify/taxonomy",
+    "method": "GET",
+    "scenario": "Role taxonomy definitions",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'schema_version': 'role-taxonomy-v1', 'purpose': 'Human annotation taxonomy for JobRadar Phase 4. Labels are gold labels only after a human reviewer completes them.', 'label_column': 'human_verified_role_label', 'role_families': [{'id': 'data_scient...",
+    "latency_ms": 15.74,
+    "notes": "Returns all 11 canonical taxonomy families and frontend mappings"
+  },
+  {
+    "endpoint": "/api/classify/info",
+    "method": "GET",
+    "scenario": "Classifier model metadata & training card",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'loaded', 'model_name': 'tfidf_logistic_regression', 'model_version': '0.1.0', 'label_source': 'provisional_silver_rule_v1', 'is_provisional': True, 'num_classes': 11, 'classes': ['backend_core_software_engineering', 'cloud_devops_sre', 'd...",
+    "latency_ms": 3.88,
+    "notes": "Returns model version, vocabulary size, and class labels"
+  },
+  {
+    "endpoint": "/api/resume/extract-skills",
+    "method": "POST",
+    "scenario": "Valid Plain Text (.txt) resume upload",
+    "category": "Valid",
+    "payload_or_params": {
+      "filename": "resume.txt",
+      "size": 115
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'filename': 'resume.txt', 'file_type': 'txt', 'file_size_bytes': 115, 'extracted_skill_count': 6, 'skills': [{'canonical_name': 'AWS', 'category': 'Cloud', 'evidence': '...ate Resume Skills: Python, SQL, Docker, AWS, Scikit-learn, React. Experience:...",
+    "latency_ms": 5.42,
+    "notes": "Parses hard skills with categorized evidence strictly in-memory"
+  },
+  {
+    "endpoint": "/api/resume/extract-skills",
+    "method": "POST",
+    "scenario": "Empty file upload (0 bytes)",
+    "category": "Error Handling",
+    "payload_or_params": {
+      "filename": "empty.txt",
+      "size": 0
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': 'Uploaded resume file is empty (0 bytes).'}",
+    "latency_ms": 1.8,
+    "notes": "Rejects empty resume upload with HTTP 400 Bad Request"
+  },
+  {
+    "endpoint": "/api/resume/extract-skills",
+    "method": "POST",
+    "scenario": "Unsupported file extension (.exe)",
+    "category": "Error Handling",
+    "payload_or_params": {
+      "filename": "malicious.exe"
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': \"Unsupported file format '.exe'. Allowed formats: PDF (.pdf), Word (.docx), Plain Text (.txt).\"}",
+    "latency_ms": 1.29,
+    "notes": "Enforces allowed extensions (.pdf, .docx, .txt)"
+  },
+  {
+    "endpoint": "/api/resume/extract-skills",
+    "method": "POST",
+    "scenario": "Oversized file upload (>5 MB)",
+    "category": "Boundary",
+    "payload_or_params": {
+      "filename": "huge.txt",
+      "size": 5243904
+    },
+    "expected_status": 413,
+    "actual_status": 413,
+    "status": "PASS",
+    "response_summary": "{'detail': 'File exceeds maximum allowed size of 5 MB (5243904 bytes received).'}",
+    "latency_ms": 66.63,
+    "notes": "Rejects file exceeding 5 MB limit with HTTP 413 Content Too Large"
+  },
+  {
+    "endpoint": "/api/resume/extract-skills",
+    "method": "POST",
+    "scenario": "Corrupted PDF byte payload",
+    "category": "Error Handling",
+    "payload_or_params": {
+      "filename": "corrupt.pdf"
+    },
+    "expected_status": 400,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'filename': 'corrupt.pdf', 'file_type': 'pdf', 'file_size_bytes': 38, 'extracted_skill_count': 0, 'skills': [], 'skill_names': [], 'status': 'corrupt_file', 'warnings': ['Failed to read PDF document: PdfStreamError - Stream has ended unexpectedly']}",
+    "latency_ms": 301.03,
+    "notes": "Safely handles PDF corruption without crashing server"
+  },
+  {
+    "endpoint": "/api/recommendations/career",
+    "method": "POST",
+    "scenario": "Valid career recommendations request",
+    "category": "Valid",
+    "payload_or_params": {
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "Microservices",
+        "Docker",
+        "SQL"
+      ],
+      "preferred_role": "Backend Developer"
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'success', 'user_skills_provided': ['Java', 'Spring Boot', 'Microservices', 'Docker', 'SQL'], 'normalized_skills': ['Java', 'Spring Boot', 'Microservices', 'Docker', 'SQL'], 'recommendations': [{'role_id': 'backend_core_software_engineerin...",
+    "latency_ms": 25.33,
+    "notes": "Ranks 8 technical careers by demand-weighted cosine overlap"
+  },
+  {
+    "endpoint": "/api/recommendations/career",
+    "method": "POST",
+    "scenario": "Empty student skills profile",
+    "category": "Boundary",
+    "payload_or_params": {
+      "skills": []
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'incomplete_profile', 'user_skills_provided': [], 'normalized_skills': [], 'recommendations': [{'role_id': 'backend_core_software_engineering', 'role_name': 'Backend & Core Software Engineering', 'match_score': 0.0, 'matching_skills': [], ...",
+    "latency_ms": 3.51,
+    "notes": "Returns unranked baseline profiles with incomplete_profile status"
+  },
+  {
+    "endpoint": "/api/recommendations/career",
+    "method": "POST",
+    "scenario": "Unrecognized skills handling",
+    "category": "Boundary",
+    "payload_or_params": {
+      "skills": [
+        "QuantumAlchemy",
+        "CryptoTeleportation"
+      ]
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'status': 'no_skills_matched', 'user_skills_provided': ['QuantumAlchemy', 'CryptoTeleportation'], 'normalized_skills': ['QuantumAlchemy', 'CryptoTeleportation'], 'recommendations': [{'role_id': 'backend_core_software_engineering', 'role_name': 'Back...",
+    "latency_ms": 20.71,
+    "notes": "Gracefully handles unseen skills without KeyError"
+  },
+  {
+    "endpoint": "/api/skills/gap",
+    "method": "POST",
+    "scenario": "Valid skill-gap diagnosis",
+    "category": "Valid",
+    "payload_or_params": {
+      "target_role": "Data Scientist",
+      "skills": [
+        "Python",
+        "SQL"
+      ]
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'role_id': 'data_scientist_advanced_analytics', 'role_name': 'Data Scientist & Advanced Analytics', 'readiness_score': 29.5, 'acquired_skills': [{'skill_name': 'Python', 'demand_percentage': 65.07, 'disclosed_job_demand_pct': 65.56, 'priority_catego...",
+    "latency_ms": 3.63,
+    "notes": "Calculates readiness score and partitions acquired vs missing skills"
+  },
+  {
+    "endpoint": "/api/skills/gap",
+    "method": "POST",
+    "scenario": "Unsupported target role",
+    "category": "Invalid Input",
+    "payload_or_params": {
+      "target_role": "Astronaut"
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': \"Target role 'Astronaut' is not a supported technical role. Supported roles: ['data_scientist_advanced_analytics', 'machine_learning_ai_engineer', 'data_engineer_big_data_platform', 'data_analyst_business_intelligence', 'backend_core_softw...",
+    "latency_ms": 24.03,
+    "notes": "Rejects unsupported target role with 400 Bad Request"
+  },
+  {
+    "endpoint": "/api/skills/gap",
+    "method": "POST",
+    "scenario": "Missing target_role field",
+    "category": "Missing Field",
+    "payload_or_params": {
+      "skills": [
+        "Python"
+      ]
+    },
+    "expected_status": 422,
+    "actual_status": 422,
+    "status": "PASS",
+    "response_summary": "{'detail': [{'type': 'missing', 'loc': ['body', 'target_role'], 'msg': 'Field required', 'input': {'skills': ['Python']}}]}",
+    "latency_ms": 1.98,
+    "notes": "Enforces mandatory target_role with HTTP 422 Unprocessable Entity"
+  },
+  {
+    "endpoint": "/api/skills/gap",
+    "method": "POST",
+    "scenario": "Full skill match diagnosis",
+    "category": "Boundary",
+    "payload_or_params": {
+      "target_role": "Data Scientist",
+      "skills": [
+        "Data Science",
+        "Machine Learning",
+        "Python",
+        "SQL",
+        "Statistics",
+        "Deep Learning"
+      ]
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'role_id': 'data_scientist_advanced_analytics', 'role_name': 'Data Scientist & Advanced Analytics', 'readiness_score': 85.2, 'acquired_skills': [{'skill_name': 'Data Science', 'demand_percentage': 81.62, 'disclosed_job_demand_pct': 82.22, 'priority_...",
+    "latency_ms": 14.15,
+    "notes": "Reflects high readiness score when core critical skills are acquired"
+  },
+  {
+    "endpoint": "/api/roadmap/generate",
+    "method": "POST",
+    "scenario": "Valid milestone roadmap generation",
+    "category": "Valid",
+    "payload_or_params": {
+      "target_role": "data_engineer_big_data_platform",
+      "skills": [
+        "SQL",
+        "Python"
+      ]
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'role_id': 'data_engineer_big_data_platform', 'role_name': 'Data Engineer & Big Data Platform', 'current_readiness_score': 59.5, 'total_estimated_weeks': 16, 'milestones': [{'milestone_id': 1, 'title': 'Core Tooling & Frameworks: Spark & Scala', 'ph...",
+    "latency_ms": 15.34,
+    "notes": "Generates sequenced milestones with realistic timelines and resources"
+  },
+  {
+    "endpoint": "/api/roadmap/generate",
+    "method": "POST",
+    "scenario": "Invalid target role for roadmap",
+    "category": "Invalid Input",
+    "payload_or_params": {
+      "target_role": "Singer"
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': \"Target role 'Singer' is not a supported technical role. Supported roles: ['data_scientist_advanced_analytics', 'machine_learning_ai_engineer', 'data_engineer_big_data_platform', 'data_analyst_business_intelligence', 'backend_core_software...",
+    "latency_ms": 16.87,
+    "notes": "Rejects unsupported role with 400 Bad Request"
+  },
+  {
+    "endpoint": "/api/recommendations/roles",
+    "method": "GET",
+    "scenario": "Supported technical career catalog",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "[{'role_id': 'data_scientist_advanced_analytics', 'role_name': 'Data Scientist & Advanced Analytics', 'frontend_filter_key': 'Data Scientist', 'description': 'Uses statistics, experimentation, forecasting, or advanced analytical methods to answer bus...",
+    "latency_ms": 30.67,
+    "notes": "Returns 8 canonical technical roles with metadata and UI filter keys"
+  },
+  {
+    "endpoint": "/api/salary/predict",
+    "method": "POST",
+    "scenario": "Valid software engineer compensation prediction",
+    "category": "Valid",
+    "payload_or_params": {
+      "role": "Software Engineer",
+      "experience_years": 3.0,
+      "location": "Bengaluru",
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "SQL"
+      ]
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'target_role': 'Software Engineer', 'resolved_role_family': 'backend_core_software_engineering', 'is_technical': True, 'experience_years': 3.0, 'location': 'Bengaluru', 'skills_provided': ['Java', 'Spring Boot', 'SQL'], 'predicted_salary_lpa': 6.44,...",
+    "latency_ms": 57.39,
+    "notes": "Returns Ridge prediction with 90% calibrated conformal prediction interval"
+  },
+  {
+    "endpoint": "/api/salary/predict",
+    "method": "POST",
+    "scenario": "Valid data scientist compensation prediction",
+    "category": "Valid",
+    "payload_or_params": {
+      "role": "Data Scientist",
+      "experience_years": 5.0,
+      "location": "Hyderabad",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "PyTorch"
+      ]
+    },
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'target_role': 'Data Scientist', 'resolved_role_family': 'data_science_ml_ai', 'is_technical': True, 'experience_years': 5.0, 'location': 'Hyderabad', 'skills_provided': ['Python', 'Machine Learning', 'PyTorch'], 'predicted_salary_lpa': 13.95, 'pred...",
+    "latency_ms": 20.99,
+    "notes": "Correctly maps to data science track and calculates metro location index"
+  },
+  {
+    "endpoint": "/api/salary/predict",
+    "method": "POST",
+    "scenario": "Non-technical role rejection ('HR Recruiter')",
+    "category": "Error Handling",
+    "payload_or_params": {
+      "role": "HR Executive / Recruiter",
+      "experience_years": 4.0,
+      "location": "Mumbai",
+      "skills": [
+        "Communication",
+        "Payroll"
+      ]
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': \"Salary prediction is currently calibrated exclusively for core technical engineering and data roles (Backend, Frontend, Full Stack, QA, Cloud/DevOps, Data Engineering, Data Analytics, and Data Science / AI). The requested role 'HR Executi...",
+    "latency_ms": 2.79,
+    "notes": "Rejects non-technical role with informative HTTP 400 explanation"
+  },
+  {
+    "endpoint": "/api/salary/predict",
+    "method": "POST",
+    "scenario": "Non-technical role rejection ('Accountant')",
+    "category": "Error Handling",
+    "payload_or_params": {
+      "role": "Chartered Accountant / Finance Lead",
+      "experience_years": 6.0,
+      "location": "Delhi",
+      "skills": [
+        "Tally",
+        "GST"
+      ]
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': \"Salary prediction is currently calibrated exclusively for core technical engineering and data roles (Backend, Frontend, Full Stack, QA, Cloud/DevOps, Data Engineering, Data Analytics, and Data Science / AI). The requested role 'Chartered ...",
+    "latency_ms": 2.75,
+    "notes": "Safely rejects non-technical finance roles"
+  },
+  {
+    "endpoint": "/api/salary/predict",
+    "method": "POST",
+    "scenario": "Negative experience boundary (<0)",
+    "category": "Boundary",
+    "payload_or_params": {
+      "experience_years": -3.0
+    },
+    "expected_status": 400,
+    "actual_status": 422,
+    "status": "PASS",
+    "response_summary": "{'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'experience_years'], 'msg': 'Input should be greater than or equal to 0', 'input': -3.0, 'ctx': {'ge': 0.0}}]}",
+    "latency_ms": 21.64,
+    "notes": "Rejects negative experience value with HTTP 400/422"
+  },
+  {
+    "endpoint": "/api/salary/predict",
+    "method": "POST",
+    "scenario": "Extreme experience boundary (>40 yrs)",
+    "category": "Boundary",
+    "payload_or_params": {
+      "experience_years": 50.0
+    },
+    "expected_status": 400,
+    "actual_status": 422,
+    "status": "PASS",
+    "response_summary": "{'detail': [{'type': 'less_than_equal', 'loc': ['body', 'experience_years'], 'msg': 'Input should be less than or equal to 40', 'input': 50.0, 'ctx': {'le': 40.0}}]}",
+    "latency_ms": 14.16,
+    "notes": "Rejects experience > 40.0 yrs"
+  },
+  {
+    "endpoint": "/api/salary/predict",
+    "method": "POST",
+    "scenario": "Empty role string",
+    "category": "Invalid Input",
+    "payload_or_params": {
+      "role": ""
+    },
+    "expected_status": 400,
+    "actual_status": 400,
+    "status": "PASS",
+    "response_summary": "{'detail': 'Target role must be a non-empty string.'}",
+    "latency_ms": 14.51,
+    "notes": "Rejects empty string as target role"
+  },
+  {
+    "endpoint": "/api/salary/metadata",
+    "method": "GET",
+    "scenario": "Salary model card & validation metrics",
+    "category": "Valid",
+    "payload_or_params": null,
+    "expected_status": 200,
+    "actual_status": 200,
+    "status": "PASS",
+    "response_summary": "{'model_version': '2.0.0', 'scope': 'Core Technical Careers Only (Option A)', 'champion_model_name': 'Ridge Regression (alpha=10.0)', 'validation_strategy': '5-Fold GroupKFold on companyName_clean', 'training_samples_count': 4207, 'unique_companies_c...",
+    "latency_ms": 17.79,
+    "notes": "Exposes Ridge champion validation metrics (GroupKFold MAE and R2)"
+  }
+]

@@ -1,0 +1,550 @@
+company,ats,postings_with_text,postings_stating_pay,postings_stating_rupee_pay,pct_stating_pay
+Litmos,greenhouse,10,10,10,100.0
+Packt,workable,10,10,10,100.0
+Zenara Health,workable,10,7,7,70.0
+Apt Resources,workable,13,9,0,69.2
+Fresh Prints,greenhouse,18,12,0,66.7
+Fuku,workable,13,7,0,53.8
+Squarepoint Capital,greenhouse,23,10,0,43.5
+AJAIA,workable,15,4,0,26.7
+"Datamark, Inc.",workable,46,11,11,23.9
+Instawork,greenhouse,32,7,7,21.9
+Shadow Light Studios,workable,10,2,0,20.0
+Volga Partners,workable,18,2,2,11.1
+Tech Firefly,workable,11,1,1,9.1
+Skild AI,greenhouse,12,1,0,8.3
+Span,ashby,13,1,1,7.7
+project44,greenhouse,13,1,0,7.7
+Ema,ashby,16,1,1,6.3
+WIN Home Inspection,greenhouse,18,1,1,5.6
+RELX,workday,57,3,0,5.3
+Astera Labs,greenhouse,19,1,0,5.3
+Gramian Consulting Group,workable,21,1,0,4.8
+Solenis,workday,21,1,0,4.8
+Wise,smartrecruiters,28,1,1,3.6
+S&P Global,workday,31,1,0,3.2
+GE Vernova,workday,323,10,0,3.1
+Apna,workable,104,3,3,2.9
+Unilever,workday,37,1,1,2.7
+Gohighlevel,lever,75,2,2,2.7
+Thomson Reuters,workday,50,1,0,2.0
+Astreya,workday,53,1,0,1.9
+TJX,workday,59,1,0,1.7
+Philips,workday,61,1,0,1.6
+Lonza,workday,64,1,0,1.6
+Roche,workday,65,1,0,1.5
+HP,workday,139,2,0,1.4
+SimCorp,workday,70,1,0,1.4
+Northern Trust,workday,94,1,0,1.1
+Rentokil Initial,workable,335,3,2,0.9
+Hewlett Packard Enterprise,workday,404,3,0,0.7
+Danaher,workday,135,1,0,0.7
+Applied Materials,workday,176,1,0,0.6
+NXP Semiconductors,workday,201,1,0,0.5
+LSEG (London Stock Exchange Group),workday,208,1,0,0.5
+Thermo Fisher Scientific,workday,257,1,1,0.4
+Micron Technology,workday,317,1,1,0.3
+Apex Group,workday,395,1,1,0.3
+DBS Bank,workday,442,0,0,0.0
+Paytm Payments,lever,421,0,0,0.0
+Barclays,workday,335,0,0,0.0
+Kyndryl,workday,334,0,0,0.0
+NTT,workday,314,0,0,0.0
+Cisco,workday,293,0,0,0.0
+Deutsche Bank,workday,291,0,0,0.0
+Cushman & Wakefield,workday,277,0,0,0.0
+Maersk,workday,252,0,0,0.0
+ABB,workday,247,0,0,0.0
+NVIDIA,workday,243,0,0,0.0
+Mastercard,workday,240,0,0,0.0
+Jade Global,workday,226,0,0,0.0
+Airbus,workday,216,0,0,0.0
+MUFG,workday,206,0,0,0.0
+RSM,workday,199,0,0,0.0
+Cadence Design Systems,workday,198,0,0,0.0
+Sun Life,workday,182,0,0,0.0
+Capco,greenhouse,179,0,0,0.0
+Piramal Pharma,workday,177,0,0,0.0
+Valeo,workday,170,0,0,0.0
+Abbott,workday,167,0,0,0.0
+Brillio 2,lever,162,0,0,0.0
+CorroHealth,workday,155,0,0,0.0
+TaskUs,workday,152,0,0,0.0
+Johnson Controls,workday,150,0,0,0.0
+Paytm,lever,143,0,0,0.0
+dentsu,workday,142,0,0,0.0
+Bank of America,workday,140,0,0,0.0
+TD SYNNEX,workday,136,0,0,0.0
+Wells Fargo,workday,133,0,0,0.0
+Cigna,workday,132,0,0,0.0
+DXC Technology,workday,132,0,0,0.0
+Ecolab,workday,128,0,0,0.0
+Novartis,workday,127,0,0,0.0
+Guidehouse,workday,122,0,0,0.0
+Syneos Health,workday,122,0,0,0.0
+Aptiv,workday,121,0,0,0.0
+KSB,workday,121,0,0,0.0
+HARMAN,workday,120,0,0,0.0
+Salesforce,workday,118,0,0,0.0
+Morgan Stanley,workday,113,0,0,0.0
+Synechron,workday,113,0,0,0.0
+Qualys,workday,108,0,0,0.0
+Analog Devices,workday,107,0,0,0.0
+GE HealthCare,workday,101,0,0,0.0
+Medtronic,workday,100,0,0,0.0
+Concentrix,workday,99,0,0,0.0
+Okta,greenhouse,98,0,0,0.0
+R1 RCM,workday,98,0,0,0.0
+Fresenius Medical Care,workday,97,0,0,0.0
+Databricks,greenhouse,96,0,0,0.0
+Thales,workday,95,0,0,0.0
+Unisys,workday,94,0,0,0.0
+Everpure,greenhouse,92,0,0,0.0
+Adobe,workday,92,0,0,0.0
+Sopra Steria,smartrecruiters,91,0,0,0.0
+ZEISS,workday,91,0,0,0.0
+Capgemini,workable,88,0,0,0.0
+Caterpillar,workday,88,0,0,0.0
+RTX,workday,88,0,0,0.0
+Nike,workday,88,0,0,0.0
+Xylem,workday,85,0,0,0.0
+Stryker,workday,84,0,0,0.0
+Zscaler,greenhouse,83,0,0,0.0
+Jabil,workday,82,0,0,0.0
+Agilent Technologies,workday,80,0,0,0.0
+Ingram Micro,workday,80,0,0,0.0
+Sanofi,workday,80,0,0,0.0
+Blue Yonder,workday,79,0,0,0.0
+Cencora,workday,78,0,0,0.0
+MongoDB,greenhouse,77,0,0,0.0
+Vanguard,workday,77,0,0,0.0
+Broadcom,workday,76,0,0,0.0
+KBR,workday,76,0,0,0.0
+Revantage,workday,76,0,0,0.0
+GlobalFoundries,workday,75,0,0,0.0
+WPP,greenhouse,74,0,0,0.0
+Visa,workday,74,0,0,0.0
+Marsh McLennan,workday,73,0,0,0.0
+WPP Media,greenhouse,72,0,0,0.0
+AVEVA,workday,72,0,0,0.0
+Freudenberg,workday,71,0,0,0.0
+ICON plc,workday,69,0,0,0.0
+ServiceNow,smartrecruiters,68,0,0,0.0
+Baker Tilly,workday,68,0,0,0.0
+Clearwater Analytics,workday,68,0,0,0.0
+NAB,workday,68,0,0,0.0
+Fractal Analytics,workday,67,0,0,0.0
+SS&C Technologies,workday,67,0,0,0.0
+M&G,workday,66,0,0,0.0
+bp,workday,65,0,0,0.0
+Huron,workday,65,0,0,0.0
+Target,workday,65,0,0,0.0
+VML/WPP Enterprise Solutions,greenhouse,64,0,0,0.0
+T-Systems ICT India Pvt. Ltd.,smartrecruiters,64,0,0,0.0
+Kraft Heinz,workday,64,0,0,0.0
+Rockwell Automation,workday,64,0,0,0.0
+Wolters Kluwer,workday,64,0,0,0.0
+Sandisk,smartrecruiters,63,0,0,0.0
+Medline,workday,63,0,0,0.0
+Lokal App,workable,62,0,0,0.0
+Ameriprise Financial,workday,62,0,0,0.0
+Armanino,workday,62,0,0,0.0
+Clarivate,workday,62,0,0,0.0
+Sarvam AI,ashby,61,0,0,0.0
+Konecranes,smartrecruiters,60,0,0,0.0
+Bristol Myers Squibb,workday,60,0,0,0.0
+IFF,workday,60,0,0,0.0
+International Schools Partnership,workday,60,0,0,0.0
+PUMA,workday,60,0,0,0.0
+Thinkahead,lever,58,0,0,0.0
+BlackRock,workday,58,0,0,0.0
+Valtech,greenhouse,57,0,0,0.0
+Commonwealth Bank of Australia,workday,57,0,0,0.0
+KONE,workday,57,0,0,0.0
+PhonePe,greenhouse,55,0,0,0.0
+Tekion,greenhouse,54,0,0,0.0
+Meesho,lever,54,0,0,0.0
+Candescent,workday,53,0,0,0.0
+FedEx,workday,53,0,0,0.0
+FIS,workday,53,0,0,0.0
+Meridial,greenhouse,52,0,0,0.0
+Blackbaud,workday,52,0,0,0.0
+Beghouconsulting,lever,51,0,0,0.0
+WNS Global Services,smartrecruiters,51,0,0,0.0
+Ares Management,workday,51,0,0,0.0
+ERM,workday,51,0,0,0.0
+Lloyds Banking Group,workday,51,0,0,0.0
+SiFive,workday,51,0,0,0.0
+Hevodata,lever,50,0,0,0.0
+Intel,workday,50,0,0,0.0
+Altera,workday,49,0,0,0.0
+Carrier,workday,49,0,0,0.0
+Quantiphi,workday,49,0,0,0.0
+Exponent Energy,workable,48,0,0,0.0
+Aristocrat,workday,48,0,0,0.0
+Regeneron,workday,48,0,0,0.0
+The Hartford,workday,48,0,0,0.0
+First Citizens Bank,workday,47,0,0,0.0
+Ensono,greenhouse,46,0,0,0.0
+InMobi,greenhouse,46,0,0,0.0
+BD (Becton Dickinson),workday,46,0,0,0.0
+Haleon,workday,46,0,0,0.0
+Invesco,workday,46,0,0,0.0
+American Express Global Business Travel,workday,46,0,0,0.0
+VML,greenhouse,45,0,0,0.0
+Finastra,workday,45,0,0,0.0
+ICF,workday,45,0,0,0.0
+Vishay,workday,45,0,0,0.0
+Extremenetworks,lever,44,0,0,0.0
+Edwards Lifesciences,workday,44,0,0,0.0
+Empower,workday,44,0,0,0.0
+Flowserve,workday,44,0,0,0.0
+MSD,workday,44,0,0,0.0
+NatWest,workday,43,0,0,0.0
+Surbana Jurong,workday,43,0,0,0.0
+DigitalOcean,greenhouse,42,0,0,0.0
+Stripe,greenhouse,42,0,0,0.0
+AspenTech,workday,42,0,0,0.0
+CLSA,workday,42,0,0,0.0
+o9 Solutions,workday,42,0,0,0.0
+Broadridge,workday,41,0,0,0.0
+Signify,workday,41,0,0,0.0
+Mondelez International,workday,41,0,0,0.0
+Sabre,workday,41,0,0,0.0
+Zillow,workday,41,0,0,0.0
+Air Liquide,workday,40,0,0,0.0
+Copeland,workday,40,0,0,0.0
+Disney,workday,40,0,0,0.0
+nVent,workday,40,0,0,0.0
+Ethos Life,greenhouse,39,0,0,0.0
+Point72,greenhouse,39,0,0,0.0
+NECSWS,smartrecruiters,39,0,0,0.0
+First American,workday,39,0,0,0.0
+Light & Wonder,workday,39,0,0,0.0
+Lowe's,workday,39,0,0,0.0
+Cohere Health,greenhouse,38,0,0,0.0
+Payoneer,greenhouse,38,0,0,0.0
+Chevron,workday,38,0,0,0.0
+CrowdStrike,workday,38,0,0,0.0
+Crowe,workday,38,0,0,0.0
+Flex,workday,38,0,0,0.0
+IQVIA,workday,38,0,0,0.0
+Saks,workday,38,0,0,0.0
+Rakuten,workday,38,0,0,0.0
+Warner Bros. Discovery,workday,38,0,0,0.0
+GLG,greenhouse,37,0,0,0.0
+Zeta Global,greenhouse,37,0,0,0.0
+Autodesk,workday,37,0,0,0.0
+Diageo,workday,37,0,0,0.0
+Coupang,greenhouse,36,0,0,0.0
+Arctic Wolf,workday,36,0,0,0.0
+Motorola Solutions,workday,36,0,0,0.0
+NICE,greenhouse,35,0,0,0.0
+PubMatic,greenhouse,35,0,0,0.0
+Keywords Studios,workable,35,0,0,0.0
+Origin,workable,35,0,0,0.0
+Barry-Wehmiller,workday,35,0,0,0.0
+Parexel,workday,35,0,0,0.0
+Southwest Airlines,workday,35,0,0,0.0
+Veeva,lever,34,0,0,0.0
+xponentiate,workable,34,0,0,0.0
+Aliaxis,workday,34,0,0,0.0
+BrowserStack,workday,34,0,0,0.0
+Guidewire,workday,34,0,0,0.0
+Nordson,workday,34,0,0,0.0
+Omnissa,workday,34,0,0,0.0
+ROCKWOOL,workday,34,0,0,0.0
+Samsung,workday,34,0,0,0.0
+Zentiva,workday,34,0,0,0.0
+Rubrik Job Board,greenhouse,33,0,0,0.0
+Zinnov,greenhouse,33,0,0,0.0
+Innovaccer Analytics,workable,33,0,0,0.0
+Fidelity International,workday,33,0,0,0.0
+Fortrea,workday,33,0,0,0.0
+Galderma,workday,33,0,0,0.0
+Labcorp,workday,33,0,0,0.0
+AlphaSense,greenhouse,32,0,0,0.0
+Anaplan,greenhouse,32,0,0,0.0
+Celonis,greenhouse,32,0,0,0.0
+Five9,greenhouse,32,0,0,0.0
+Roku,greenhouse,32,0,0,0.0
+ApplyBoard,workday,32,0,0,0.0
+Equifax,workday,32,0,0,0.0
+AlphaSense India,greenhouse,31,0,0,0.0
+Mactores,lever,31,0,0,0.0
+Saviynt,lever,31,0,0,0.0
+athenahealth,workday,31,0,0,0.0
+Baxter,workday,31,0,0,0.0
+Procter & Gamble,workday,31,0,0,0.0
+Prudential,workday,31,0,0,0.0
+BJAK,ashby,30,0,0,0.0
+Appian Corporation,greenhouse,30,0,0,0.0
+Emergent Labs,greenhouse,30,0,0,0.0
+Sigmoid,greenhouse,30,0,0,0.0
+Portagepointpartners,lever,30,0,0,0.0
+Experian,smartrecruiters,30,0,0,0.0
+GSSTech Group,workable,30,0,0,0.0
+Renault Group,workday,30,0,0,0.0
+AT&T,workday,30,0,0,0.0
+Dexcom,workday,30,0,0,0.0
+FNZ,workday,30,0,0,0.0
+Gartner,workday,30,0,0,0.0
+Solera,workday,30,0,0,0.0
+The Access Group,workday,30,0,0,0.0
+U.S. Bank,workday,30,0,0,0.0
+Avantor,workday,30,0,0,0.0
+Netgear,ashby,29,0,0,0.0
+Fictiv,greenhouse,29,0,0,0.0
+GitLab,greenhouse,29,0,0,0.0
+Pico,greenhouse,29,0,0,0.0
+SonicWall,greenhouse,29,0,0,0.0
+Babcock Power APAC Pvt. Ltd.,workable,29,0,0,0.0
+Anglo-Eastern Ship Management,workable,29,0,0,0.0
+Cubic,workday,29,0,0,0.0
+Elanco,workday,29,0,0,0.0
+PTC,workday,29,0,0,0.0
+Workday,workday,29,0,0,0.0
+Amtech Software,greenhouse,28,0,0,0.0
+OpenFX,greenhouse,28,0,0,0.0
+Sprinto,lever,28,0,0,0.0
+Syngenta Group,smartrecruiters,28,0,0,0.0
+Lakshya Digital,workable,28,0,0,0.0
+Nasdaq,workday,28,0,0,0.0
+Trintech,workday,28,0,0,0.0
+Riveron,ashby,27,0,0,0.0
+Athene,workday,27,0,0,0.0
+Bloom Energy,workday,27,0,0,0.0
+Dow,workday,27,0,0,0.0
+Equinix,workday,27,0,0,0.0
+Johnson Electric,workday,27,0,0,0.0
+Sprinklr,workday,27,0,0,0.0
+Sulzer,workday,27,0,0,0.0
+Trimble,workday,27,0,0,0.0
+Viavi Solutions,workday,27,0,0,0.0
+OneTrust,greenhouse,26,0,0,0.0
+Careers at Tide,greenhouse,26,0,0,0.0
+Ttecdigital,lever,26,0,0,0.0
+Side,workable,26,0,0,0.0
+F5,workday,26,0,0,0.0
+Sandvik,workday,26,0,0,0.0
+Azurity Pharmaceuticals - India,greenhouse,25,0,0,0.0
+Dnb,lever,25,0,0,0.0
+Sia,smartrecruiters,25,0,0,0.0
+Proximity Works,workable,25,0,0,0.0
+Infotel UK,workable,25,0,0,0.0
+Huzzle,workable,25,0,0,0.0
+AllianceBernstein,workday,25,0,0,0.0
+Circles,workday,25,0,0,0.0
+Fiserv,workday,25,0,0,0.0
+GEA,workday,25,0,0,0.0
+NCR,workday,25,0,0,0.0
+Glance,greenhouse,24,0,0,0.0
+Glean,greenhouse,24,0,0,0.0
+Zenoti,greenhouse,24,0,0,0.0
+FactSet,workday,24,0,0,0.0
+Silicon Labs,workday,24,0,0,0.0
+Arcesium LLC,greenhouse,23,0,0,0.0
+Burson,greenhouse,23,0,0,0.0
+GHX India,greenhouse,23,0,0,0.0
+Konrad,greenhouse,23,0,0,0.0
+Omnidesigntech,lever,23,0,0,0.0
+Valgenesis,lever,23,0,0,0.0
+CXG,workable,23,0,0,0.0
+Elevation Capital,workable,23,0,0,0.0
+Global Pacific Support,workable,23,0,0,0.0
+Illumina,workday,23,0,0,0.0
+Pretium,workday,23,0,0,0.0
+Shell,workday,23,0,0,0.0
+DevRev,greenhouse,22,0,0,0.0
+DoorDash India,greenhouse,22,0,0,0.0
+Kaseya,greenhouse,22,0,0,0.0
+Netskope,greenhouse,22,0,0,0.0
+Drivetrain,lever,22,0,0,0.0
+Kaufman Rossin,workable,22,0,0,0.0
+Centific,workday,22,0,0,0.0
+Pfizer,workday,22,0,0,0.0
+Regal Rexnord,workday,22,0,0,0.0
+G2,ashby,21,0,0,0.0
+Arcana Analytics,greenhouse,21,0,0,0.0
+Atomicwork Inc,greenhouse,21,0,0,0.0
+Bitwarden,greenhouse,21,0,0,0.0
+Graphcore,greenhouse,21,0,0,0.0
+Mitsogo Inc,greenhouse,21,0,0,0.0
+Razorpay,greenhouse,21,0,0,0.0
+Roboyo,greenhouse,21,0,0,0.0
+Stable Money1,lever,21,0,0,0.0
+AstraZeneca,workday,21,0,0,0.0
+PVH,workday,21,0,0,0.0
+Lumilens,ashby,20,0,0,0.0
+Zeta,lever,20,0,0,0.0
+Accellor,workable,20,0,0,0.0
+Pavago,workable,20,0,0,0.0
+Erbity Private Limited,workable,20,0,0,0.0
+Morningstar,workday,20,0,0,0.0
+DigiCert,greenhouse,19,0,0,0.0
+Energy Exemplar,greenhouse,19,0,0,0.0
+Fivetran,greenhouse,19,0,0,0.0
+Harness,greenhouse,19,0,0,0.0
+BOLD,greenhouse,19,0,0,0.0
+Altisource,smartrecruiters,19,0,0,0.0
+Smartstream Limited,workable,19,0,0,0.0
+DuPont,workday,19,0,0,0.0
+Mars,workday,19,0,0,0.0
+TransUnion,workday,19,0,0,0.0
+Nightfall Ai,ashby,18,0,0,0.0
+Avathon,greenhouse,18,0,0,0.0
+eClinical Solutions,greenhouse,18,0,0,0.0
+OLIVER Agency - APAC,greenhouse,18,0,0,0.0
+Orion Innovation,greenhouse,18,0,0,0.0
+Quince,greenhouse,18,0,0,0.0
+Redwood Software,greenhouse,18,0,0,0.0
+Truveta,greenhouse,18,0,0,0.0
+Cardinal Health,workday,18,0,0,0.0
+Duck Creek Technologies,workday,18,0,0,0.0
+HackerRank Careers,greenhouse,17,0,0,0.0
+Smartsheet,greenhouse,17,0,0,0.0
+Careers at KKR,greenhouse,17,0,0,0.0
+Toast,greenhouse,17,0,0,0.0
+Zinnia - Employee Referral,greenhouse,17,0,0,0.0
+Mindtickle,lever,17,0,0,0.0
+Botsync,workable,17,0,0,0.0
+Rolling Arrays - Consulting,workable,17,0,0,0.0
+Elevance Health,workday,17,0,0,0.0
+S&P Global Mobility,workday,17,0,0,0.0
+Verizon,workday,17,0,0,0.0
+Bureau,ashby,16,0,0,0.0
+Signoz,ashby,16,0,0,0.0
+Cognite - AI for Industry,greenhouse,16,0,0,0.0
+EnCharge AI,greenhouse,16,0,0,0.0
+Gruve,greenhouse,16,0,0,0.0
+Particle41,greenhouse,16,0,0,0.0
+Navan (Tripeur),greenhouse,16,0,0,0.0
+Zinnia,greenhouse,16,0,0,0.0
+ZoomInfo Technologies LLC,greenhouse,16,0,0,0.0
+Bpmcpa,lever,16,0,0,0.0
+JumpCloud,lever,16,0,0,0.0
+Levelai,lever,16,0,0,0.0
+Maxwell Energy System Pvt Ltd,workable,16,0,0,0.0
+WATI.io,workable,16,0,0,0.0
+A2MAC1,workable,16,0,0,0.0
+Equiniti,workday,16,0,0,0.0
+Genesys,workday,16,0,0,0.0
+66degrees,greenhouse,15,0,0,0.0
+AST SpaceMobile,greenhouse,15,0,0,0.0
+Cialfo,greenhouse,15,0,0,0.0
+Elastic,greenhouse,15,0,0,0.0
+"Ethernovia, Inc.",greenhouse,15,0,0,0.0
+IMC,greenhouse,15,0,0,0.0
+Spaulding Ridge,greenhouse,15,0,0,0.0
+StarRez,greenhouse,15,0,0,0.0
+YipitData (Alternative),greenhouse,15,0,0,0.0
+Zafin,greenhouse,15,0,0,0.0
+Acceldata,lever,15,0,0,0.0
+Fampay,lever,15,0,0,0.0
+Nium,lever,15,0,0,0.0
+robusta,workable,15,0,0,0.0
+Enfinity Global,workable,15,0,0,0.0
+Opengov,ashby,14,0,0,0.0
+Snowflake,ashby,14,0,0,0.0
+Axi,greenhouse,14,0,0,0.0
+Graviton Research Capital LLP,greenhouse,14,0,0,0.0
+Headout,greenhouse,14,0,0,0.0
+KRAFTON India,greenhouse,14,0,0,0.0
+Omnicom Media,greenhouse,14,0,0,0.0
+Netradyne,greenhouse,14,0,0,0.0
+"NeuraFlash, Part of Accenture",greenhouse,14,0,0,0.0
+Precision Medicine Group,greenhouse,14,0,0,0.0
+Twilio,greenhouse,14,0,0,0.0
+VaynerMedia LLC,greenhouse,14,0,0,0.0
+Cyderes,lever,14,0,0,0.0
+Arena Investors I Quaestor Advisors,workable,14,0,0,0.0
+Evidence Action,workable,14,0,0,0.0
+Gridlines,workable,14,0,0,0.0
+JoVE,workable,14,0,0,0.0
+Kong,ashby,13,0,0,0.0
+"Black Duck Software, Inc.",greenhouse,13,0,0,0.0
+Commvault,greenhouse,13,0,0,0.0
+‎ConnectWise,greenhouse,13,0,0,0.0
+Diligent Corporation,greenhouse,13,0,0,0.0
+Guidepoint,greenhouse,13,0,0,0.0
+Karya,greenhouse,13,0,0,0.0
+New Era Technology,greenhouse,13,0,0,0.0
+Roblox,greenhouse,13,0,0,0.0
+Skillz Inc,greenhouse,13,0,0,0.0
+Xometry,greenhouse,13,0,0,0.0
+3pillarglobal,lever,13,0,0,0.0
+Endpointclinical,lever,13,0,0,0.0
+Neuron7,lever,13,0,0,0.0
+LRN Corporation,workable,13,0,0,0.0
+Interpath Advisory,workable,13,0,0,0.0
+ZainTECH,workable,13,0,0,0.0
+Valsoft Corporation,workable,13,0,0,0.0
+SAP Fioneer,workable,13,0,0,0.0
+CloudSEK,greenhouse,12,0,0,0.0
+Druva,greenhouse,12,0,0,0.0
+Easyship,greenhouse,12,0,0,0.0
+Landor,greenhouse,12,0,0,0.0
+phData,greenhouse,12,0,0,0.0
+Plume,greenhouse,12,0,0,0.0
+StockX,greenhouse,12,0,0,0.0
+Syndigo,greenhouse,12,0,0,0.0
+Tower Research Capital,greenhouse,12,0,0,0.0
+Dozee,lever,12,0,0,0.0
+Pditechnologies,lever,12,0,0,0.0
+Safe,lever,12,0,0,0.0
+Sécheron Hasler Group,workable,12,0,0,0.0
+Blue Machines AI,workable,12,0,0,0.0
+Coram Ai,ashby,11,0,0,0.0
+Addepar,greenhouse,11,0,0,0.0
+Brandtech+,greenhouse,11,0,0,0.0
+Coinbase,greenhouse,11,0,0,0.0
+Endor Labs,greenhouse,11,0,0,0.0
+Konovo,greenhouse,11,0,0,0.0
+Modulr,greenhouse,11,0,0,0.0
+NK Securities,greenhouse,11,0,0,0.0
+Prodigal,greenhouse,11,0,0,0.0
+Truecaller,greenhouse,11,0,0,0.0
+CRED,lever,11,0,0,0.0
+Epifi,lever,11,0,0,0.0
+Galepartners,lever,11,0,0,0.0
+Netomi,lever,11,0,0,0.0
+Protolabs,lever,11,0,0,0.0
+Shieldai,lever,11,0,0,0.0
+Sophos,lever,11,0,0,0.0
+Uvcyber,lever,11,0,0,0.0
+Wmg,lever,11,0,0,0.0
+"UWorld, LLC",workable,11,0,0,0.0
+BreachLock,workable,11,0,0,0.0
+Astrome Technologies,workable,11,0,0,0.0
+PMC Commerce,workable,11,0,0,0.0
+Airwallex,ashby,10,0,0,0.0
+Lyric,ashby,10,0,0,0.0
+Openai,ashby,10,0,0,0.0
+Plane,ashby,10,0,0,0.0
+Abnormal,greenhouse,10,0,0,0.0
+Agoda,greenhouse,10,0,0,0.0
+Inizio Ignite,greenhouse,10,0,0,0.0
+ChargePoint,greenhouse,10,0,0,0.0
+"Crunchyroll, LLC",greenhouse,10,0,0,0.0
+Datadog,greenhouse,10,0,0,0.0
+Jumio,greenhouse,10,0,0,0.0
+New Relic,greenhouse,10,0,0,0.0
+Precision for Medicine,greenhouse,10,0,0,0.0
+Reltio,greenhouse,10,0,0,0.0
+Scopely,greenhouse,10,0,0,0.0
+Taboola,greenhouse,10,0,0,0.0
+Teach For All,greenhouse,10,0,0,0.0
+Veeam Software,greenhouse,10,0,0,0.0
+Zocdoc,greenhouse,10,0,0,0.0
+Balbix,lever,10,0,0,0.0
+Cprime,lever,10,0,0,0.0
+Linkedin,lever,10,0,0,0.0
+Lyrahealth,lever,10,0,0,0.0
+Pattern Technologies,lever,10,0,0,0.0
+Applus IDIADA,smartrecruiters,10,0,0,0.0
+ProArch,workable,10,0,0,0.0
+BestEx Research,workable,10,0,0,0.0
+Blue Altair,workable,10,0,0,0.0
+Civica,workable,10,0,0,0.0
+"Mercari, Inc. (India)",workable,10,0,0,0.0
+Messe Muenchen India,workable,10,0,0,0.0

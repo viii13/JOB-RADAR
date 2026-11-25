@@ -1,0 +1,29 @@
+{
+  "tests": {
+    "integ_pipeline_to_classifier_text_format": {
+      "status": "PASS",
+      "details": {
+        "prepared_text_preview": "Full Stack Cloud Engineer \n Full Stack Cloud Engineer \n Full Stack Cloud Engineer \n Python, React, AWS, Docker \n Python,"
+      }
+    },
+    "integ_skill_naming_consistency": {
+      "status": "PASS",
+      "details": {
+        "mismatches_count": 0,
+        "mismatches": []
+      }
+    },
+    "integ_taxonomy_role_alignment": {
+      "status": "PASS",
+      "details": {
+        "total_taxonomy_families": 11,
+        "tech_roles_covered": 8
+      }
+    }
+  },
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3
+  }
+}

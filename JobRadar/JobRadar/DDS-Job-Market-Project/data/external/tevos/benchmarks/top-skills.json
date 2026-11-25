@@ -1,0 +1,201 @@
+{
+  "publisher": "Tevos Labs",
+  "source_url": "https://gettevos.com/industries.php",
+  "retrieved_from": "Tevos industry demand page indexed by web search",
+  "observed_date": "2026-11-11",
+  "license": "Not stated on the retrieved page",
+  "schema_version": "1.0",
+  "description": "Partial snapshot of skills and mention counts shown on Tevos's industry demand page. Counts are skill mentions in active job descriptions, grouped by industry. This is not a complete export of the page or a verified direct top-skills JSON endpoint.",
+  "methodology_note": "The page says industry tagging is sourced from its company catalogue and skill mentions are extracted from active job descriptions; coverage grows daily. Treat counts as source-reported mentions, not unique job counts or forecasts.",
+  "industries": [
+    {
+      "industry": "Consulting",
+      "skills": [
+        {
+          "skill": "Java",
+          "mentions": 5280
+        },
+        {
+          "skill": "Python",
+          "mentions": 4570
+        },
+        {
+          "skill": "SQL",
+          "mentions": 3489
+        },
+        {
+          "skill": "Azure",
+          "mentions": 2710
+        },
+        {
+          "skill": "SAP",
+          "mentions": 2575
+        },
+        {
+          "skill": "AWS",
+          "mentions": 2408
+        },
+        {
+          "skill": "Git",
+          "mentions": 2268
+        },
+        {
+          "skill": "Excel",
+          "mentions": 2087
+        },
+        {
+          "skill": "Full Stack Development",
+          "mentions": 1946
+        },
+        {
+          "skill": "Kubernetes",
+          "mentions": 1812
+        },
+        {
+          "skill": "Docker",
+          "mentions": 1477
+        },
+        {
+          "skill": "Debugging",
+          "mentions": 1410
+        },
+        {
+          "skill": "JavaScript",
+          "mentions": 1388
+        }
+      ]
+    },
+    {
+      "industry": "Semiconductors",
+      "skills": [
+        {
+          "skill": ".NET Framework",
+          "mentions": 22
+        },
+        {
+          "skill": "Build Infrastructure",
+          "mentions": 22
+        },
+        {
+          "skill": "Hardware Engineering",
+          "mentions": 13
+        },
+        {
+          "skill": "ONNX",
+          "mentions": 12
+        }
+      ]
+    },
+    {
+      "industry": "Software Product",
+      "skills": [
+        {
+          "skill": "remote diagnostics",
+          "mentions": 7
+        },
+        {
+          "skill": "field service",
+          "mentions": 6
+        },
+        {
+          "skill": "resiliency engineering",
+          "mentions": 5
+        },
+        {
+          "skill": "zero-touch operations",
+          "mentions": 5
+        },
+        {
+          "skill": "scaling workflows",
+          "mentions": 5
+        },
+        {
+          "skill": "AI/ML-based predictive monitoring",
+          "mentions": 5
+        },
+        {
+          "skill": "infrastructure optimization",
+          "mentions": 5
+        },
+        {
+          "skill": "multi-region systems",
+          "mentions": 5
+        },
+        {
+          "skill": "agentic systems",
+          "mentions": 5
+        },
+        {
+          "skill": "programmatic advertising",
+          "mentions": 5
+        },
+        {
+          "skill": "credit monitoring",
+          "mentions": 5
+        },
+        {
+          "skill": "policy formulation",
+          "mentions": 5
+        },
+        {
+          "skill": "AI-driven product development",
+          "mentions": 4
+        },
+        {
+          "skill": "ad serving",
+          "mentions": 4
+        },
+        {
+          "skill": "RTB flows",
+          "mentions": 4
+        }
+      ]
+    },
+    {
+      "industry": "FinTech",
+      "skills": [
+        {
+          "skill": "target achievement",
+          "mentions": 14
+        },
+        {
+          "skill": "stress testing",
+          "mentions": 13
+        },
+        {
+          "skill": "debt recovery",
+          "mentions": 13
+        },
+        {
+          "skill": "agency management",
+          "mentions": 12
+        },
+        {
+          "skill": "training and evaluation",
+          "mentions": 12
+        },
+        {
+          "skill": "user behavior analysis",
+          "mentions": 10
+        },
+        {
+          "skill": "product analytics",
+          "mentions": 8
+        },
+        {
+          "skill": "UI Testing",
+          "mentions": 8
+        },
+        {
+          "skill": "Behavior-Driven Development (BDD)",
+          "mentions": 7
+        },
+        {
+          "skill": "Test-Driven Development (TDD)",
+          "mentions": 7
+        }
+      ]
+    }
+  ],
+  "coverage_warning": "Only the industry sections and skill rows explicitly visible in the retrieved page result are included. Do not treat this file as a complete national top-skills ranking."
+}

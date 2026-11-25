@@ -1,0 +1,332 @@
+{
+  "tests": {
+    "ml_phase4_model_file_exists": {
+      "status": "PASS",
+      "details": null
+    },
+    "ml_phase4_bundle_loading": {
+      "status": "PASS",
+      "details": {
+        "model_name": "tfidf_logistic_regression",
+        "version": "0.1.0",
+        "num_features": 18458,
+        "classes_count": 11,
+        "is_provisional": true
+      }
+    },
+    "ml_phase4_backend_classification": {
+      "status": "PASS",
+      "details": {
+        "role": "backend_core_software_engineering",
+        "confidence": 0.5773,
+        "tier": "HIGH"
+      }
+    },
+    "ml_phase4_data_scientist_classification": {
+      "status": "PASS",
+      "details": {
+        "role": "data_scientist_advanced_analytics",
+        "confidence": 0.2607,
+        "tier": "LOW"
+      }
+    },
+    "ml_phase4_devops_classification": {
+      "status": "PASS",
+      "details": {
+        "role": "cloud_devops_sre",
+        "confidence": 0.8148,
+        "tier": "HIGH"
+      }
+    },
+    "ml_phase4_qa_classification": {
+      "status": "PASS",
+      "details": {
+        "role": "qa_automation_testing",
+        "confidence": 0.7014,
+        "tier": "HIGH"
+      }
+    },
+    "ml_phase4_unknown_input_handling": {
+      "status": "PASS",
+      "details": {
+        "predicted": "other_unclassified",
+        "confidence": 0.3615
+      }
+    },
+    "ml_phase4_rule_based_fallback": {
+      "status": "PASS",
+      "details": {
+        "role_id": "frontend_full_stack_engineering",
+        "score": 150.0
+      }
+    },
+    "ml_phase4_empirical_metrics": {
+      "status": "PASS",
+      "details": {
+        "accuracy": 0.8571,
+        "weighted_f1": 0.8571,
+        "weighted_precision": 0.8929,
+        "weighted_recall": 0.8571
+      }
+    },
+    "ml_phase5_benchmarks_loaded": {
+      "status": "PASS",
+      "details": {
+        "benchmark_roles_count": 8,
+        "roles": [
+          "backend_core_software_engineering",
+          "cloud_devops_sre",
+          "data_analyst_business_intelligence",
+          "data_engineer_big_data_platform",
+          "data_scientist_advanced_analytics",
+          "frontend_full_stack_engineering",
+          "machine_learning_ai_engineer",
+          "qa_automation_testing"
+        ]
+      }
+    },
+    "ml_phase5_recommendations_ranking": {
+      "status": "PASS",
+      "details": {
+        "top_role": "Backend & Core Software Engineering",
+        "match_score": 50.6,
+        "matching_skills": [
+          "MatchingSkillInfo(skill_name='Java', demand_percentage=25.61, disclosed_job_demand_pct=26.75, priority_category='RECOMMENDED')",
+          "MatchingSkillInfo(skill_name='SQL', demand_percentage=22.52, disclosed_job_demand_pct=23.51, priority_category='RECOMMENDED')",
+          "MatchingSkillInfo(skill_name='Microservices', demand_percentage=13.58, disclosed_job_demand_pct=14.18, priority_category='ELECTIVE')",
+          "MatchingSkillInfo(skill_name='Spring Boot', demand_percentage=11.7, disclosed_job_demand_pct=12.22, priority_category='ELECTIVE')",
+          "MatchingSkillInfo(skill_name='Docker', demand_percentage=5.15, disclosed_job_demand_pct=5.37, priority_category='ELECTIVE')"
+        ]
+      }
+    },
+    "ml_phase5_skill_gap_and_readiness_bounds": {
+      "status": "PASS",
+      "details": {
+        "readiness_score": 29.5,
+        "acquired_count": 2,
+        "missing_critical_count": 2
+      }
+    },
+    "ml_phase5_roadmap_generation": {
+      "status": "PASS",
+      "details": {
+        "milestones_count": 4,
+        "total_weeks": 21
+      }
+    },
+    "ml_phase5_resume_parsing_integration": {
+      "status": "PASS",
+      "details": {
+        "extracted_count": 5
+      }
+    },
+    "ml_phase5_empty_profile_handling": {
+      "status": "PASS",
+      "details": {
+        "status": "incomplete_profile"
+      }
+    },
+    "ml_phase6_engine_initialized": {
+      "status": "PASS",
+      "details": {
+        "model_name": "Ridge Regression (alpha=10.0)",
+        "version": "2.0.0"
+      }
+    },
+    "ml_phase6_software_engineer_prediction": {
+      "status": "PASS",
+      "details": {
+        "predicted_lpa": 6.436213799995172,
+        "conformal_interval_lpa": {
+          "min_lpa": 0.6,
+          "max_lpa": 17.45
+        },
+        "resolved_family": "backend_core_software_engineering"
+      }
+    },
+    "ml_phase6_data_scientist_prediction": {
+      "status": "PASS",
+      "details": {
+        "predicted_lpa": 13.948699632138979,
+        "conformal_interval_lpa": {
+          "min_lpa": 0.6,
+          "max_lpa": 32.29
+        },
+        "resolved_family": "data_science_ml_ai"
+      }
+    },
+    "ml_phase6_conformal_interval_width": {
+      "status": "PASS",
+      "details": {
+        "interval_width_lpa": 16.85,
+        "interval": {
+          "min_lpa": 0.6,
+          "max_lpa": 17.45
+        }
+      }
+    },
+    "ml_phase6_non_technical_role_rejection": {
+      "status": "PASS",
+      "details": {
+        "error_message": "Salary prediction is currently calibrated exclusively for core technical engineering and data roles (Backend, Frontend, Full Stack, QA, Cloud/DevOps, Data Engineering, Data Analytics, and Data Science / AI). The requested role 'HR Executive / Recruiter' is not within technical scope."
+      }
+    },
+    "ml_phase6_negative_experience_handling": {
+      "status": "PASS",
+      "details": {
+        "api_schema_rejected_422": true,
+        "engine_defensively_clamped_to_fresher": true,
+        "validation_error_summary": true
+      }
+    }
+  },
+  "metrics": {
+    "phase4_classification": {
+      "sample_size": 14,
+      "accuracy": 0.8571,
+      "weighted_f1": 0.8571,
+      "macro_f1": 0.7333,
+      "weighted_precision": 0.8929,
+      "weighted_recall": 0.8571,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ]
+    },
+    "phase6_salary": {
+      "champion_model": "Ridge Regression (alpha=10.0)",
+      "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+      "training_samples": 4207,
+      "cv_mae_lpa": 4.74,
+      "cv_rmse_lpa": 7.035,
+      "cv_r2_score": 0.4639,
+      "cv_medae_lpa": 3.174,
+      "cv_mape_pct": 55.84,
+      "conformal_interval_nominal_coverage": 90.0,
+      "empirical_interval_coverage_pct": 90.09
+    }
+  },
+  "summary": {
+    "passed": 21,
+    "failed": 0,
+    "total": 21
+  }
+}

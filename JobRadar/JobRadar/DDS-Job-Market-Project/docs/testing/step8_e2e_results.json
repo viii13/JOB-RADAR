@@ -1,0 +1,315 @@
+{
+  "summary": {
+    "total": 35,
+    "passed": 35,
+    "failed": 0
+  },
+  "tests": {
+    "e2e_health_status_ok": {
+      "status": "PASS",
+      "details": {
+        "status": "healthy",
+        "service": "JobRadar API",
+        "version": "1.0.0",
+        "dataset": {
+          "total_jobs_processed": 97682,
+          "total_skill_mentions": 210043,
+          "unique_skills": 104,
+          "jobs_with_skills": 68004
+        },
+        "database": {
+          "connected": true,
+          "engine": "sqlite",
+          "total_jobs": 98347
+        },
+        "models": {
+          "classifier_loaded": true,
+          "classifier_version": "0.1.0",
+          "salary_predictor_loaded": true,
+          "salary_predictor_version": "2.0.0",
+          "career_recommendations_loaded": true,
+          "emerging_skills_index_loaded": true
+        },
+        "classifier": {
+          "loaded": true,
+          "version": "0.1.0"
+        }
+      }
+    },
+    "e2e_health_database_connected": {
+      "status": "PASS",
+      "details": {
+        "connected": true,
+        "engine": "sqlite",
+        "total_jobs": 98347
+      }
+    },
+    "e2e_health_models_initialized": {
+      "status": "PASS",
+      "details": {
+        "classifier_loaded": true,
+        "classifier_version": "0.1.0",
+        "salary_predictor_loaded": true,
+        "salary_predictor_version": "2.0.0",
+        "career_recommendations_loaded": true,
+        "emerging_skills_index_loaded": true
+      }
+    },
+    "e2e_jobs_list_retrieval": {
+      "status": "PASS",
+      "details": {
+        "total": 97679,
+        "returned": 20
+      }
+    },
+    "e2e_jobs_keyword_search": {
+      "status": "PASS",
+      "details": {
+        "python_total_matching": 7622
+      }
+    },
+    "e2e_jobs_location_filter": {
+      "status": "PASS",
+      "details": {
+        "bengaluru_total": 25958
+      }
+    },
+    "e2e_jobs_salary_filter": {
+      "status": "PASS",
+      "details": {
+        "salary_ge_10lpa_total": 8695
+      }
+    },
+    "e2e_jobs_detail_by_id": {
+      "status": "PASS",
+      "details": {
+        "id": "100125012854",
+        "title": "Business Development Manager",
+        "company": "Southern Trading Co"
+      }
+    },
+    "e2e_jobs_empty_search_handling": {
+      "status": "PASS",
+      "details": {
+        "total": 0
+      }
+    },
+    "e2e_skills_top_rankings": {
+      "status": "PASS",
+      "details": {
+        "top_skills": [
+          "Communication Skills",
+          "Python",
+          "Customer Service",
+          "SAP",
+          "SQL"
+        ]
+      }
+    },
+    "e2e_skills_categories_breakdown": {
+      "status": "PASS",
+      "details": {
+        "categories_count": 10,
+        "sample_categories": [
+          "Other",
+          "Tools",
+          "Programming Language",
+          "DevOps",
+          "Framework"
+        ]
+      }
+    },
+    "e2e_skills_by_role_demand": {
+      "status": "PASS",
+      "details": {
+        "role_name": "Data Scientist & Advanced Analytics",
+        "skills_count": 62
+      }
+    },
+    "e2e_skills_emerging_momentum_index": {
+      "status": "PASS",
+      "details": {
+        "sample_emerging": [
+          {
+            "skill": "PyTorch",
+            "tier": "High Momentum",
+            "score": 78.34
+          },
+          {
+            "skill": "Golang",
+            "tier": "High Momentum",
+            "score": 74.06
+          },
+          {
+            "skill": "TensorFlow",
+            "tier": "High Momentum",
+            "score": 73.52
+          }
+        ]
+      }
+    },
+    "e2e_classification_tech_posting": {
+      "status": "PASS",
+      "details": {
+        "predicted_role": "cloud_devops_sre",
+        "confidence": 0.9425,
+        "tier": "HIGH",
+        "method": "ml_logistic_regression"
+      }
+    },
+    "e2e_classification_out_of_domain_fallback": {
+      "status": "PASS",
+      "details": {
+        "predicted": "other_unclassified",
+        "is_fallback": false
+      }
+    },
+    "e2e_classification_batch_execution": {
+      "status": "PASS",
+      "details": {
+        "batch_size": 2
+      }
+    },
+    "e2e_recommendation_cosine_ranking": {
+      "status": "PASS",
+      "details": {
+        "top_role": "Backend & Core Software Engineering",
+        "match_score": 50.6
+      }
+    },
+    "e2e_skill_gap_analysis": {
+      "status": "PASS",
+      "details": {
+        "role_id": "data_scientist_advanced_analytics",
+        "readiness_score": 29.5,
+        "missing_critical_count": 2
+      }
+    },
+    "e2e_roadmap_generation": {
+      "status": "PASS",
+      "details": {
+        "milestones_count": 4,
+        "total_weeks": 21
+      }
+    },
+    "e2e_recommendations_supported_roles": {
+      "status": "PASS",
+      "details": {
+        "supported_roles_count": 8
+      }
+    },
+    "e2e_recommendations_empty_profile": {
+      "status": "PASS",
+      "details": {
+        "status": "incomplete_profile"
+      }
+    },
+    "e2e_resume_txt_skill_extraction": {
+      "status": "PASS",
+      "details": {
+        "extracted_count": 6,
+        "skills": [
+          "AWS",
+          "Docker",
+          "PostgreSQL",
+          "Python",
+          "React",
+          "Redis"
+        ]
+      }
+    },
+    "e2e_resume_zero_disk_persistence": {
+      "status": "PASS",
+      "details": {
+        "orphaned_files": []
+      }
+    },
+    "e2e_resume_empty_file_rejected": {
+      "status": "PASS",
+      "details": "Empty resume file rejected safely"
+    },
+    "e2e_resume_unsupported_format_rejected": {
+      "status": "PASS",
+      "details": "Unsupported .exe rejected safely"
+    },
+    "e2e_salary_point_and_conformal_interval": {
+      "status": "PASS",
+      "details": {
+        "predicted_lpa": 6.44,
+        "interval": {
+          "min_lpa": 0.6,
+          "max_lpa": 17.45
+        },
+        "market_tier": "tier_1_metro",
+        "resolved_family": "backend_core_software_engineering"
+      }
+    },
+    "e2e_salary_fresher_baseline": {
+      "status": "PASS",
+      "details": {
+        "fresher_lpa": 3.05
+      }
+    },
+    "e2e_salary_negative_experience_rejected_422": {
+      "status": "PASS",
+      "details": "Negative experience rejected with HTTP 422"
+    },
+    "e2e_salary_non_technical_role_rejected_400": {
+      "status": "PASS",
+      "details": "Non-technical role rejected with HTTP 400"
+    },
+    "e2e_salary_model_metadata": {
+      "status": "PASS",
+      "details": {
+        "version": "2.0.0",
+        "champion": "Ridge Regression (alpha=10.0)",
+        "samples": 4207
+      }
+    },
+    "e2e_reconciliation_exact_alignment": {
+      "status": "PASS",
+      "details": {
+        "datastore_jobs": 97682,
+        "sqlite_jobs": 98347,
+        "jobs_api_total": 97679,
+        "reconciled": true
+      }
+    },
+    "e2e_failure_invalid_json_body_422": {
+      "status": "PASS",
+      "details": "Pydantic validation error returns HTTP 422"
+    },
+    "e2e_failure_route_not_found_404": {
+      "status": "PASS",
+      "details": "Unmatched route returns HTTP 404"
+    },
+    "e2e_concurrent_read_requests": {
+      "status": "PASS",
+      "details": {
+        "concurrent_requests": 12,
+        "successful": 12
+      }
+    },
+    "e2e_complete_user_journey_workflow": {
+      "status": "PASS",
+      "details": {
+        "steps_completed": 9,
+        "user_recommended_role": "Data Engineer & Big Data Platform",
+        "readiness_score": 59.5,
+        "roadmap_milestones": 3,
+        "predicted_compensation_lpa": 5.47,
+        "conformal_interval_lpa": {
+          "min_lpa": 0.6,
+          "max_lpa": 15.61
+        }
+      }
+    }
+  },
+  "metrics": {},
+  "reconciliation": {
+    "jobs_api_searchable_total": 97679,
+    "cleaned_deduplicated_pipeline_datastore": 97682,
+    "sqlite_jobs_table_total_snapshots": 98347,
+    "explanation": "97,682 represents the golden cleaned, deduplicated dataset serving API analytics overview. 97,679 is the active searchable total in /api/jobs due to 3 records with empty/invalid title strings excluded from search masking. 98,347 in SQLite contains 665 multi-ingestion historical snapshots preserved for audit provenance."
+  }
+}

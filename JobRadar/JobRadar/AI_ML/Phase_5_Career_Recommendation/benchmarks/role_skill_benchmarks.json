@@ -1,0 +1,5382 @@
+{
+  "metadata": {
+    "generated_at": "2026-11-11T06:20:01.005506+00:00",
+    "calculation_version": "1.1.0",
+    "taxonomy_reference": "role-taxonomy-v1",
+    "supported_roles_count": 8,
+    "total_eligible_jobs_analyzed": 26766,
+    "critical_threshold_pct": 50.0,
+    "recommended_threshold_pct": 20.0,
+    "min_confidence_threshold": 0.2,
+    "source_datasets": [
+      {
+        "file_name": "cleaned_indian_job_market_2025.csv",
+        "raw_row_count": 97682,
+        "deduplicated_job_count": 97679
+      },
+      {
+        "file_name": "job_skills.csv",
+        "raw_row_count": 210043,
+        "deduplicated_skill_pairs_count": 210029
+      }
+    ],
+    "assumptions_and_limitations": [
+      "Data Source: Extracted strictly from cleaned Indian tech job postings (cleaned_indian_job_market_2025.csv).",
+      "Role Classification: Roles assigned using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0).",
+      "Provisional Status: Labels are silver model-derived classifications; independent gold human verification remains pending.",
+      "Confidence Gate (0.20): Postings with model confidence < 0.20 are classified as uncertain and excluded from benchmarks. The 0.20 cutoff is an inherited heuristic filter from earlier 5-class experiments; in the 11-class model, it requires >= 2.2x uniform random prior (9.09%). Softmax outputs are uncalibrated decision scores and must NOT be interpreted as true probabilities or classification accuracy.",
+      "Denominator Methodology: 'demand_percentage' uses all eligible role jobs as the primary denominator. 'disclosed_job_demand_pct' is provided as a secondary metric using only jobs with >= 1 extracted skill.",
+      "Support Tiers: Roles are categorized as HIGH (>= 2,500 jobs), MODERATE (1,000-2,499 jobs), or LOW (< 1,000 jobs). Data Scientist (272 jobs) is explicitly flagged as LOW support.",
+      "Specialization Handling: 'Generative AI Engineer' is treated as an applied specialization within 'Machine Learning & AI Engineer'.",
+      "Deduplication Order Dependence: Job deduplication enforces drop_duplicates(subset=['jobId'], keep='first'). For the 3 duplicate job IDs with multi-city variants, keeping the first occurrence discards secondary location text without impacting role classification or skills.",
+      "Threshold Meaning: Priority tiers (CRITICAL, RECOMMENDED, ELECTIVE) represent empirical relative demand within JobRadar, not external formal accreditations."
+    ]
+  },
+  "roles": {
+    "backend_core_software_engineering": {
+      "role_id": "backend_core_software_engineering",
+      "role_name": "Backend & Core Software Engineering",
+      "description": "Builds APIs, services, application logic, databases, integrations, or general software systems.",
+      "eligible_job_count": 11370,
+      "skill_disclosed_job_count": 10887,
+      "zero_skill_job_count": 483,
+      "skill_disclosure_rate": 95.75,
+      "support_tier": "HIGH",
+      "distinct_skills_count": 104,
+      "critical_skills_count": 0,
+      "recommended_skills_count": 4,
+      "elective_skills_count": 100,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=11370); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=10887).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'HIGH' based on sample volume (11370 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 2912,
+          "demand_percentage": 25.61,
+          "disclosed_job_demand_pct": 26.75,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 2560,
+          "demand_percentage": 22.52,
+          "disclosed_job_demand_pct": 23.51,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 2539,
+          "demand_percentage": 22.33,
+          "disclosed_job_demand_pct": 23.32,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 2335,
+          "demand_percentage": 20.54,
+          "disclosed_job_demand_pct": 21.45,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 2172,
+          "demand_percentage": 19.1,
+          "disclosed_job_demand_pct": 19.95,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 1806,
+          "demand_percentage": 15.88,
+          "disclosed_job_demand_pct": 16.59,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 1765,
+          "demand_percentage": 15.52,
+          "disclosed_job_demand_pct": 16.21,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 1654,
+          "demand_percentage": 14.55,
+          "disclosed_job_demand_pct": 15.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microservices",
+          "distinct_job_count": 1544,
+          "demand_percentage": 13.58,
+          "disclosed_job_demand_pct": 14.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 1360,
+          "demand_percentage": 11.96,
+          "disclosed_job_demand_pct": 12.49,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring Boot",
+          "distinct_job_count": 1330,
+          "demand_percentage": 11.7,
+          "disclosed_job_demand_pct": 12.22,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring",
+          "distinct_job_count": 1300,
+          "demand_percentage": 11.43,
+          "disclosed_job_demand_pct": 11.94,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 1182,
+          "demand_percentage": 10.4,
+          "disclosed_job_demand_pct": 10.86,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Debugging",
+          "distinct_job_count": 1183,
+          "demand_percentage": 10.4,
+          "disclosed_job_demand_pct": 10.87,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 1096,
+          "demand_percentage": 9.64,
+          "disclosed_job_demand_pct": 10.07,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 1046,
+          "demand_percentage": 9.2,
+          "disclosed_job_demand_pct": 9.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 1044,
+          "demand_percentage": 9.18,
+          "disclosed_job_demand_pct": 9.59,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET",
+          "distinct_job_count": 1006,
+          "demand_percentage": 8.85,
+          "disclosed_job_demand_pct": 9.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 968,
+          "demand_percentage": 8.51,
+          "disclosed_job_demand_pct": 8.89,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 846,
+          "demand_percentage": 7.44,
+          "disclosed_job_demand_pct": 7.77,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 790,
+          "demand_percentage": 6.95,
+          "disclosed_job_demand_pct": 7.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 783,
+          "demand_percentage": 6.89,
+          "disclosed_job_demand_pct": 7.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hibernate",
+          "distinct_job_count": 777,
+          "demand_percentage": 6.83,
+          "disclosed_job_demand_pct": 7.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 695,
+          "demand_percentage": 6.11,
+          "disclosed_job_demand_pct": 6.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 693,
+          "demand_percentage": 6.09,
+          "disclosed_job_demand_pct": 6.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 692,
+          "demand_percentage": 6.09,
+          "disclosed_job_demand_pct": 6.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PostgreSQL",
+          "distinct_job_count": 689,
+          "demand_percentage": 6.06,
+          "disclosed_job_demand_pct": 6.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 679,
+          "demand_percentage": 5.97,
+          "disclosed_job_demand_pct": 6.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 614,
+          "demand_percentage": 5.4,
+          "disclosed_job_demand_pct": 5.64,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 599,
+          "demand_percentage": 5.27,
+          "disclosed_job_demand_pct": 5.5,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 585,
+          "demand_percentage": 5.15,
+          "disclosed_job_demand_pct": 5.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 580,
+          "demand_percentage": 5.1,
+          "disclosed_job_demand_pct": 5.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Continuous Integration",
+          "distinct_job_count": 563,
+          "demand_percentage": 4.95,
+          "disclosed_job_demand_pct": 5.17,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "React",
+          "distinct_job_count": 539,
+          "demand_percentage": 4.74,
+          "disclosed_job_demand_pct": 4.95,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 516,
+          "demand_percentage": 4.54,
+          "disclosed_job_demand_pct": 4.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 501,
+          "demand_percentage": 4.41,
+          "disclosed_job_demand_pct": 4.6,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Angular",
+          "distinct_job_count": 493,
+          "demand_percentage": 4.34,
+          "disclosed_job_demand_pct": 4.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET Core",
+          "distinct_job_count": 487,
+          "demand_percentage": 4.28,
+          "disclosed_job_demand_pct": 4.47,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 463,
+          "demand_percentage": 4.07,
+          "disclosed_job_demand_pct": 4.25,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ASP.NET",
+          "distinct_job_count": 439,
+          "demand_percentage": 3.86,
+          "disclosed_job_demand_pct": 4.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 416,
+          "demand_percentage": 3.66,
+          "disclosed_job_demand_pct": 3.82,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 416,
+          "demand_percentage": 3.66,
+          "disclosed_job_demand_pct": 3.82,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "J2EE",
+          "distinct_job_count": 414,
+          "demand_percentage": 3.64,
+          "disclosed_job_demand_pct": 3.8,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 397,
+          "demand_percentage": 3.49,
+          "disclosed_job_demand_pct": 3.65,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 386,
+          "demand_percentage": 3.39,
+          "disclosed_job_demand_pct": 3.55,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP HANA",
+          "distinct_job_count": 382,
+          "demand_percentage": 3.36,
+          "disclosed_job_demand_pct": 3.51,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SOAP",
+          "distinct_job_count": 371,
+          "demand_percentage": 3.26,
+          "disclosed_job_demand_pct": 3.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 364,
+          "demand_percentage": 3.2,
+          "disclosed_job_demand_pct": 3.34,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 348,
+          "demand_percentage": 3.06,
+          "disclosed_job_demand_pct": 3.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 319,
+          "demand_percentage": 2.81,
+          "disclosed_job_demand_pct": 2.93,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Node.js",
+          "distinct_job_count": 274,
+          "demand_percentage": 2.41,
+          "disclosed_job_demand_pct": 2.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 263,
+          "demand_percentage": 2.31,
+          "disclosed_job_demand_pct": 2.42,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Django",
+          "distinct_job_count": 258,
+          "demand_percentage": 2.27,
+          "disclosed_job_demand_pct": 2.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Bootstrap",
+          "distinct_job_count": 239,
+          "demand_percentage": 2.1,
+          "disclosed_job_demand_pct": 2.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jira",
+          "distinct_job_count": 230,
+          "demand_percentage": 2.02,
+          "disclosed_job_demand_pct": 2.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 228,
+          "demand_percentage": 2.01,
+          "disclosed_job_demand_pct": 2.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PHP",
+          "distinct_job_count": 214,
+          "demand_percentage": 1.88,
+          "disclosed_job_demand_pct": 1.97,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Flask",
+          "distinct_job_count": 202,
+          "demand_percentage": 1.78,
+          "disclosed_job_demand_pct": 1.86,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C",
+          "distinct_job_count": 191,
+          "demand_percentage": 1.68,
+          "disclosed_job_demand_pct": 1.75,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ERP",
+          "distinct_job_count": 185,
+          "demand_percentage": 1.63,
+          "disclosed_job_demand_pct": 1.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Golang",
+          "distinct_job_count": 182,
+          "demand_percentage": 1.6,
+          "disclosed_job_demand_pct": 1.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TypeScript",
+          "distinct_job_count": 178,
+          "demand_percentage": 1.57,
+          "disclosed_job_demand_pct": 1.63,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ADO.NET",
+          "distinct_job_count": 172,
+          "demand_percentage": 1.51,
+          "disclosed_job_demand_pct": 1.58,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Automation Testing",
+          "distinct_job_count": 153,
+          "demand_percentage": 1.35,
+          "disclosed_job_demand_pct": 1.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Redis",
+          "distinct_job_count": 145,
+          "demand_percentage": 1.28,
+          "disclosed_job_demand_pct": 1.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kotlin",
+          "distinct_job_count": 136,
+          "demand_percentage": 1.2,
+          "disclosed_job_demand_pct": 1.25,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "WordPress",
+          "distinct_job_count": 100,
+          "demand_percentage": 0.88,
+          "disclosed_job_demand_pct": 0.92,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 99,
+          "demand_percentage": 0.87,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 99,
+          "demand_percentage": 0.87,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ruby",
+          "distinct_job_count": 93,
+          "demand_percentage": 0.82,
+          "disclosed_job_demand_pct": 0.85,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Terraform",
+          "distinct_job_count": 90,
+          "demand_percentage": 0.79,
+          "disclosed_job_demand_pct": 0.83,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Swift",
+          "distinct_job_count": 88,
+          "demand_percentage": 0.77,
+          "disclosed_job_demand_pct": 0.81,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 82,
+          "demand_percentage": 0.72,
+          "disclosed_job_demand_pct": 0.75,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 79,
+          "demand_percentage": 0.69,
+          "disclosed_job_demand_pct": 0.73,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Confluence",
+          "distinct_job_count": 79,
+          "demand_percentage": 0.69,
+          "disclosed_job_demand_pct": 0.73,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 76,
+          "demand_percentage": 0.67,
+          "disclosed_job_demand_pct": 0.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 75,
+          "demand_percentage": 0.66,
+          "disclosed_job_demand_pct": 0.69,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ansible",
+          "distinct_job_count": 72,
+          "demand_percentage": 0.63,
+          "disclosed_job_demand_pct": 0.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 71,
+          "demand_percentage": 0.62,
+          "disclosed_job_demand_pct": 0.65,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Elasticsearch",
+          "distinct_job_count": 70,
+          "demand_percentage": 0.62,
+          "disclosed_job_demand_pct": 0.64,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scala",
+          "distinct_job_count": 70,
+          "demand_percentage": 0.62,
+          "disclosed_job_demand_pct": 0.64,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Perl",
+          "distinct_job_count": 69,
+          "demand_percentage": 0.61,
+          "disclosed_job_demand_pct": 0.63,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Customer Service",
+          "distinct_job_count": 62,
+          "demand_percentage": 0.55,
+          "disclosed_job_demand_pct": 0.57,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 58,
+          "demand_percentage": 0.51,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 56,
+          "demand_percentage": 0.49,
+          "disclosed_job_demand_pct": 0.51,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Vue.js",
+          "distinct_job_count": 48,
+          "demand_percentage": 0.42,
+          "disclosed_job_demand_pct": 0.44,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 41,
+          "demand_percentage": 0.36,
+          "disclosed_job_demand_pct": 0.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 39,
+          "demand_percentage": 0.34,
+          "disclosed_job_demand_pct": 0.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 38,
+          "demand_percentage": 0.33,
+          "disclosed_job_demand_pct": 0.35,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 36,
+          "demand_percentage": 0.32,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Digital Marketing",
+          "distinct_job_count": 35,
+          "demand_percentage": 0.31,
+          "disclosed_job_demand_pct": 0.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 35,
+          "demand_percentage": 0.31,
+          "disclosed_job_demand_pct": 0.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Rust",
+          "distinct_job_count": 29,
+          "demand_percentage": 0.26,
+          "disclosed_job_demand_pct": 0.27,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 27,
+          "demand_percentage": 0.24,
+          "disclosed_job_demand_pct": 0.25,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 19,
+          "demand_percentage": 0.17,
+          "disclosed_job_demand_pct": 0.17,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PyTorch",
+          "distinct_job_count": 16,
+          "demand_percentage": 0.14,
+          "disclosed_job_demand_pct": 0.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 15,
+          "demand_percentage": 0.13,
+          "disclosed_job_demand_pct": 0.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AutoCAD",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Deep Learning",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Figma",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.1,
+          "disclosed_job_demand_pct": 0.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "QA",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.04,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HR",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TDS",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "BPO",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.02,
+          "disclosed_job_demand_pct": 0.02,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    },
+    "cloud_devops_sre": {
+      "role_id": "cloud_devops_sre",
+      "role_name": "Cloud, DevOps & SRE",
+      "description": "Operates cloud infrastructure, CI/CD, reliability, observability, deployment, security automation, or platform operations.",
+      "eligible_job_count": 2464,
+      "skill_disclosed_job_count": 2458,
+      "zero_skill_job_count": 6,
+      "skill_disclosure_rate": 99.76,
+      "support_tier": "MODERATE",
+      "distinct_skills_count": 98,
+      "critical_skills_count": 2,
+      "recommended_skills_count": 8,
+      "elective_skills_count": 88,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=2464); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=2458).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'MODERATE' based on sample volume (2464 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 1411,
+          "demand_percentage": 57.26,
+          "disclosed_job_demand_pct": 57.4,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 1244,
+          "demand_percentage": 50.49,
+          "disclosed_job_demand_pct": 50.61,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 1128,
+          "demand_percentage": 45.78,
+          "disclosed_job_demand_pct": 45.89,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 1080,
+          "demand_percentage": 43.83,
+          "disclosed_job_demand_pct": 43.94,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 867,
+          "demand_percentage": 35.19,
+          "disclosed_job_demand_pct": 35.27,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 819,
+          "demand_percentage": 33.24,
+          "disclosed_job_demand_pct": 33.32,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 678,
+          "demand_percentage": 27.52,
+          "disclosed_job_demand_pct": 27.58,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Continuous Integration",
+          "distinct_job_count": 661,
+          "demand_percentage": 26.83,
+          "disclosed_job_demand_pct": 26.89,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 647,
+          "demand_percentage": 26.26,
+          "disclosed_job_demand_pct": 26.32,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Terraform",
+          "distinct_job_count": 577,
+          "demand_percentage": 23.42,
+          "disclosed_job_demand_pct": 23.47,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 459,
+          "demand_percentage": 18.63,
+          "disclosed_job_demand_pct": 18.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 446,
+          "demand_percentage": 18.1,
+          "disclosed_job_demand_pct": 18.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 384,
+          "demand_percentage": 15.58,
+          "disclosed_job_demand_pct": 15.62,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ansible",
+          "distinct_job_count": 356,
+          "demand_percentage": 14.45,
+          "disclosed_job_demand_pct": 14.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 327,
+          "demand_percentage": 13.27,
+          "disclosed_job_demand_pct": 13.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 299,
+          "demand_percentage": 12.13,
+          "disclosed_job_demand_pct": 12.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 286,
+          "demand_percentage": 11.61,
+          "disclosed_job_demand_pct": 11.64,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 285,
+          "demand_percentage": 11.57,
+          "disclosed_job_demand_pct": 11.59,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 283,
+          "demand_percentage": 11.49,
+          "disclosed_job_demand_pct": 11.51,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 262,
+          "demand_percentage": 10.63,
+          "disclosed_job_demand_pct": 10.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 221,
+          "demand_percentage": 8.97,
+          "disclosed_job_demand_pct": 8.99,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microservices",
+          "distinct_job_count": 210,
+          "demand_percentage": 8.52,
+          "disclosed_job_demand_pct": 8.54,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 187,
+          "demand_percentage": 7.59,
+          "disclosed_job_demand_pct": 7.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 124,
+          "demand_percentage": 5.03,
+          "disclosed_job_demand_pct": 5.04,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 116,
+          "demand_percentage": 4.71,
+          "disclosed_job_demand_pct": 4.72,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 111,
+          "demand_percentage": 4.5,
+          "disclosed_job_demand_pct": 4.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 109,
+          "demand_percentage": 4.42,
+          "disclosed_job_demand_pct": 4.43,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET",
+          "distinct_job_count": 106,
+          "demand_percentage": 4.3,
+          "disclosed_job_demand_pct": 4.31,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 91,
+          "demand_percentage": 3.69,
+          "disclosed_job_demand_pct": 3.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 90,
+          "demand_percentage": 3.65,
+          "disclosed_job_demand_pct": 3.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 83,
+          "demand_percentage": 3.37,
+          "disclosed_job_demand_pct": 3.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PostgreSQL",
+          "distinct_job_count": 75,
+          "demand_percentage": 3.04,
+          "disclosed_job_demand_pct": 3.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jira",
+          "distinct_job_count": 71,
+          "demand_percentage": 2.88,
+          "disclosed_job_demand_pct": 2.89,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 71,
+          "demand_percentage": 2.88,
+          "disclosed_job_demand_pct": 2.89,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Golang",
+          "distinct_job_count": 67,
+          "demand_percentage": 2.72,
+          "disclosed_job_demand_pct": 2.73,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 67,
+          "demand_percentage": 2.72,
+          "disclosed_job_demand_pct": 2.73,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 66,
+          "demand_percentage": 2.68,
+          "disclosed_job_demand_pct": 2.69,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 62,
+          "demand_percentage": 2.52,
+          "disclosed_job_demand_pct": 2.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 61,
+          "demand_percentage": 2.48,
+          "disclosed_job_demand_pct": 2.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Debugging",
+          "distinct_job_count": 57,
+          "demand_percentage": 2.31,
+          "disclosed_job_demand_pct": 2.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 56,
+          "demand_percentage": 2.27,
+          "disclosed_job_demand_pct": 2.28,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "React",
+          "distinct_job_count": 54,
+          "demand_percentage": 2.19,
+          "disclosed_job_demand_pct": 2.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 52,
+          "demand_percentage": 2.11,
+          "disclosed_job_demand_pct": 2.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Angular",
+          "distinct_job_count": 44,
+          "demand_percentage": 1.79,
+          "disclosed_job_demand_pct": 1.79,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring",
+          "distinct_job_count": 38,
+          "demand_percentage": 1.54,
+          "disclosed_job_demand_pct": 1.55,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Node.js",
+          "distinct_job_count": 36,
+          "demand_percentage": 1.46,
+          "disclosed_job_demand_pct": 1.46,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 35,
+          "demand_percentage": 1.42,
+          "disclosed_job_demand_pct": 1.42,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 33,
+          "demand_percentage": 1.34,
+          "disclosed_job_demand_pct": 1.34,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Automation Testing",
+          "distinct_job_count": 31,
+          "demand_percentage": 1.26,
+          "disclosed_job_demand_pct": 1.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TypeScript",
+          "distinct_job_count": 31,
+          "demand_percentage": 1.26,
+          "disclosed_job_demand_pct": 1.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Customer Service",
+          "distinct_job_count": 30,
+          "demand_percentage": 1.22,
+          "disclosed_job_demand_pct": 1.22,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 28,
+          "demand_percentage": 1.14,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Confluence",
+          "distinct_job_count": 27,
+          "demand_percentage": 1.1,
+          "disclosed_job_demand_pct": 1.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ADO.NET",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.01,
+          "disclosed_job_demand_pct": 1.02,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.01,
+          "disclosed_job_demand_pct": 1.02,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.01,
+          "disclosed_job_demand_pct": 1.02,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.01,
+          "disclosed_job_demand_pct": 1.02,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.97,
+          "disclosed_job_demand_pct": 0.98,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Perl",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.97,
+          "disclosed_job_demand_pct": 0.98,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Redis",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.97,
+          "disclosed_job_demand_pct": 0.98,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ruby",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.97,
+          "disclosed_job_demand_pct": 0.98,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring Boot",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.97,
+          "disclosed_job_demand_pct": 0.98,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET Core",
+          "distinct_job_count": 23,
+          "demand_percentage": 0.93,
+          "disclosed_job_demand_pct": 0.94,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Elasticsearch",
+          "distinct_job_count": 23,
+          "demand_percentage": 0.93,
+          "disclosed_job_demand_pct": 0.94,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 23,
+          "demand_percentage": 0.93,
+          "disclosed_job_demand_pct": 0.94,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 20,
+          "demand_percentage": 0.81,
+          "disclosed_job_demand_pct": 0.81,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hibernate",
+          "distinct_job_count": 20,
+          "demand_percentage": 0.81,
+          "disclosed_job_demand_pct": 0.81,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ERP",
+          "distinct_job_count": 19,
+          "demand_percentage": 0.77,
+          "disclosed_job_demand_pct": 0.77,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 18,
+          "demand_percentage": 0.73,
+          "disclosed_job_demand_pct": 0.73,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "J2EE",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.57,
+          "disclosed_job_demand_pct": 0.57,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PHP",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SOAP",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Flask",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.45,
+          "disclosed_job_demand_pct": 0.45,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Rust",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.45,
+          "disclosed_job_demand_pct": 0.45,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.41,
+          "disclosed_job_demand_pct": 0.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Django",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.41,
+          "disclosed_job_demand_pct": 0.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ASP.NET",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.32,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scala",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.28,
+          "disclosed_job_demand_pct": 0.28,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.24,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Digital Marketing",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PyTorch",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kotlin",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.16,
+          "disclosed_job_demand_pct": 0.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.16,
+          "disclosed_job_demand_pct": 0.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.16,
+          "disclosed_job_demand_pct": 0.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP HANA",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.16,
+          "disclosed_job_demand_pct": 0.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Vue.js",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.16,
+          "disclosed_job_demand_pct": 0.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "BPO",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.12,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Bootstrap",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Swift",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "QA",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.04,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    },
+    "data_analyst_business_intelligence": {
+      "role_id": "data_analyst_business_intelligence",
+      "role_name": "Data Analyst & Business Intelligence",
+      "description": "Produces reports, dashboards, SQL analysis, metrics, and business insights without primary responsibility for advanced modeling.",
+      "eligible_job_count": 3516,
+      "skill_disclosed_job_count": 3405,
+      "zero_skill_job_count": 111,
+      "skill_disclosure_rate": 96.84,
+      "support_tier": "HIGH",
+      "distinct_skills_count": 97,
+      "critical_skills_count": 1,
+      "recommended_skills_count": 4,
+      "elective_skills_count": 92,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=3516); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=3405).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'HIGH' based on sample volume (3516 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 1907,
+          "demand_percentage": 54.24,
+          "disclosed_job_demand_pct": 56.01,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 914,
+          "demand_percentage": 26.0,
+          "disclosed_job_demand_pct": 26.84,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 879,
+          "demand_percentage": 25.0,
+          "disclosed_job_demand_pct": 25.81,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 844,
+          "demand_percentage": 24.0,
+          "disclosed_job_demand_pct": 24.79,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 781,
+          "demand_percentage": 22.21,
+          "disclosed_job_demand_pct": 22.94,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 652,
+          "demand_percentage": 18.54,
+          "disclosed_job_demand_pct": 19.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 651,
+          "demand_percentage": 18.52,
+          "disclosed_job_demand_pct": 19.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 498,
+          "demand_percentage": 14.16,
+          "disclosed_job_demand_pct": 14.63,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 380,
+          "demand_percentage": 10.81,
+          "disclosed_job_demand_pct": 11.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 264,
+          "demand_percentage": 7.51,
+          "disclosed_job_demand_pct": 7.75,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 241,
+          "demand_percentage": 6.85,
+          "disclosed_job_demand_pct": 7.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 240,
+          "demand_percentage": 6.83,
+          "disclosed_job_demand_pct": 7.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 230,
+          "demand_percentage": 6.54,
+          "disclosed_job_demand_pct": 6.75,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 222,
+          "demand_percentage": 6.31,
+          "disclosed_job_demand_pct": 6.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 194,
+          "demand_percentage": 5.52,
+          "disclosed_job_demand_pct": 5.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 168,
+          "demand_percentage": 4.78,
+          "disclosed_job_demand_pct": 4.93,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 167,
+          "demand_percentage": 4.75,
+          "disclosed_job_demand_pct": 4.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 143,
+          "demand_percentage": 4.07,
+          "disclosed_job_demand_pct": 4.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ERP",
+          "distinct_job_count": 138,
+          "demand_percentage": 3.92,
+          "disclosed_job_demand_pct": 4.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 107,
+          "demand_percentage": 3.04,
+          "disclosed_job_demand_pct": 3.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jira",
+          "distinct_job_count": 107,
+          "demand_percentage": 3.04,
+          "disclosed_job_demand_pct": 3.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 106,
+          "demand_percentage": 3.01,
+          "disclosed_job_demand_pct": 3.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 105,
+          "demand_percentage": 2.99,
+          "disclosed_job_demand_pct": 3.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 103,
+          "demand_percentage": 2.93,
+          "disclosed_job_demand_pct": 3.02,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 88,
+          "demand_percentage": 2.5,
+          "disclosed_job_demand_pct": 2.58,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Customer Service",
+          "distinct_job_count": 86,
+          "demand_percentage": 2.45,
+          "disclosed_job_demand_pct": 2.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 81,
+          "demand_percentage": 2.3,
+          "disclosed_job_demand_pct": 2.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 79,
+          "demand_percentage": 2.25,
+          "disclosed_job_demand_pct": 2.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 66,
+          "demand_percentage": 1.88,
+          "disclosed_job_demand_pct": 1.94,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 59,
+          "demand_percentage": 1.68,
+          "disclosed_job_demand_pct": 1.73,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Confluence",
+          "distinct_job_count": 54,
+          "demand_percentage": 1.54,
+          "disclosed_job_demand_pct": 1.59,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 52,
+          "demand_percentage": 1.48,
+          "disclosed_job_demand_pct": 1.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 48,
+          "demand_percentage": 1.37,
+          "disclosed_job_demand_pct": 1.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 44,
+          "demand_percentage": 1.25,
+          "disclosed_job_demand_pct": 1.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 44,
+          "demand_percentage": 1.25,
+          "disclosed_job_demand_pct": 1.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Digital Marketing",
+          "distinct_job_count": 41,
+          "demand_percentage": 1.17,
+          "disclosed_job_demand_pct": 1.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 40,
+          "demand_percentage": 1.14,
+          "disclosed_job_demand_pct": 1.17,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 40,
+          "demand_percentage": 1.14,
+          "disclosed_job_demand_pct": 1.17,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 37,
+          "demand_percentage": 1.05,
+          "disclosed_job_demand_pct": 1.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 31,
+          "demand_percentage": 0.88,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 31,
+          "demand_percentage": 0.88,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 28,
+          "demand_percentage": 0.8,
+          "disclosed_job_demand_pct": 0.82,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 27,
+          "demand_percentage": 0.77,
+          "disclosed_job_demand_pct": 0.79,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 27,
+          "demand_percentage": 0.77,
+          "disclosed_job_demand_pct": 0.79,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.68,
+          "disclosed_job_demand_pct": 0.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 21,
+          "demand_percentage": 0.6,
+          "disclosed_job_demand_pct": 0.62,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PostgreSQL",
+          "distinct_job_count": 21,
+          "demand_percentage": 0.6,
+          "disclosed_job_demand_pct": 0.62,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Debugging",
+          "distinct_job_count": 18,
+          "demand_percentage": 0.51,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP HANA",
+          "distinct_job_count": 17,
+          "demand_percentage": 0.48,
+          "disclosed_job_demand_pct": 0.5,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 16,
+          "demand_percentage": 0.46,
+          "disclosed_job_demand_pct": 0.47,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.4,
+          "disclosed_job_demand_pct": 0.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.4,
+          "disclosed_job_demand_pct": 0.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TDS",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.34,
+          "disclosed_job_demand_pct": 0.35,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.34,
+          "disclosed_job_demand_pct": 0.35,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Automation Testing",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.31,
+          "disclosed_job_demand_pct": 0.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Figma",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.31,
+          "disclosed_job_demand_pct": 0.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "BPO",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.28,
+          "disclosed_job_demand_pct": 0.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.28,
+          "disclosed_job_demand_pct": 0.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AutoCAD",
+          "distinct_job_count": 9,
+          "demand_percentage": 0.26,
+          "disclosed_job_demand_pct": 0.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 9,
+          "demand_percentage": 0.26,
+          "disclosed_job_demand_pct": 0.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.23,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Continuous Integration",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.21,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "React",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.21,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Swift",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.2,
+          "disclosed_job_demand_pct": 0.21,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HR",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.17,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microservices",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.17,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scala",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.17,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Angular",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.14,
+          "disclosed_job_demand_pct": 0.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.14,
+          "disclosed_job_demand_pct": 0.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Perl",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.14,
+          "disclosed_job_demand_pct": 0.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "QA",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.14,
+          "disclosed_job_demand_pct": 0.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Deep Learning",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hibernate",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Terraform",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.09,
+          "disclosed_job_demand_pct": 0.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.09,
+          "disclosed_job_demand_pct": 0.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.09,
+          "disclosed_job_demand_pct": 0.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SOAP",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.09,
+          "disclosed_job_demand_pct": 0.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.09,
+          "disclosed_job_demand_pct": 0.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "WordPress",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.09,
+          "disclosed_job_demand_pct": 0.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ansible",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Golang",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Node.js",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PyTorch",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Redis",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET Core",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ADO.NET",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ASP.NET",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Bootstrap",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Elasticsearch",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Flask",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ruby",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TypeScript",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Vue.js",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    },
+    "data_engineer_big_data_platform": {
+      "role_id": "data_engineer_big_data_platform",
+      "role_name": "Data Engineer & Big Data Platform",
+      "description": "Builds data pipelines, warehouses, ETL/ELT workflows, streaming systems, or data-platform infrastructure.",
+      "eligible_job_count": 1712,
+      "skill_disclosed_job_count": 1689,
+      "zero_skill_job_count": 23,
+      "skill_disclosure_rate": 98.66,
+      "support_tier": "MODERATE",
+      "distinct_skills_count": 88,
+      "critical_skills_count": 2,
+      "recommended_skills_count": 6,
+      "elective_skills_count": 80,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=1712); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=1689).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'MODERATE' based on sample volume (1712 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 1133,
+          "demand_percentage": 66.18,
+          "disclosed_job_demand_pct": 67.08,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 939,
+          "demand_percentage": 54.85,
+          "disclosed_job_demand_pct": 55.6,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 615,
+          "demand_percentage": 35.92,
+          "disclosed_job_demand_pct": 36.41,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Scala",
+          "distinct_job_count": 539,
+          "demand_percentage": 31.48,
+          "disclosed_job_demand_pct": 31.91,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 453,
+          "demand_percentage": 26.46,
+          "disclosed_job_demand_pct": 26.82,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 436,
+          "demand_percentage": 25.47,
+          "disclosed_job_demand_pct": 25.81,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 401,
+          "demand_percentage": 23.42,
+          "disclosed_job_demand_pct": 23.74,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 380,
+          "demand_percentage": 22.2,
+          "disclosed_job_demand_pct": 22.5,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 338,
+          "demand_percentage": 19.74,
+          "disclosed_job_demand_pct": 20.01,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 295,
+          "demand_percentage": 17.23,
+          "disclosed_job_demand_pct": 17.47,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 265,
+          "demand_percentage": 15.48,
+          "disclosed_job_demand_pct": 15.69,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 235,
+          "demand_percentage": 13.73,
+          "disclosed_job_demand_pct": 13.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 216,
+          "demand_percentage": 12.62,
+          "disclosed_job_demand_pct": 12.79,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 213,
+          "demand_percentage": 12.44,
+          "disclosed_job_demand_pct": 12.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jira",
+          "distinct_job_count": 202,
+          "demand_percentage": 11.8,
+          "disclosed_job_demand_pct": 11.96,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 190,
+          "demand_percentage": 11.1,
+          "disclosed_job_demand_pct": 11.25,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 183,
+          "demand_percentage": 10.69,
+          "disclosed_job_demand_pct": 10.83,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 180,
+          "demand_percentage": 10.51,
+          "disclosed_job_demand_pct": 10.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ansible",
+          "distinct_job_count": 173,
+          "demand_percentage": 10.11,
+          "disclosed_job_demand_pct": 10.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 173,
+          "demand_percentage": 10.11,
+          "disclosed_job_demand_pct": 10.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 148,
+          "demand_percentage": 8.64,
+          "disclosed_job_demand_pct": 8.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 126,
+          "demand_percentage": 7.36,
+          "disclosed_job_demand_pct": 7.46,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 115,
+          "demand_percentage": 6.72,
+          "disclosed_job_demand_pct": 6.81,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 112,
+          "demand_percentage": 6.54,
+          "disclosed_job_demand_pct": 6.63,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 111,
+          "demand_percentage": 6.48,
+          "disclosed_job_demand_pct": 6.57,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 100,
+          "demand_percentage": 5.84,
+          "disclosed_job_demand_pct": 5.92,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Confluence",
+          "distinct_job_count": 98,
+          "demand_percentage": 5.72,
+          "disclosed_job_demand_pct": 5.8,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Debugging",
+          "distinct_job_count": 96,
+          "demand_percentage": 5.61,
+          "disclosed_job_demand_pct": 5.68,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 82,
+          "demand_percentage": 4.79,
+          "disclosed_job_demand_pct": 4.85,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PostgreSQL",
+          "distinct_job_count": 76,
+          "demand_percentage": 4.44,
+          "disclosed_job_demand_pct": 4.5,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Automation Testing",
+          "distinct_job_count": 71,
+          "demand_percentage": 4.15,
+          "disclosed_job_demand_pct": 4.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Continuous Integration",
+          "distinct_job_count": 68,
+          "demand_percentage": 3.97,
+          "disclosed_job_demand_pct": 4.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 68,
+          "demand_percentage": 3.97,
+          "disclosed_job_demand_pct": 4.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 66,
+          "demand_percentage": 3.86,
+          "disclosed_job_demand_pct": 3.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Elasticsearch",
+          "distinct_job_count": 65,
+          "demand_percentage": 3.8,
+          "disclosed_job_demand_pct": 3.85,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 61,
+          "demand_percentage": 3.56,
+          "disclosed_job_demand_pct": 3.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 59,
+          "demand_percentage": 3.45,
+          "disclosed_job_demand_pct": 3.49,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 56,
+          "demand_percentage": 3.27,
+          "disclosed_job_demand_pct": 3.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 54,
+          "demand_percentage": 3.15,
+          "disclosed_job_demand_pct": 3.2,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 50,
+          "demand_percentage": 2.92,
+          "disclosed_job_demand_pct": 2.96,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 38,
+          "demand_percentage": 2.22,
+          "disclosed_job_demand_pct": 2.25,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Terraform",
+          "distinct_job_count": 37,
+          "demand_percentage": 2.16,
+          "disclosed_job_demand_pct": 2.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 33,
+          "demand_percentage": 1.93,
+          "disclosed_job_demand_pct": 1.95,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 32,
+          "demand_percentage": 1.87,
+          "disclosed_job_demand_pct": 1.89,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 26,
+          "demand_percentage": 1.52,
+          "disclosed_job_demand_pct": 1.54,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.46,
+          "disclosed_job_demand_pct": 1.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.46,
+          "disclosed_job_demand_pct": 1.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 22,
+          "demand_percentage": 1.29,
+          "disclosed_job_demand_pct": 1.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.82,
+          "disclosed_job_demand_pct": 0.83,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.82,
+          "disclosed_job_demand_pct": 0.83,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.82,
+          "disclosed_job_demand_pct": 0.83,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.7,
+          "disclosed_job_demand_pct": 0.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microservices",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.64,
+          "disclosed_job_demand_pct": 0.65,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 9,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "React",
+          "distinct_job_count": 9,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.47,
+          "disclosed_job_demand_pct": 0.47,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "J2EE",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.47,
+          "disclosed_job_demand_pct": 0.47,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.47,
+          "disclosed_job_demand_pct": 0.47,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.41,
+          "disclosed_job_demand_pct": 0.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.41,
+          "disclosed_job_demand_pct": 0.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.41,
+          "disclosed_job_demand_pct": 0.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Angular",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.35,
+          "disclosed_job_demand_pct": 0.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.35,
+          "disclosed_job_demand_pct": 0.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ERP",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.35,
+          "disclosed_job_demand_pct": 0.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.35,
+          "disclosed_job_demand_pct": 0.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Perl",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.35,
+          "disclosed_job_demand_pct": 0.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.35,
+          "disclosed_job_demand_pct": 0.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Golang",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.29,
+          "disclosed_job_demand_pct": 0.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hibernate",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.29,
+          "disclosed_job_demand_pct": 0.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PyTorch",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.29,
+          "disclosed_job_demand_pct": 0.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Customer Service",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Django",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Flask",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Node.js",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Redis",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ADO.NET",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring Boot",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TypeScript",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Digital Marketing",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.12,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PHP",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.12,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "QA",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SOAP",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TDS",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    },
+    "data_scientist_advanced_analytics": {
+      "role_id": "data_scientist_advanced_analytics",
+      "role_name": "Data Scientist & Advanced Analytics",
+      "description": "Uses statistics, experimentation, forecasting, or advanced analytical methods to answer business or research questions.",
+      "eligible_job_count": 272,
+      "skill_disclosed_job_count": 270,
+      "zero_skill_job_count": 2,
+      "skill_disclosure_rate": 99.26,
+      "support_tier": "LOW",
+      "distinct_skills_count": 62,
+      "critical_skills_count": 3,
+      "recommended_skills_count": 4,
+      "elective_skills_count": 55,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=272); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=270).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'LOW' based on sample volume (272 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 222,
+          "demand_percentage": 81.62,
+          "disclosed_job_demand_pct": 82.22,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 196,
+          "demand_percentage": 72.06,
+          "disclosed_job_demand_pct": 72.59,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 177,
+          "demand_percentage": 65.07,
+          "disclosed_job_demand_pct": 65.56,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 90,
+          "demand_percentage": 33.09,
+          "disclosed_job_demand_pct": 33.33,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 81,
+          "demand_percentage": 29.78,
+          "disclosed_job_demand_pct": 30.0,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 80,
+          "demand_percentage": 29.41,
+          "disclosed_job_demand_pct": 29.63,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 62,
+          "demand_percentage": 22.79,
+          "disclosed_job_demand_pct": 22.96,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Deep Learning",
+          "distinct_job_count": 53,
+          "demand_percentage": 19.49,
+          "disclosed_job_demand_pct": 19.63,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 49,
+          "demand_percentage": 18.01,
+          "disclosed_job_demand_pct": 18.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 41,
+          "demand_percentage": 15.07,
+          "disclosed_job_demand_pct": 15.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 39,
+          "demand_percentage": 14.34,
+          "disclosed_job_demand_pct": 14.44,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 39,
+          "demand_percentage": 14.34,
+          "disclosed_job_demand_pct": 14.44,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 27,
+          "demand_percentage": 9.93,
+          "disclosed_job_demand_pct": 10.0,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 25,
+          "demand_percentage": 9.19,
+          "disclosed_job_demand_pct": 9.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 25,
+          "demand_percentage": 9.19,
+          "disclosed_job_demand_pct": 9.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PyTorch",
+          "distinct_job_count": 23,
+          "demand_percentage": 8.46,
+          "disclosed_job_demand_pct": 8.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 21,
+          "demand_percentage": 7.72,
+          "disclosed_job_demand_pct": 7.78,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 20,
+          "demand_percentage": 7.35,
+          "disclosed_job_demand_pct": 7.41,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 18,
+          "demand_percentage": 6.62,
+          "disclosed_job_demand_pct": 6.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 14,
+          "demand_percentage": 5.15,
+          "disclosed_job_demand_pct": 5.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 11,
+          "demand_percentage": 4.04,
+          "disclosed_job_demand_pct": 4.07,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 10,
+          "demand_percentage": 3.68,
+          "disclosed_job_demand_pct": 3.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 10,
+          "demand_percentage": 3.68,
+          "disclosed_job_demand_pct": 3.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 9,
+          "demand_percentage": 3.31,
+          "disclosed_job_demand_pct": 3.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 8,
+          "demand_percentage": 2.94,
+          "disclosed_job_demand_pct": 2.96,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 8,
+          "demand_percentage": 2.94,
+          "disclosed_job_demand_pct": 2.96,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 8,
+          "demand_percentage": 2.94,
+          "disclosed_job_demand_pct": 2.96,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 7,
+          "demand_percentage": 2.57,
+          "disclosed_job_demand_pct": 2.59,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 6,
+          "demand_percentage": 2.21,
+          "disclosed_job_demand_pct": 2.22,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 6,
+          "demand_percentage": 2.21,
+          "disclosed_job_demand_pct": 2.22,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 5,
+          "demand_percentage": 1.84,
+          "disclosed_job_demand_pct": 1.85,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 4,
+          "demand_percentage": 1.47,
+          "disclosed_job_demand_pct": 1.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 4,
+          "demand_percentage": 1.47,
+          "disclosed_job_demand_pct": 1.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 4,
+          "demand_percentage": 1.47,
+          "disclosed_job_demand_pct": 1.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C",
+          "distinct_job_count": 3,
+          "demand_percentage": 1.1,
+          "disclosed_job_demand_pct": 1.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 3,
+          "demand_percentage": 1.1,
+          "disclosed_job_demand_pct": 1.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 3,
+          "demand_percentage": 1.1,
+          "disclosed_job_demand_pct": 1.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 3,
+          "demand_percentage": 1.1,
+          "disclosed_job_demand_pct": 1.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Flask",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scala",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AutoCAD",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Django",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HR",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.37,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    },
+    "frontend_full_stack_engineering": {
+      "role_id": "frontend_full_stack_engineering",
+      "role_name": "Frontend & Full Stack Engineering",
+      "description": "Builds user interfaces, web or mobile clients, or end-to-end applications with a meaningful frontend responsibility.",
+      "eligible_job_count": 3378,
+      "skill_disclosed_job_count": 3360,
+      "zero_skill_job_count": 18,
+      "skill_disclosure_rate": 99.47,
+      "support_tier": "HIGH",
+      "distinct_skills_count": 99,
+      "critical_skills_count": 3,
+      "recommended_skills_count": 4,
+      "elective_skills_count": 92,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=3378); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=3360).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'HIGH' based on sample volume (3378 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 2112,
+          "demand_percentage": 62.52,
+          "disclosed_job_demand_pct": 62.86,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 1828,
+          "demand_percentage": 54.11,
+          "disclosed_job_demand_pct": 54.4,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "React",
+          "distinct_job_count": 1708,
+          "demand_percentage": 50.56,
+          "disclosed_job_demand_pct": 50.83,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 1305,
+          "demand_percentage": 38.63,
+          "disclosed_job_demand_pct": 38.84,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Angular",
+          "distinct_job_count": 1214,
+          "demand_percentage": 35.94,
+          "disclosed_job_demand_pct": 36.13,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 1180,
+          "demand_percentage": 34.93,
+          "disclosed_job_demand_pct": 35.12,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 994,
+          "demand_percentage": 29.43,
+          "disclosed_job_demand_pct": 29.58,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 654,
+          "demand_percentage": 19.36,
+          "disclosed_job_demand_pct": 19.46,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 643,
+          "demand_percentage": 19.03,
+          "disclosed_job_demand_pct": 19.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 635,
+          "demand_percentage": 18.8,
+          "disclosed_job_demand_pct": 18.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Node.js",
+          "distinct_job_count": 619,
+          "demand_percentage": 18.32,
+          "disclosed_job_demand_pct": 18.42,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microservices",
+          "distinct_job_count": 612,
+          "demand_percentage": 18.12,
+          "disclosed_job_demand_pct": 18.21,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring",
+          "distinct_job_count": 606,
+          "demand_percentage": 17.94,
+          "disclosed_job_demand_pct": 18.04,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TypeScript",
+          "distinct_job_count": 598,
+          "demand_percentage": 17.7,
+          "disclosed_job_demand_pct": 17.8,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring Boot",
+          "distinct_job_count": 546,
+          "demand_percentage": 16.16,
+          "disclosed_job_demand_pct": 16.25,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 541,
+          "demand_percentage": 16.02,
+          "disclosed_job_demand_pct": 16.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET",
+          "distinct_job_count": 489,
+          "demand_percentage": 14.48,
+          "disclosed_job_demand_pct": 14.55,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 465,
+          "demand_percentage": 13.77,
+          "disclosed_job_demand_pct": 13.84,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 459,
+          "demand_percentage": 13.59,
+          "disclosed_job_demand_pct": 13.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 415,
+          "demand_percentage": 12.29,
+          "disclosed_job_demand_pct": 12.35,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hibernate",
+          "distinct_job_count": 391,
+          "demand_percentage": 11.57,
+          "disclosed_job_demand_pct": 11.64,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 376,
+          "demand_percentage": 11.13,
+          "disclosed_job_demand_pct": 11.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Bootstrap",
+          "distinct_job_count": 336,
+          "demand_percentage": 9.95,
+          "disclosed_job_demand_pct": 10.0,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 317,
+          "demand_percentage": 9.38,
+          "disclosed_job_demand_pct": 9.43,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 285,
+          "demand_percentage": 8.44,
+          "disclosed_job_demand_pct": 8.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PostgreSQL",
+          "distinct_job_count": 281,
+          "demand_percentage": 8.32,
+          "disclosed_job_demand_pct": 8.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET Core",
+          "distinct_job_count": 278,
+          "demand_percentage": 8.23,
+          "disclosed_job_demand_pct": 8.27,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Continuous Integration",
+          "distinct_job_count": 272,
+          "demand_percentage": 8.05,
+          "disclosed_job_demand_pct": 8.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 266,
+          "demand_percentage": 7.87,
+          "disclosed_job_demand_pct": 7.92,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 257,
+          "demand_percentage": 7.61,
+          "disclosed_job_demand_pct": 7.65,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 246,
+          "demand_percentage": 7.28,
+          "disclosed_job_demand_pct": 7.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Debugging",
+          "distinct_job_count": 241,
+          "demand_percentage": 7.13,
+          "disclosed_job_demand_pct": 7.17,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 238,
+          "demand_percentage": 7.05,
+          "disclosed_job_demand_pct": 7.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 229,
+          "demand_percentage": 6.78,
+          "disclosed_job_demand_pct": 6.82,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 212,
+          "demand_percentage": 6.28,
+          "disclosed_job_demand_pct": 6.31,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 203,
+          "demand_percentage": 6.01,
+          "disclosed_job_demand_pct": 6.04,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 203,
+          "demand_percentage": 6.01,
+          "disclosed_job_demand_pct": 6.04,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 193,
+          "demand_percentage": 5.71,
+          "disclosed_job_demand_pct": 5.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 192,
+          "demand_percentage": 5.68,
+          "disclosed_job_demand_pct": 5.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 172,
+          "demand_percentage": 5.09,
+          "disclosed_job_demand_pct": 5.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ASP.NET",
+          "distinct_job_count": 172,
+          "demand_percentage": 5.09,
+          "disclosed_job_demand_pct": 5.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 154,
+          "demand_percentage": 4.56,
+          "disclosed_job_demand_pct": 4.58,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Vue.js",
+          "distinct_job_count": 138,
+          "demand_percentage": 4.09,
+          "disclosed_job_demand_pct": 4.11,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 134,
+          "demand_percentage": 3.97,
+          "disclosed_job_demand_pct": 3.99,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "J2EE",
+          "distinct_job_count": 126,
+          "demand_percentage": 3.73,
+          "disclosed_job_demand_pct": 3.75,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 119,
+          "demand_percentage": 3.52,
+          "disclosed_job_demand_pct": 3.54,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jira",
+          "distinct_job_count": 86,
+          "demand_percentage": 2.55,
+          "disclosed_job_demand_pct": 2.56,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Django",
+          "distinct_job_count": 84,
+          "demand_percentage": 2.49,
+          "disclosed_job_demand_pct": 2.5,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 77,
+          "demand_percentage": 2.28,
+          "disclosed_job_demand_pct": 2.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Redis",
+          "distinct_job_count": 75,
+          "demand_percentage": 2.22,
+          "disclosed_job_demand_pct": 2.23,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 64,
+          "demand_percentage": 1.89,
+          "disclosed_job_demand_pct": 1.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PHP",
+          "distinct_job_count": 61,
+          "demand_percentage": 1.81,
+          "disclosed_job_demand_pct": 1.82,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Flask",
+          "distinct_job_count": 60,
+          "demand_percentage": 1.78,
+          "disclosed_job_demand_pct": 1.79,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 53,
+          "demand_percentage": 1.57,
+          "disclosed_job_demand_pct": 1.58,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 52,
+          "demand_percentage": 1.54,
+          "disclosed_job_demand_pct": 1.55,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 51,
+          "demand_percentage": 1.51,
+          "disclosed_job_demand_pct": 1.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 49,
+          "demand_percentage": 1.45,
+          "disclosed_job_demand_pct": 1.46,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SOAP",
+          "distinct_job_count": 48,
+          "demand_percentage": 1.42,
+          "disclosed_job_demand_pct": 1.43,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ADO.NET",
+          "distinct_job_count": 45,
+          "demand_percentage": 1.33,
+          "disclosed_job_demand_pct": 1.34,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Automation Testing",
+          "distinct_job_count": 45,
+          "demand_percentage": 1.33,
+          "disclosed_job_demand_pct": 1.34,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Terraform",
+          "distinct_job_count": 45,
+          "demand_percentage": 1.33,
+          "disclosed_job_demand_pct": 1.34,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Figma",
+          "distinct_job_count": 42,
+          "demand_percentage": 1.24,
+          "disclosed_job_demand_pct": 1.25,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 41,
+          "demand_percentage": 1.21,
+          "disclosed_job_demand_pct": 1.22,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Golang",
+          "distinct_job_count": 40,
+          "demand_percentage": 1.18,
+          "disclosed_job_demand_pct": 1.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kotlin",
+          "distinct_job_count": 39,
+          "demand_percentage": 1.15,
+          "disclosed_job_demand_pct": 1.16,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Elasticsearch",
+          "distinct_job_count": 36,
+          "demand_percentage": 1.07,
+          "disclosed_job_demand_pct": 1.07,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 34,
+          "demand_percentage": 1.01,
+          "disclosed_job_demand_pct": 1.01,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Swift",
+          "distinct_job_count": 31,
+          "demand_percentage": 0.92,
+          "disclosed_job_demand_pct": 0.92,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ansible",
+          "distinct_job_count": 30,
+          "demand_percentage": 0.89,
+          "disclosed_job_demand_pct": 0.89,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ERP",
+          "distinct_job_count": 29,
+          "demand_percentage": 0.86,
+          "disclosed_job_demand_pct": 0.86,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 29,
+          "demand_percentage": 0.86,
+          "disclosed_job_demand_pct": 0.86,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Confluence",
+          "distinct_job_count": 28,
+          "demand_percentage": 0.83,
+          "disclosed_job_demand_pct": 0.83,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Digital Marketing",
+          "distinct_job_count": 27,
+          "demand_percentage": 0.8,
+          "disclosed_job_demand_pct": 0.8,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 25,
+          "demand_percentage": 0.74,
+          "disclosed_job_demand_pct": 0.74,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.71,
+          "disclosed_job_demand_pct": 0.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.71,
+          "disclosed_job_demand_pct": 0.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ruby",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.71,
+          "disclosed_job_demand_pct": 0.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 21,
+          "demand_percentage": 0.62,
+          "disclosed_job_demand_pct": 0.62,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "WordPress",
+          "distinct_job_count": 20,
+          "demand_percentage": 0.59,
+          "disclosed_job_demand_pct": 0.6,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 17,
+          "demand_percentage": 0.5,
+          "disclosed_job_demand_pct": 0.51,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 17,
+          "demand_percentage": 0.5,
+          "disclosed_job_demand_pct": 0.51,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 17,
+          "demand_percentage": 0.5,
+          "disclosed_job_demand_pct": 0.51,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.41,
+          "disclosed_job_demand_pct": 0.42,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Customer Service",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.33,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.33,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scala",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.33,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.3,
+          "disclosed_job_demand_pct": 0.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 9,
+          "demand_percentage": 0.27,
+          "disclosed_job_demand_pct": 0.27,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.24,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.24,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.15,
+          "disclosed_job_demand_pct": 0.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.12,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Perl",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.12,
+          "disclosed_job_demand_pct": 0.12,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "QA",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP HANA",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.06,
+          "disclosed_job_demand_pct": 0.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PyTorch",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Rust",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.03,
+          "disclosed_job_demand_pct": 0.03,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    },
+    "machine_learning_ai_engineer": {
+      "role_id": "machine_learning_ai_engineer",
+      "role_name": "Machine Learning & AI Engineer",
+      "description": "Builds, deploys, evaluates, or operates machine-learning, AI, computer-vision, NLP, LLM, or generative-AI systems. Note: Generative AI Engineer is treated as a specialization within this family.",
+      "eligible_job_count": 1317,
+      "skill_disclosed_job_count": 1316,
+      "zero_skill_job_count": 1,
+      "skill_disclosure_rate": 99.92,
+      "support_tier": "MODERATE",
+      "distinct_skills_count": 92,
+      "critical_skills_count": 3,
+      "recommended_skills_count": 8,
+      "elective_skills_count": 81,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=1317); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=1316).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'MODERATE' based on sample volume (1317 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 1072,
+          "demand_percentage": 81.4,
+          "disclosed_job_demand_pct": 81.46,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 868,
+          "demand_percentage": 65.91,
+          "disclosed_job_demand_pct": 65.96,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 832,
+          "demand_percentage": 63.17,
+          "disclosed_job_demand_pct": 63.22,
+          "priority_category": "CRITICAL"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 621,
+          "demand_percentage": 47.15,
+          "disclosed_job_demand_pct": 47.19,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 440,
+          "demand_percentage": 33.41,
+          "disclosed_job_demand_pct": 33.43,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 382,
+          "demand_percentage": 29.01,
+          "disclosed_job_demand_pct": 29.03,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "PyTorch",
+          "distinct_job_count": 331,
+          "demand_percentage": 25.13,
+          "disclosed_job_demand_pct": 25.15,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 329,
+          "demand_percentage": 24.98,
+          "disclosed_job_demand_pct": 25.0,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 294,
+          "demand_percentage": 22.32,
+          "disclosed_job_demand_pct": 22.34,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Deep Learning",
+          "distinct_job_count": 269,
+          "demand_percentage": 20.43,
+          "disclosed_job_demand_pct": 20.44,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 267,
+          "demand_percentage": 20.27,
+          "disclosed_job_demand_pct": 20.29,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 260,
+          "demand_percentage": 19.74,
+          "disclosed_job_demand_pct": 19.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 166,
+          "demand_percentage": 12.6,
+          "disclosed_job_demand_pct": 12.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 154,
+          "demand_percentage": 11.69,
+          "disclosed_job_demand_pct": 11.7,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 110,
+          "demand_percentage": 8.35,
+          "disclosed_job_demand_pct": 8.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 107,
+          "demand_percentage": 8.12,
+          "disclosed_job_demand_pct": 8.13,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 90,
+          "demand_percentage": 6.83,
+          "disclosed_job_demand_pct": 6.84,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 85,
+          "demand_percentage": 6.45,
+          "disclosed_job_demand_pct": 6.46,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 79,
+          "demand_percentage": 6.0,
+          "disclosed_job_demand_pct": 6.0,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 77,
+          "demand_percentage": 5.85,
+          "disclosed_job_demand_pct": 5.85,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 70,
+          "demand_percentage": 5.32,
+          "disclosed_job_demand_pct": 5.32,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 60,
+          "demand_percentage": 4.56,
+          "disclosed_job_demand_pct": 4.56,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 56,
+          "demand_percentage": 4.25,
+          "disclosed_job_demand_pct": 4.26,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Continuous Integration",
+          "distinct_job_count": 55,
+          "demand_percentage": 4.18,
+          "disclosed_job_demand_pct": 4.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 55,
+          "demand_percentage": 4.18,
+          "disclosed_job_demand_pct": 4.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 53,
+          "demand_percentage": 4.02,
+          "disclosed_job_demand_pct": 4.03,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 48,
+          "demand_percentage": 3.64,
+          "disclosed_job_demand_pct": 3.65,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 46,
+          "demand_percentage": 3.49,
+          "disclosed_job_demand_pct": 3.5,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 44,
+          "demand_percentage": 3.34,
+          "disclosed_job_demand_pct": 3.34,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 42,
+          "demand_percentage": 3.19,
+          "disclosed_job_demand_pct": 3.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Debugging",
+          "distinct_job_count": 42,
+          "demand_percentage": 3.19,
+          "disclosed_job_demand_pct": 3.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Flask",
+          "distinct_job_count": 35,
+          "demand_percentage": 2.66,
+          "disclosed_job_demand_pct": 2.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 35,
+          "demand_percentage": 2.66,
+          "disclosed_job_demand_pct": 2.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microservices",
+          "distinct_job_count": 33,
+          "demand_percentage": 2.51,
+          "disclosed_job_demand_pct": 2.51,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 31,
+          "demand_percentage": 2.35,
+          "disclosed_job_demand_pct": 2.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 31,
+          "demand_percentage": 2.35,
+          "disclosed_job_demand_pct": 2.36,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 27,
+          "demand_percentage": 2.05,
+          "disclosed_job_demand_pct": 2.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scala",
+          "distinct_job_count": 27,
+          "demand_percentage": 2.05,
+          "disclosed_job_demand_pct": 2.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.9,
+          "disclosed_job_demand_pct": 1.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.9,
+          "disclosed_job_demand_pct": 1.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.9,
+          "disclosed_job_demand_pct": 1.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "React",
+          "distinct_job_count": 25,
+          "demand_percentage": 1.9,
+          "disclosed_job_demand_pct": 1.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 23,
+          "demand_percentage": 1.75,
+          "disclosed_job_demand_pct": 1.75,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 22,
+          "demand_percentage": 1.67,
+          "disclosed_job_demand_pct": 1.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Django",
+          "distinct_job_count": 20,
+          "demand_percentage": 1.52,
+          "disclosed_job_demand_pct": 1.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 17,
+          "demand_percentage": 1.29,
+          "disclosed_job_demand_pct": 1.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 17,
+          "demand_percentage": 1.29,
+          "disclosed_job_demand_pct": 1.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 17,
+          "demand_percentage": 1.29,
+          "disclosed_job_demand_pct": 1.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C",
+          "distinct_job_count": 15,
+          "demand_percentage": 1.14,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 15,
+          "demand_percentage": 1.14,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PostgreSQL",
+          "distinct_job_count": 15,
+          "demand_percentage": 1.14,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Terraform",
+          "distinct_job_count": 15,
+          "demand_percentage": 1.14,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 14,
+          "demand_percentage": 1.06,
+          "disclosed_job_demand_pct": 1.06,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.99,
+          "disclosed_job_demand_pct": 0.99,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Automation Testing",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.91,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.91,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jira",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.91,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Node.js",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.91,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 12,
+          "demand_percentage": 0.91,
+          "disclosed_job_demand_pct": 0.91,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.84,
+          "disclosed_job_demand_pct": 0.84,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Angular",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.76,
+          "disclosed_job_demand_pct": 0.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.76,
+          "disclosed_job_demand_pct": 0.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.76,
+          "disclosed_job_demand_pct": 0.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Customer Service",
+          "distinct_job_count": 9,
+          "demand_percentage": 0.68,
+          "disclosed_job_demand_pct": 0.68,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.61,
+          "disclosed_job_demand_pct": 0.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.61,
+          "disclosed_job_demand_pct": 0.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.61,
+          "disclosed_job_demand_pct": 0.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ERP",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Golang",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.53,
+          "disclosed_job_demand_pct": 0.53,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TypeScript",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.46,
+          "disclosed_job_demand_pct": 0.46,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ansible",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.38,
+          "disclosed_job_demand_pct": 0.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.38,
+          "disclosed_job_demand_pct": 0.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Redis",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.38,
+          "disclosed_job_demand_pct": 0.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Confluence",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.3,
+          "disclosed_job_demand_pct": 0.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Elasticsearch",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.3,
+          "disclosed_job_demand_pct": 0.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.3,
+          "disclosed_job_demand_pct": 0.3,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.23,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AutoCAD",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.23,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.23,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.23,
+          "disclosed_job_demand_pct": 0.23,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Vue.js",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.15,
+          "disclosed_job_demand_pct": 0.15,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ADO.NET",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Digital Marketing",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Figma",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HR",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hibernate",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "QA",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Rust",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP HANA",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SOAP",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring Boot",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.08,
+          "disclosed_job_demand_pct": 0.08,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    },
+    "qa_automation_testing": {
+      "role_id": "qa_automation_testing",
+      "role_name": "QA & Automation Testing",
+      "description": "Validates software quality through manual testing, test automation, performance testing, or quality engineering.",
+      "eligible_job_count": 2737,
+      "skill_disclosed_job_count": 2101,
+      "zero_skill_job_count": 636,
+      "skill_disclosure_rate": 76.76,
+      "support_tier": "HIGH",
+      "distinct_skills_count": 95,
+      "critical_skills_count": 0,
+      "recommended_skills_count": 2,
+      "elective_skills_count": 93,
+      "classification_source": "Phase 4 provisional ML model (role_classifier_baseline_v0.1.0.joblib)",
+      "limitations": [
+        "Classified using Phase 4 provisional TF-IDF + Logistic Regression model (v0.1.0) with confidence >= 0.20.",
+        "Confidence threshold is an inherited heuristic filter; model outputs are uncalibrated decision scores, not frequentist probabilities or classification accuracy.",
+        "Role labels are model-derived estimates based on silver training data; independent human gold benchmark validation is pending.",
+        "Primary demand percentage uses all eligible jobs (N=2737); secondary disclosed_job_demand_pct uses jobs with >= 1 skill (N=2101).",
+        "Priority tiers (CRITICAL >= 50.0%, RECOMMENDED >= 20.0%) are product design thresholds for curriculum guidance.",
+        "Support tier is 'HIGH' based on sample volume (2737 eligible jobs)."
+      ],
+      "skills": [
+        {
+          "skill_name": "Automation Testing",
+          "distinct_job_count": 1046,
+          "demand_percentage": 38.22,
+          "disclosed_job_demand_pct": 49.79,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Software Testing",
+          "distinct_job_count": 975,
+          "demand_percentage": 35.62,
+          "disclosed_job_demand_pct": 46.41,
+          "priority_category": "RECOMMENDED"
+        },
+        {
+          "skill_name": "Java",
+          "distinct_job_count": 470,
+          "demand_percentage": 17.17,
+          "disclosed_job_demand_pct": 22.37,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Python",
+          "distinct_job_count": 402,
+          "demand_percentage": 14.69,
+          "disclosed_job_demand_pct": 19.13,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Agile",
+          "distinct_job_count": 392,
+          "demand_percentage": 14.32,
+          "disclosed_job_demand_pct": 18.66,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jira",
+          "distinct_job_count": 295,
+          "demand_percentage": 10.78,
+          "disclosed_job_demand_pct": 14.04,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "REST",
+          "distinct_job_count": 265,
+          "demand_percentage": 9.68,
+          "disclosed_job_demand_pct": 12.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SQL",
+          "distinct_job_count": 256,
+          "demand_percentage": 9.35,
+          "disclosed_job_demand_pct": 12.18,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Continuous Integration",
+          "distinct_job_count": 246,
+          "demand_percentage": 8.99,
+          "disclosed_job_demand_pct": 11.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CI/CD",
+          "distinct_job_count": 236,
+          "demand_percentage": 8.62,
+          "disclosed_job_demand_pct": 11.23,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Communication Skills",
+          "distinct_job_count": 226,
+          "demand_percentage": 8.26,
+          "disclosed_job_demand_pct": 10.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "JavaScript",
+          "distinct_job_count": 202,
+          "demand_percentage": 7.38,
+          "disclosed_job_demand_pct": 9.61,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Jenkins",
+          "distinct_job_count": 155,
+          "demand_percentage": 5.66,
+          "disclosed_job_demand_pct": 7.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Git",
+          "distinct_job_count": 145,
+          "demand_percentage": 5.3,
+          "disclosed_job_demand_pct": 6.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Scrum",
+          "distinct_job_count": 128,
+          "demand_percentage": 4.68,
+          "disclosed_job_demand_pct": 6.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C#",
+          "distinct_job_count": 123,
+          "demand_percentage": 4.49,
+          "disclosed_job_demand_pct": 5.85,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Troubleshooting",
+          "distinct_job_count": 117,
+          "demand_percentage": 4.27,
+          "disclosed_job_demand_pct": 5.57,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Debugging",
+          "distinct_job_count": 115,
+          "demand_percentage": 4.2,
+          "disclosed_job_demand_pct": 5.47,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "DevOps",
+          "distinct_job_count": 100,
+          "demand_percentage": 3.65,
+          "disclosed_job_demand_pct": 4.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP",
+          "distinct_job_count": 88,
+          "demand_percentage": 3.22,
+          "disclosed_job_demand_pct": 4.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microsoft Azure",
+          "distinct_job_count": 83,
+          "demand_percentage": 3.03,
+          "disclosed_job_demand_pct": 3.95,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "QA",
+          "distinct_job_count": 82,
+          "demand_percentage": 3.0,
+          "disclosed_job_demand_pct": 3.9,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AWS",
+          "distinct_job_count": 80,
+          "demand_percentage": 2.92,
+          "disclosed_job_demand_pct": 3.81,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "IT",
+          "distinct_job_count": 79,
+          "demand_percentage": 2.89,
+          "disclosed_job_demand_pct": 3.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Linux",
+          "distinct_job_count": 76,
+          "demand_percentage": 2.78,
+          "disclosed_job_demand_pct": 3.62,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Project Management",
+          "distinct_job_count": 76,
+          "demand_percentage": 2.78,
+          "disclosed_job_demand_pct": 3.62,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TypeScript",
+          "distinct_job_count": 63,
+          "demand_percentage": 2.3,
+          "disclosed_job_demand_pct": 3.0,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AI",
+          "distinct_job_count": 60,
+          "demand_percentage": 2.19,
+          "disclosed_job_demand_pct": 2.86,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Oracle",
+          "distinct_job_count": 57,
+          "demand_percentage": 2.08,
+          "disclosed_job_demand_pct": 2.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SOAP",
+          "distinct_job_count": 56,
+          "demand_percentage": 2.05,
+          "disclosed_job_demand_pct": 2.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kubernetes",
+          "distinct_job_count": 47,
+          "demand_percentage": 1.72,
+          "disclosed_job_demand_pct": 2.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Confluence",
+          "distinct_job_count": 45,
+          "demand_percentage": 1.64,
+          "disclosed_job_demand_pct": 2.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Networking",
+          "distinct_job_count": 44,
+          "demand_percentage": 1.61,
+          "disclosed_job_demand_pct": 2.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C++",
+          "distinct_job_count": 41,
+          "demand_percentage": 1.5,
+          "disclosed_job_demand_pct": 1.95,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Salesforce",
+          "distinct_job_count": 39,
+          "demand_percentage": 1.42,
+          "disclosed_job_demand_pct": 1.86,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Docker",
+          "distinct_job_count": 38,
+          "demand_percentage": 1.39,
+          "disclosed_job_demand_pct": 1.81,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Excel",
+          "distinct_job_count": 38,
+          "demand_percentage": 1.39,
+          "disclosed_job_demand_pct": 1.81,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "ERP",
+          "distinct_job_count": 33,
+          "demand_percentage": 1.21,
+          "disclosed_job_demand_pct": 1.57,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "CSS",
+          "distinct_job_count": 31,
+          "demand_percentage": 1.13,
+          "disclosed_job_demand_pct": 1.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Analysis",
+          "distinct_job_count": 25,
+          "demand_percentage": 0.91,
+          "disclosed_job_demand_pct": 1.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "GCP",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.88,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "HTML",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.88,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Team Management",
+          "distinct_job_count": 24,
+          "demand_percentage": 0.88,
+          "disclosed_job_demand_pct": 1.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Microservices",
+          "distinct_job_count": 23,
+          "demand_percentage": 0.84,
+          "disclosed_job_demand_pct": 1.09,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET",
+          "distinct_job_count": 22,
+          "demand_percentage": 0.8,
+          "disclosed_job_demand_pct": 1.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Stakeholder Management",
+          "distinct_job_count": 20,
+          "demand_percentage": 0.73,
+          "disclosed_job_demand_pct": 0.95,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Customer Service",
+          "distinct_job_count": 16,
+          "demand_percentage": 0.58,
+          "disclosed_job_demand_pct": 0.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MySQL",
+          "distinct_job_count": 16,
+          "demand_percentage": 0.58,
+          "disclosed_job_demand_pct": 0.76,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kafka",
+          "distinct_job_count": 15,
+          "demand_percentage": 0.55,
+          "disclosed_job_demand_pct": 0.71,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "C",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.51,
+          "disclosed_job_demand_pct": 0.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Machine Learning",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.51,
+          "disclosed_job_demand_pct": 0.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Marketing",
+          "distinct_job_count": 14,
+          "demand_percentage": 0.51,
+          "disclosed_job_demand_pct": 0.67,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "MongoDB",
+          "distinct_job_count": 13,
+          "demand_percentage": 0.47,
+          "disclosed_job_demand_pct": 0.62,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Angular",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.4,
+          "disclosed_job_demand_pct": 0.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Artificial Intelligence",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.4,
+          "disclosed_job_demand_pct": 0.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Perl",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.4,
+          "disclosed_job_demand_pct": 0.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PostgreSQL",
+          "distinct_job_count": 11,
+          "demand_percentage": 0.4,
+          "disclosed_job_demand_pct": 0.52,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Business Analysis",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Swift",
+          "distinct_job_count": 10,
+          "demand_percentage": 0.37,
+          "disclosed_job_demand_pct": 0.48,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Accounting",
+          "distinct_job_count": 9,
+          "demand_percentage": 0.33,
+          "disclosed_job_demand_pct": 0.43,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Science",
+          "distinct_job_count": 8,
+          "demand_percentage": 0.29,
+          "disclosed_job_demand_pct": 0.38,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Golang",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.26,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "React",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.26,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ruby",
+          "distinct_job_count": 7,
+          "demand_percentage": 0.26,
+          "disclosed_job_demand_pct": 0.33,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "AutoCAD",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.22,
+          "disclosed_job_demand_pct": 0.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "J2EE",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.22,
+          "disclosed_job_demand_pct": 0.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Node.js",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.22,
+          "disclosed_job_demand_pct": 0.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Power BI",
+          "distinct_job_count": 6,
+          "demand_percentage": 0.22,
+          "disclosed_job_demand_pct": 0.29,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Elasticsearch",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Kotlin",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "SAP HANA",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spark",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring",
+          "distinct_job_count": 5,
+          "demand_percentage": 0.18,
+          "disclosed_job_demand_pct": 0.24,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Data Modeling",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.15,
+          "disclosed_job_demand_pct": 0.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Digital Marketing",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.15,
+          "disclosed_job_demand_pct": 0.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hadoop",
+          "distinct_job_count": 4,
+          "demand_percentage": 0.15,
+          "disclosed_job_demand_pct": 0.19,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Ansible",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "BPO",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Performance Tuning",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TDS",
+          "distinct_job_count": 3,
+          "demand_percentage": 0.11,
+          "disclosed_job_demand_pct": 0.14,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Django",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.07,
+          "disclosed_job_demand_pct": 0.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Spring Boot",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.07,
+          "disclosed_job_demand_pct": 0.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "TensorFlow",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.07,
+          "disclosed_job_demand_pct": 0.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Terraform",
+          "distinct_job_count": 2,
+          "demand_percentage": 0.07,
+          "disclosed_job_demand_pct": 0.1,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": ".NET Core",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Cassandra",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Figma",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Hibernate",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "NLP",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "PHP",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "R",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Redis",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Tableau",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "Vue.js",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        },
+        {
+          "skill_name": "WordPress",
+          "distinct_job_count": 1,
+          "demand_percentage": 0.04,
+          "disclosed_job_demand_pct": 0.05,
+          "priority_category": "ELECTIVE"
+        }
+      ]
+    }
+  }
+}

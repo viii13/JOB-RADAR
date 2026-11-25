@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  jobradar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jobradar-platform
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - PYTHONPATH=/app/backend/src
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

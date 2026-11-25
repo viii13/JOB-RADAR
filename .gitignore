@@ -1,0 +1,15 @@
+**/node_modules/
+**/.pytest_cache/
+**/__pycache__/
+**/*.py[cod]
+**/.env
+**/.env.*
+!.env.example
+**/venv/
+**/.venv/
+
+# Large files excluded from GitHub
+**/jobradar_pre_m4_pilot_20261110.db
+**/results.csv
+**/survey_results_public.csv
+**/jobradar.db

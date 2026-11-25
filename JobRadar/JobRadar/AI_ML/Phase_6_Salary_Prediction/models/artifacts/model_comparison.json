@@ -1,0 +1,57 @@
+[
+  {
+    "model_name": "DummyRegressor (Median Baseline)",
+    "train_mae_lpa": 4.687,
+    "test_mae_lpa": 4.706,
+    "test_medae_lpa": 1.75,
+    "test_rmse_lpa": 9.442,
+    "train_r2": -0.1445,
+    "test_r2": -0.1409,
+    "test_mape_pct": 57.5,
+    "cv_mae_5fold_lpa": 4.688
+  },
+  {
+    "model_name": "Linear Regression (OLS)",
+    "train_mae_lpa": 2.999,
+    "test_mae_lpa": 3.028,
+    "test_medae_lpa": 1.161,
+    "test_rmse_lpa": 6.843,
+    "train_r2": 0.408,
+    "test_r2": 0.4007,
+    "test_mape_pct": 43.69,
+    "cv_mae_5fold_lpa": 3.018
+  },
+  {
+    "model_name": "Ridge Regression (alpha=1.0)",
+    "train_mae_lpa": 2.999,
+    "test_mae_lpa": 3.027,
+    "test_medae_lpa": 1.161,
+    "test_rmse_lpa": 6.841,
+    "train_r2": 0.4081,
+    "test_r2": 0.4011,
+    "test_mape_pct": 43.69,
+    "cv_mae_5fold_lpa": 3.017
+  },
+  {
+    "model_name": "Ridge Regression (alpha=10.0)",
+    "train_mae_lpa": 2.999,
+    "test_mae_lpa": 3.024,
+    "test_medae_lpa": 1.159,
+    "test_rmse_lpa": 6.833,
+    "train_r2": 0.408,
+    "test_r2": 0.4025,
+    "test_mape_pct": 43.68,
+    "cv_mae_5fold_lpa": 3.014
+  },
+  {
+    "model_name": "Random Forest Regressor (n=100)",
+    "train_mae_lpa": 2.7,
+    "test_mae_lpa": 2.884,
+    "test_medae_lpa": 1.094,
+    "test_rmse_lpa": 6.593,
+    "train_r2": 0.492,
+    "test_r2": 0.4436,
+    "test_mape_pct": 42.52,
+    "cv_mae_5fold_lpa": 2.921
+  }
+]

@@ -1,0 +1,684 @@
+{
+  "model_version": "2.0.0",
+  "scope": "Core Technical Careers Only (Option A)",
+  "champion_model_name": "Ridge Regression (alpha=10.0)",
+  "validation_strategy": "5-Fold GroupKFold on companyName_clean",
+  "training_samples_count": 4207,
+  "unique_companies_count": 1764,
+  "curation_summary": {
+    "total_raw_rows": 97682,
+    "raw_disclosed_valid_rows": 33138,
+    "base_curated_rows": 32579,
+    "excluded_non_technical_rows": 28286,
+    "excluded_low_confidence_rows": 86,
+    "final_technical_rows": 4207,
+    "unique_companies_count": 1764,
+    "role_distribution": {
+      "backend_core_software_engineering": 1440,
+      "frontend_full_stack_engineering": 673,
+      "qa_automation_testing": 618,
+      "data_analyst_business_intelligence": 492,
+      "cloud_devops_sre": 389,
+      "data_engineer_big_data_platform": 386,
+      "data_science_ml_ai": 209
+    },
+    "original_role_distribution": {
+      "backend_core_software_engineering": 1440,
+      "frontend_full_stack_engineering": 673,
+      "qa_automation_testing": 618,
+      "data_analyst_business_intelligence": 492,
+      "cloud_devops_sre": 389,
+      "data_engineer_big_data_platform": 386,
+      "machine_learning_ai_engineer": 174,
+      "data_scientist_advanced_analytics": 35
+    },
+    "median_midpoint_lpa": 13.5,
+    "mean_midpoint_lpa": 14.425,
+    "std_midpoint_lpa": 9.609,
+    "min_midpoint_lpa": 0.6,
+    "max_midpoint_lpa": 87.5
+  },
+  "model_comparison": [
+    {
+      "model_name": "DummyRegressor (Median Baseline)",
+      "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+      "sample_count": 4207,
+      "cv_mae_lpa": 7.511,
+      "cv_medae_lpa": 6.75,
+      "cv_rmse_lpa": 9.662,
+      "cv_r2_score": -0.0112,
+      "cv_mape_pct": 117.04
+    },
+    {
+      "model_name": "Linear Regression (OLS)",
+      "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+      "sample_count": 4207,
+      "cv_mae_lpa": 4.769,
+      "cv_medae_lpa": 3.214,
+      "cv_rmse_lpa": 7.101,
+      "cv_r2_score": 0.4537,
+      "cv_mape_pct": 56.52
+    },
+    {
+      "model_name": "Ridge Regression (alpha=1.0)",
+      "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+      "sample_count": 4207,
+      "cv_mae_lpa": 4.763,
+      "cv_medae_lpa": 3.204,
+      "cv_rmse_lpa": 7.086,
+      "cv_r2_score": 0.4561,
+      "cv_mape_pct": 56.38
+    },
+    {
+      "model_name": "Ridge Regression (alpha=10.0)",
+      "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+      "sample_count": 4207,
+      "cv_mae_lpa": 4.74,
+      "cv_medae_lpa": 3.174,
+      "cv_rmse_lpa": 7.035,
+      "cv_r2_score": 0.4639,
+      "cv_mape_pct": 55.84
+    },
+    {
+      "model_name": "Random Forest Regressor (n=100)",
+      "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+      "sample_count": 4207,
+      "cv_mae_lpa": 4.776,
+      "cv_medae_lpa": 3.158,
+      "cv_rmse_lpa": 7.016,
+      "cv_r2_score": 0.4668,
+      "cv_mape_pct": 54.42
+    }
+  ],
+  "champion_metrics": {
+    "model_name": "Ridge Regression (alpha=10.0)",
+    "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+    "sample_count": 4207,
+    "cv_mae_lpa": 4.74,
+    "cv_medae_lpa": 3.174,
+    "cv_rmse_lpa": 7.035,
+    "cv_r2_score": 0.4639,
+    "cv_mape_pct": 55.84
+  },
+  "role_breakdown_consolidated": [
+    {
+      "role_model": "backend_core_software_engineering",
+      "sample_count": 1440,
+      "median_actual_lpa": 14.0,
+      "mean_actual_lpa": 14.93,
+      "mae_lpa": 4.99,
+      "medae_lpa": 3.571,
+      "rmse_lpa": 7.325,
+      "r2": 0.401
+    },
+    {
+      "role_model": "frontend_full_stack_engineering",
+      "sample_count": 673,
+      "median_actual_lpa": 15.0,
+      "mean_actual_lpa": 15.16,
+      "mae_lpa": 5.135,
+      "medae_lpa": 3.701,
+      "rmse_lpa": 7.353,
+      "r2": 0.385
+    },
+    {
+      "role_model": "qa_automation_testing",
+      "sample_count": 618,
+      "median_actual_lpa": 6.5,
+      "mean_actual_lpa": 9.16,
+      "mae_lpa": 3.438,
+      "medae_lpa": 2.111,
+      "rmse_lpa": 5.426,
+      "r2": 0.4528
+    },
+    {
+      "role_model": "data_analyst_business_intelligence",
+      "sample_count": 492,
+      "median_actual_lpa": 6.5,
+      "mean_actual_lpa": 9.54,
+      "mae_lpa": 3.376,
+      "medae_lpa": 1.966,
+      "rmse_lpa": 5.157,
+      "r2": 0.5777
+    },
+    {
+      "role_model": "cloud_devops_sre",
+      "sample_count": 389,
+      "median_actual_lpa": 17.0,
+      "mean_actual_lpa": 18.12,
+      "mae_lpa": 4.928,
+      "medae_lpa": 4.25,
+      "rmse_lpa": 7.061,
+      "r2": 0.3642
+    },
+    {
+      "role_model": "data_engineer_big_data_platform",
+      "sample_count": 386,
+      "median_actual_lpa": 20.0,
+      "mean_actual_lpa": 18.93,
+      "mae_lpa": 5.146,
+      "medae_lpa": 3.5,
+      "rmse_lpa": 7.235,
+      "r2": 0.1621
+    },
+    {
+      "role_model": "data_science_ml_ai",
+      "sample_count": 209,
+      "median_actual_lpa": 20.0,
+      "mean_actual_lpa": 20.41,
+      "mae_lpa": 7.709,
+      "medae_lpa": 5.338,
+      "rmse_lpa": 10.647,
+      "r2": 0.2383
+    }
+  ],
+  "role_breakdown_original": [
+    {
+      "original_role_family": "backend_core_software_engineering",
+      "sample_count": 1440,
+      "median_actual_lpa": 14.0,
+      "mean_actual_lpa": 14.93,
+      "mae_lpa": 4.99,
+      "medae_lpa": 3.571,
+      "rmse_lpa": 7.325,
+      "r2": 0.401
+    },
+    {
+      "original_role_family": "frontend_full_stack_engineering",
+      "sample_count": 673,
+      "median_actual_lpa": 15.0,
+      "mean_actual_lpa": 15.16,
+      "mae_lpa": 5.135,
+      "medae_lpa": 3.701,
+      "rmse_lpa": 7.353,
+      "r2": 0.385
+    },
+    {
+      "original_role_family": "qa_automation_testing",
+      "sample_count": 618,
+      "median_actual_lpa": 6.5,
+      "mean_actual_lpa": 9.16,
+      "mae_lpa": 3.438,
+      "medae_lpa": 2.111,
+      "rmse_lpa": 5.426,
+      "r2": 0.4528
+    },
+    {
+      "original_role_family": "data_analyst_business_intelligence",
+      "sample_count": 492,
+      "median_actual_lpa": 6.5,
+      "mean_actual_lpa": 9.54,
+      "mae_lpa": 3.376,
+      "medae_lpa": 1.966,
+      "rmse_lpa": 5.157,
+      "r2": 0.5777
+    },
+    {
+      "original_role_family": "cloud_devops_sre",
+      "sample_count": 389,
+      "median_actual_lpa": 17.0,
+      "mean_actual_lpa": 18.12,
+      "mae_lpa": 4.928,
+      "medae_lpa": 4.25,
+      "rmse_lpa": 7.061,
+      "r2": 0.3642
+    },
+    {
+      "original_role_family": "data_engineer_big_data_platform",
+      "sample_count": 386,
+      "median_actual_lpa": 20.0,
+      "mean_actual_lpa": 18.93,
+      "mae_lpa": 5.146,
+      "medae_lpa": 3.5,
+      "rmse_lpa": 7.235,
+      "r2": 0.1621
+    },
+    {
+      "original_role_family": "machine_learning_ai_engineer",
+      "sample_count": 174,
+      "median_actual_lpa": 20.0,
+      "mean_actual_lpa": 21.02,
+      "mae_lpa": 8.015,
+      "medae_lpa": 5.627,
+      "rmse_lpa": 10.856,
+      "r2": 0.2275
+    },
+    {
+      "original_role_family": "data_scientist_advanced_analytics",
+      "sample_count": 35,
+      "median_actual_lpa": 15.5,
+      "mean_actual_lpa": 17.38,
+      "mae_lpa": 6.188,
+      "medae_lpa": 4.296,
+      "rmse_lpa": 9.54,
+      "r2": 0.2368
+    }
+  ],
+  "experience_breakdown": [
+    {
+      "exp_bracket": "5-8_years (Mid-Level)",
+      "sample_count": 2123,
+      "median_actual_lpa": 13.5,
+      "mean_actual_lpa": 14.08,
+      "mae_lpa": 4.677,
+      "medae_lpa": 3.497,
+      "rmse_lpa": 6.571,
+      "r2": 0.1905
+    },
+    {
+      "exp_bracket": "9-12_years (Senior)",
+      "sample_count": 919,
+      "median_actual_lpa": 20.0,
+      "mean_actual_lpa": 20.4,
+      "mae_lpa": 6.628,
+      "medae_lpa": 5.232,
+      "rmse_lpa": 8.944,
+      "r2": 0.0198
+    },
+    {
+      "exp_bracket": "2-4_years (Early Career)",
+      "sample_count": 787,
+      "median_actual_lpa": 4.5,
+      "mean_actual_lpa": 5.87,
+      "mae_lpa": 2.373,
+      "medae_lpa": 1.417,
+      "rmse_lpa": 3.791,
+      "r2": 0.2049
+    },
+    {
+      "exp_bracket": "13+_years (Lead / Principal)",
+      "sample_count": 255,
+      "median_actual_lpa": 25.0,
+      "mean_actual_lpa": 27.43,
+      "mae_lpa": 7.232,
+      "medae_lpa": 4.558,
+      "rmse_lpa": 10.914,
+      "r2": 0.1598
+    },
+    {
+      "exp_bracket": "0-1_years (Fresher)",
+      "sample_count": 123,
+      "median_actual_lpa": 2.52,
+      "mean_actual_lpa": 3.54,
+      "mae_lpa": 1.712,
+      "medae_lpa": 1.076,
+      "rmse_lpa": 3.322,
+      "r2": 0.0242
+    }
+  ],
+  "conformal_calibration": {
+    "calibration_strategy": "Out-of-Group Residual Non-Conformity (GroupKFold)",
+    "nominal_coverage_targets_pct": [
+      90.0,
+      80.0
+    ],
+    "global_q90_lpa": 10.602,
+    "global_q80_lpa": 7.414,
+    "global_empirical_cov_90_pct": 89.99,
+    "global_empirical_cov_80_pct": 79.99,
+    "role_stratified_calibration": {
+      "backend_core_software_engineering": {
+        "sample_count": 1440,
+        "q90_lpa": 11.009,
+        "q80_lpa": 7.554,
+        "empirical_cov_90_pct": 90.0,
+        "empirical_cov_80_pct": 80.0
+      },
+      "cloud_devops_sre": {
+        "sample_count": 389,
+        "q90_lpa": 12.041,
+        "q80_lpa": 7.454,
+        "empirical_cov_90_pct": 89.97,
+        "empirical_cov_80_pct": 79.95
+      },
+      "data_analyst_business_intelligence": {
+        "sample_count": 492,
+        "q90_lpa": 8.339,
+        "q80_lpa": 5.501,
+        "empirical_cov_90_pct": 89.84,
+        "empirical_cov_80_pct": 79.88
+      },
+      "data_engineer_big_data_platform": {
+        "sample_count": 386,
+        "q90_lpa": 10.14,
+        "q80_lpa": 8.793,
+        "empirical_cov_90_pct": 89.9,
+        "empirical_cov_80_pct": 87.82
+      },
+      "data_science_ml_ai": {
+        "sample_count": 209,
+        "q90_lpa": 18.343,
+        "q80_lpa": 11.216,
+        "empirical_cov_90_pct": 89.95,
+        "empirical_cov_80_pct": 79.9
+      },
+      "frontend_full_stack_engineering": {
+        "sample_count": 673,
+        "q90_lpa": 10.259,
+        "q80_lpa": 7.373,
+        "empirical_cov_90_pct": 89.9,
+        "empirical_cov_80_pct": 79.94
+      },
+      "qa_automation_testing": {
+        "sample_count": 618,
+        "q90_lpa": 7.788,
+        "q80_lpa": 5.244,
+        "empirical_cov_90_pct": 89.97,
+        "empirical_cov_80_pct": 79.94
+      }
+    }
+  },
+  "top_permutation_features": [
+    {
+      "feature": "exp_tier_9-12_years",
+      "mae_penalty_lpa": 3.1359,
+      "std": 0.0701,
+      "importance": 3.1359
+    },
+    {
+      "feature": "skill_docker",
+      "mae_penalty_lpa": 0.4599,
+      "std": 0.0184,
+      "importance": 0.4599
+    },
+    {
+      "feature": "loc_loc_remote",
+      "mae_penalty_lpa": 0.4439,
+      "std": 0.0193,
+      "importance": 0.4439
+    },
+    {
+      "feature": "loc_loc_tier_2_city",
+      "mae_penalty_lpa": 0.2262,
+      "std": 0.0171,
+      "importance": 0.2262
+    },
+    {
+      "feature": "sen_sen_principal_architect",
+      "mae_penalty_lpa": 0.1364,
+      "std": 0.0064,
+      "importance": 0.1364
+    },
+    {
+      "feature": "skill_java",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "skill_sql",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "skill_python",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_2-4_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_5-8_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_13+_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_0-1_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_mid_years_scaled",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_mid_years_sq_scaled",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "loc_loc_tier_3_other",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "skill_aws",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "loc_loc_tier_1_metro",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "loc_loc_hybrid",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_senior",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_mid",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_manager",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_lead",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_junior",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_intern",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_executive",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    }
+  ],
+  "role_empirical_medians": {
+    "backend_core_software_engineering": 14.0,
+    "cloud_devops_sre": 17.0,
+    "data_analyst_business_intelligence": 6.5,
+    "data_engineer_big_data_platform": 20.0,
+    "data_science_ml_ai": 20.0,
+    "frontend_full_stack_engineering": 15.0,
+    "qa_automation_testing": 6.5
+  },
+  "top_features": [
+    {
+      "feature": "exp_tier_9-12_years",
+      "mae_penalty_lpa": 3.1359,
+      "std": 0.0701,
+      "importance": 3.1359
+    },
+    {
+      "feature": "skill_docker",
+      "mae_penalty_lpa": 0.4599,
+      "std": 0.0184,
+      "importance": 0.4599
+    },
+    {
+      "feature": "loc_loc_remote",
+      "mae_penalty_lpa": 0.4439,
+      "std": 0.0193,
+      "importance": 0.4439
+    },
+    {
+      "feature": "loc_loc_tier_2_city",
+      "mae_penalty_lpa": 0.2262,
+      "std": 0.0171,
+      "importance": 0.2262
+    },
+    {
+      "feature": "sen_sen_principal_architect",
+      "mae_penalty_lpa": 0.1364,
+      "std": 0.0064,
+      "importance": 0.1364
+    },
+    {
+      "feature": "skill_java",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "skill_sql",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "skill_python",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_2-4_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_5-8_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_13+_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_tier_0-1_years",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_mid_years_scaled",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "exp_mid_years_sq_scaled",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "loc_loc_tier_3_other",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "skill_aws",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "loc_loc_tier_1_metro",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "loc_loc_hybrid",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_senior",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_mid",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_manager",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_lead",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_junior",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_intern",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    },
+    {
+      "feature": "sen_sen_executive",
+      "mae_penalty_lpa": 0.0,
+      "std": 0.0,
+      "importance": 0.0
+    }
+  ]
+}

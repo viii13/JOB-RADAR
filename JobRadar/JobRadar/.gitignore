@@ -1,0 +1,38 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Frontend generated files
+Frontend/node_modules/
+Frontend/dist/
+Frontend/dist-ssr/
+Frontend/*.local
+
+# Editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+
+# Large or locally stored job-market datasets
+DDS-Job-Market-Project/data/raw/
+DDS-Job-Market-Project/data/processed/cleaned_indian_job_market_2025.csv
+DDS-Job-Market-Project/data/processed/job_skills.csv

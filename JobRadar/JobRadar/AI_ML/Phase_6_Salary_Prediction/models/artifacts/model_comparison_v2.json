@@ -1,0 +1,52 @@
+[
+  {
+    "model_name": "DummyRegressor (Median Baseline)",
+    "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+    "sample_count": 4207,
+    "cv_mae_lpa": 7.511,
+    "cv_medae_lpa": 6.75,
+    "cv_rmse_lpa": 9.662,
+    "cv_r2_score": -0.0112,
+    "cv_mape_pct": 117.04
+  },
+  {
+    "model_name": "Linear Regression (OLS)",
+    "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+    "sample_count": 4207,
+    "cv_mae_lpa": 4.769,
+    "cv_medae_lpa": 3.214,
+    "cv_rmse_lpa": 7.101,
+    "cv_r2_score": 0.4537,
+    "cv_mape_pct": 56.52
+  },
+  {
+    "model_name": "Ridge Regression (alpha=1.0)",
+    "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+    "sample_count": 4207,
+    "cv_mae_lpa": 4.763,
+    "cv_medae_lpa": 3.204,
+    "cv_rmse_lpa": 7.086,
+    "cv_r2_score": 0.4561,
+    "cv_mape_pct": 56.38
+  },
+  {
+    "model_name": "Ridge Regression (alpha=10.0)",
+    "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+    "sample_count": 4207,
+    "cv_mae_lpa": 4.74,
+    "cv_medae_lpa": 3.174,
+    "cv_rmse_lpa": 7.035,
+    "cv_r2_score": 0.4639,
+    "cv_mape_pct": 55.84
+  },
+  {
+    "model_name": "Random Forest Regressor (n=100)",
+    "validation_strategy": "5-Fold GroupKFold (companyName_clean)",
+    "sample_count": 4207,
+    "cv_mae_lpa": 4.776,
+    "cv_medae_lpa": 3.158,
+    "cv_rmse_lpa": 7.016,
+    "cv_r2_score": 0.4668,
+    "cv_mape_pct": 54.42
+  }
+]

@@ -1,0 +1,360 @@
+{
+  "champion_model_name": "Random Forest Regressor (n=100)",
+  "curation_summary": {
+    "total_raw_rows": 97682,
+    "raw_disclosed_valid_rows": 33138,
+    "excluded_non_inr_rows": 20,
+    "excluded_low_outlier_rows": 128,
+    "excluded_high_outlier_rows": 18,
+    "excluded_duplicate_rows": 393,
+    "final_curated_rows": 32579,
+    "median_midpoint_lpa": 4.25,
+    "mean_midpoint_lpa": 7.528,
+    "std_midpoint_lpa": 8.645,
+    "min_midpoint_lpa": 0.6,
+    "max_midpoint_lpa": 97.5
+  },
+  "model_comparison": [
+    {
+      "model_name": "DummyRegressor (Median Baseline)",
+      "train_mae_lpa": 4.687,
+      "test_mae_lpa": 4.706,
+      "test_medae_lpa": 1.75,
+      "test_rmse_lpa": 9.442,
+      "train_r2": -0.1445,
+      "test_r2": -0.1409,
+      "test_mape_pct": 57.5,
+      "cv_mae_5fold_lpa": 4.688
+    },
+    {
+      "model_name": "Linear Regression (OLS)",
+      "train_mae_lpa": 2.999,
+      "test_mae_lpa": 3.028,
+      "test_medae_lpa": 1.161,
+      "test_rmse_lpa": 6.843,
+      "train_r2": 0.408,
+      "test_r2": 0.4007,
+      "test_mape_pct": 43.69,
+      "cv_mae_5fold_lpa": 3.018
+    },
+    {
+      "model_name": "Ridge Regression (alpha=1.0)",
+      "train_mae_lpa": 2.999,
+      "test_mae_lpa": 3.027,
+      "test_medae_lpa": 1.161,
+      "test_rmse_lpa": 6.841,
+      "train_r2": 0.4081,
+      "test_r2": 0.4011,
+      "test_mape_pct": 43.69,
+      "cv_mae_5fold_lpa": 3.017
+    },
+    {
+      "model_name": "Ridge Regression (alpha=10.0)",
+      "train_mae_lpa": 2.999,
+      "test_mae_lpa": 3.024,
+      "test_medae_lpa": 1.159,
+      "test_rmse_lpa": 6.833,
+      "train_r2": 0.408,
+      "test_r2": 0.4025,
+      "test_mape_pct": 43.68,
+      "cv_mae_5fold_lpa": 3.014
+    },
+    {
+      "model_name": "Random Forest Regressor (n=100)",
+      "train_mae_lpa": 2.7,
+      "test_mae_lpa": 2.884,
+      "test_medae_lpa": 1.094,
+      "test_rmse_lpa": 6.593,
+      "train_r2": 0.492,
+      "test_r2": 0.4436,
+      "test_mape_pct": 42.52,
+      "cv_mae_5fold_lpa": 2.921
+    }
+  ],
+  "role_breakdown": [
+    {
+      "role_family": "non_tech_corporate_operations",
+      "sample_count": 5353,
+      "median_actual_lpa": 4.0,
+      "mean_actual_lpa": 6.72,
+      "mae_lpa": 2.752,
+      "medae_lpa": 1.032,
+      "rmse_lpa": 6.705,
+      "r2": 0.3637
+    },
+    {
+      "role_family": "other_technical",
+      "sample_count": 755,
+      "median_actual_lpa": 5.5,
+      "mean_actual_lpa": 9.63,
+      "mae_lpa": 3.176,
+      "medae_lpa": 1.574,
+      "rmse_lpa": 5.932,
+      "r2": 0.6365
+    },
+    {
+      "role_family": "backend_core_software_engineering",
+      "sample_count": 179,
+      "median_actual_lpa": 13.0,
+      "mean_actual_lpa": 14.41,
+      "mae_lpa": 4.282,
+      "medae_lpa": 2.428,
+      "rmse_lpa": 6.389,
+      "r2": 0.5007
+    },
+    {
+      "role_family": "data_engineer_big_data_platform",
+      "sample_count": 64,
+      "median_actual_lpa": 19.25,
+      "mean_actual_lpa": 17.82,
+      "mae_lpa": 1.789,
+      "medae_lpa": 0.125,
+      "rmse_lpa": 3.365,
+      "r2": 0.5039
+    },
+    {
+      "role_family": "qa_automation_testing",
+      "sample_count": 62,
+      "median_actual_lpa": 10.0,
+      "mean_actual_lpa": 11.64,
+      "mae_lpa": 3.436,
+      "medae_lpa": 1.952,
+      "rmse_lpa": 4.902,
+      "r2": 0.5645
+    },
+    {
+      "role_family": "cloud_devops_sre",
+      "sample_count": 34,
+      "median_actual_lpa": 15.75,
+      "mean_actual_lpa": 15.97,
+      "mae_lpa": 4.003,
+      "medae_lpa": 2.375,
+      "rmse_lpa": 5.863,
+      "r2": -0.1342
+    },
+    {
+      "role_family": "frontend_full_stack_engineering",
+      "sample_count": 21,
+      "median_actual_lpa": 11.0,
+      "mean_actual_lpa": 13.35,
+      "mae_lpa": 4.455,
+      "medae_lpa": 2.302,
+      "rmse_lpa": 6.525,
+      "r2": 0.5177
+    },
+    {
+      "role_family": "data_analyst_business_intelligence",
+      "sample_count": 20,
+      "median_actual_lpa": 9.5,
+      "mean_actual_lpa": 10.18,
+      "mae_lpa": 3.252,
+      "medae_lpa": 1.943,
+      "rmse_lpa": 4.732,
+      "r2": 0.5097
+    },
+    {
+      "role_family": "machine_learning_ai_engineer",
+      "sample_count": 10,
+      "median_actual_lpa": 27.5,
+      "mean_actual_lpa": 22.5,
+      "mae_lpa": 11.339,
+      "medae_lpa": 12.102,
+      "rmse_lpa": 12.787,
+      "r2": 0.0606
+    },
+    {
+      "role_family": "data_scientist_advanced_analytics",
+      "sample_count": 9,
+      "median_actual_lpa": 22.5,
+      "mean_actual_lpa": 21.89,
+      "mae_lpa": 7.918,
+      "medae_lpa": 6.724,
+      "rmse_lpa": 11.521,
+      "r2": -0.5094
+    },
+    {
+      "role_family": "product_technical_project_management",
+      "sample_count": 9,
+      "median_actual_lpa": 17.5,
+      "mean_actual_lpa": 18.47,
+      "mae_lpa": 9.649,
+      "medae_lpa": 8.83,
+      "rmse_lpa": 11.633,
+      "r2": -1.5007
+    }
+  ],
+  "experience_breakdown": [
+    {
+      "exp_bracket": "2-4_years",
+      "sample_count": 3046,
+      "median_actual_lpa": 3.38,
+      "mean_actual_lpa": 4.51,
+      "mae_lpa": 1.884,
+      "medae_lpa": 0.793,
+      "rmse_lpa": 5.732,
+      "r2": 0.0253
+    },
+    {
+      "exp_bracket": "5-8_years",
+      "sample_count": 1920,
+      "median_actual_lpa": 6.5,
+      "mean_actual_lpa": 8.76,
+      "mae_lpa": 3.175,
+      "medae_lpa": 1.816,
+      "rmse_lpa": 5.776,
+      "r2": 0.2815
+    },
+    {
+      "exp_bracket": "0-1_years",
+      "sample_count": 604,
+      "median_actual_lpa": 2.25,
+      "mean_actual_lpa": 2.73,
+      "mae_lpa": 0.992,
+      "medae_lpa": 0.603,
+      "rmse_lpa": 3.171,
+      "r2": 0.004
+    },
+    {
+      "exp_bracket": "9-12_years",
+      "sample_count": 601,
+      "median_actual_lpa": 13.0,
+      "mean_actual_lpa": 14.95,
+      "mae_lpa": 5.155,
+      "medae_lpa": 3.86,
+      "rmse_lpa": 7.507,
+      "r2": 0.2719
+    },
+    {
+      "exp_bracket": "13+_years",
+      "sample_count": 345,
+      "median_actual_lpa": 20.25,
+      "mean_actual_lpa": 23.59,
+      "mae_lpa": 9.445,
+      "medae_lpa": 5.721,
+      "rmse_lpa": 15.152,
+      "r2": 0.1921
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "exp_mid_years_sq_scaled",
+      "importance": 0.44915
+    },
+    {
+      "feature": "exp_mid_years_scaled",
+      "importance": 0.37566
+    },
+    {
+      "feature": "loc_loc_hybrid",
+      "importance": 0.02658
+    },
+    {
+      "feature": "sen_sen_manager",
+      "importance": 0.01295
+    },
+    {
+      "feature": "skill_python",
+      "importance": 0.01291
+    },
+    {
+      "feature": "skill_java",
+      "importance": 0.0118
+    },
+    {
+      "feature": "loc_loc_tier_3_other",
+      "importance": 0.01065
+    },
+    {
+      "feature": "role_role_non_tech_corporate_operations",
+      "importance": 0.00985
+    },
+    {
+      "feature": "loc_loc_tier_1_metro",
+      "importance": 0.00782
+    },
+    {
+      "feature": "sen_sen_mid",
+      "importance": 0.00718
+    },
+    {
+      "feature": "sen_sen_senior",
+      "importance": 0.00593
+    },
+    {
+      "feature": "role_role_other_technical",
+      "importance": 0.00585
+    },
+    {
+      "feature": "loc_loc_tier_2_city",
+      "importance": 0.00576
+    },
+    {
+      "feature": "exp_tier_5-8_years",
+      "importance": 0.00547
+    },
+    {
+      "feature": "skill_sql",
+      "importance": 0.00514
+    },
+    {
+      "feature": "loc_loc_remote",
+      "importance": 0.00432
+    },
+    {
+      "feature": "role_role_backend_core_software_engineering",
+      "importance": 0.00425
+    },
+    {
+      "feature": "skill_aws",
+      "importance": 0.00362
+    },
+    {
+      "feature": "sen_sen_lead",
+      "importance": 0.0028
+    },
+    {
+      "feature": "skill_azure",
+      "importance": 0.00276
+    },
+    {
+      "feature": "skill_excel",
+      "importance": 0.00253
+    },
+    {
+      "feature": "sen_sen_executive",
+      "importance": 0.00246
+    },
+    {
+      "feature": "sen_sen_principal_architect",
+      "importance": 0.00215
+    },
+    {
+      "feature": "skill_linux",
+      "importance": 0.00207
+    },
+    {
+      "feature": "exp_tier_2-4_years",
+      "importance": 0.00151
+    },
+    {
+      "feature": "sen_sen_junior",
+      "importance": 0.00135
+    },
+    {
+      "feature": "skill_rest",
+      "importance": 0.00135
+    },
+    {
+      "feature": "skill_react",
+      "importance": 0.00103
+    },
+    {
+      "feature": "skill_cpp",
+      "importance": 0.00094
+    },
+    {
+      "feature": "sen_sen_intern",
+      "importance": 0.00088
+    }
+  ]
+}

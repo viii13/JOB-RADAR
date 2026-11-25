@@ -1,0 +1,5 @@
+annotation_record_id,source_code,job_id,job_version_id,source_job_id,origin_record_key,title,company,location,description_excerpt,human_verified_role_label,annotation_notes
+464582cd148007173db2,historical_2025_xlsx,2,2,h-2,historical_2025_xlsx:record:h-2,Data Analyst,Example Co,Bengaluru,Uses SQL and dashboards.,,
+f4813dea65ca4075d325,historical_2025_xlsx,3,3,h-3,historical_2025_xlsx:record:h-3,Backend Engineer,Example Co,Bengaluru,Builds Python services.,,
+2b752e6ab9f7950befa9,adzuna_india,5,5,a-2,adzuna_india:record:a-2,QA Engineer,Example Co,Bengaluru,Automates browser tests.,,
+8ecf5b17177d90273b5a,adzuna_india,4,4,a-1,adzuna_india:record:a-1,ML Engineer,Example Co,Bengaluru,Deploys machine learning models.,,

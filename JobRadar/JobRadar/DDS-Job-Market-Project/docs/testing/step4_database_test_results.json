@@ -1,0 +1,263 @@
+{
+  "stage_a": {
+    "engine_dialect": {
+      "status": "PASS",
+      "details": {
+        "dialect": "sqlite"
+      }
+    },
+    "session_factory": {
+      "status": "PASS",
+      "details": {
+        "session_class": "Session"
+      }
+    },
+    "models_registered": {
+      "status": "PASS",
+      "details": {
+        "registered_tables": [
+          "external_salary_benchmarks",
+          "external_skill_benchmarks",
+          "ingestion_runs",
+          "job_skills",
+          "job_versions",
+          "jobs",
+          "raw_snapshots",
+          "skills",
+          "sources"
+        ],
+        "expected": [
+          "external_salary_benchmarks",
+          "external_skill_benchmarks",
+          "ingestion_runs",
+          "job_skills",
+          "job_versions",
+          "jobs",
+          "raw_snapshots",
+          "skills",
+          "sources"
+        ]
+      }
+    },
+    "sqlite_foreign_keys_pragma": {
+      "status": "PASS",
+      "details": {
+        "pragma_foreign_keys": 1
+      }
+    }
+  },
+  "stage_b": {
+    "foreign_key_enforcement": {
+      "status": "PASS",
+      "details": "Nonexistent FK rejected by SQLite engine"
+    },
+    "unique_constraint_source_code": {
+      "status": "PASS",
+      "details": "Duplicate Source.code rejected"
+    },
+    "check_constraint_source_type": {
+      "status": "PASS",
+      "details": "Invalid source_type rejected"
+    },
+    "check_constraint_retry_count": {
+      "status": "PASS",
+      "details": "Negative retry_count rejected"
+    },
+    "partial_unique_index_one_current": {
+      "status": "PASS",
+      "details": "Partial index enforces at most one current version per job"
+    }
+  },
+  "stage_c": {
+    "create_record": {
+      "status": "PASS",
+      "details": {
+        "created_source_id": 1
+      }
+    },
+    "read_record": {
+      "status": "PASS",
+      "details": {
+        "fetched_code": "CRUD_SRC"
+      }
+    },
+    "update_record": {
+      "status": "PASS",
+      "details": {
+        "updated_name": "CRUD Source Updated"
+      }
+    },
+    "delete_record": {
+      "status": "PASS",
+      "details": "Record removed successfully"
+    },
+    "delete_restrict_foreign_key": {
+      "status": "PASS",
+      "details": "SQLite foreign key constraint prevents deleting parent source with active jobs"
+    }
+  },
+  "stage_d": {
+    "atomic_multi_entity_commit": {
+      "status": "PASS",
+      "details": null
+    },
+    "rollback_on_intentional_failure": {
+      "status": "PASS",
+      "details": "Transaction rolled back completely"
+    },
+    "nested_transaction_savepoint_handling": {
+      "status": "PASS",
+      "details": "Savepoint rollback isolates inner failure while outer transaction succeeds"
+    },
+    "session_cleanup": {
+      "status": "PASS",
+      "details": "Session closed cleanly, active transaction cleared, and new objects discarded"
+    }
+  },
+  "stage_e": {
+    "one_job_multiple_skills": {
+      "status": "PASS",
+      "details": {
+        "jv1_skills": [
+          "Python",
+          "SQL"
+        ]
+      }
+    },
+    "one_skill_multiple_jobs": {
+      "status": "PASS",
+      "details": {
+        "python_jobs": [
+          "job_rel_1",
+          "job_rel_2"
+        ]
+      }
+    },
+    "duplicate_job_skill_rejection": {
+      "status": "PASS",
+      "details": "Duplicate JobSkill link rejected"
+    },
+    "invalid_skill_fk_rejection": {
+      "status": "PASS",
+      "details": "Nonexistent skill_id FK rejected"
+    },
+    "match_provenance_evidence": {
+      "status": "PASS",
+      "details": {
+        "source": "both",
+        "tags": 1,
+        "desc": 1
+      }
+    }
+  },
+  "stage_f": {
+    "deterministic_migration_key": {
+      "status": "PASS",
+      "details": {
+        "sha256_key": "190c14dd59128069f3fdd3c9c5125d87b33871c635eec1a435002f98500694c6"
+      }
+    },
+    "idempotent_migration_prevention": {
+      "status": "PASS",
+      "details": "Existing migration key detects prior execution"
+    },
+    "version_history_progression": {
+      "status": "PASS",
+      "details": {
+        "versions_count": 2
+      }
+    },
+    "raw_snapshot_version_relationship": {
+      "status": "PASS",
+      "details": {
+        "linked_versions_count": 1
+      }
+    }
+  },
+  "stage_g": {
+    "pk_lookup_latency": {
+      "status": "PASS",
+      "details": {
+        "avg_latency_ms": 0.248
+      }
+    },
+    "indexed_identity_key_lookup": {
+      "status": "PASS",
+      "details": {
+        "avg_latency_ms": 0.249
+      }
+    },
+    "relational_join_query_latency": {
+      "status": "PASS",
+      "details": {
+        "latency_ms": 1.106,
+        "returned_rows": 100
+      }
+    },
+    "indexed_vs_non_indexed_query": {
+      "status": "PASS",
+      "details": {
+        "indexed_avg_ms": 5.489,
+        "non_indexed_avg_ms": 3.552
+      }
+    }
+  },
+  "stage_h": {
+    "production_integrity_check": {
+      "status": "PASS",
+      "details": {
+        "integrity_result": "ok"
+      }
+    },
+    "production_foreign_key_check": {
+      "status": "PASS",
+      "details": {
+        "fk_violations_count": 0,
+        "violations": []
+      }
+    },
+    "production_table_counts": {
+      "status": "PASS",
+      "details": {
+        "external_salary_benchmarks": 0,
+        "external_skill_benchmarks": 0,
+        "ingestion_runs": 5,
+        "job_skills": 216977,
+        "job_versions": 98347,
+        "jobs": 98347,
+        "raw_snapshots": 39,
+        "skills": 120,
+        "sources": 2
+      }
+    },
+    "orphaned_job_versions": {
+      "status": "PASS",
+      "details": {
+        "orphaned_count": 0
+      }
+    },
+    "orphaned_job_skills": {
+      "status": "PASS",
+      "details": {
+        "orphaned_count": 0
+      }
+    },
+    "duplicate_job_identities": {
+      "status": "PASS",
+      "details": {
+        "duplicate_identities": []
+      }
+    },
+    "single_current_version_per_job": {
+      "status": "PASS",
+      "details": {
+        "violations": []
+      }
+    }
+  },
+  "summary": {
+    "passed": 38,
+    "failed": 0,
+    "total": 38
+  }
+}

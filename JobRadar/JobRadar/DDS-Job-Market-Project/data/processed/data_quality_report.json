@@ -1,0 +1,506 @@
+{
+  "source_workbook": "C:\\Users\\aakas\\OneDrive\\Documents\\Semester 3\\Data Analysis using Python\\DDS-Job-Market-Project\\data\\raw\\indian-job-market-dataset-2025.xlsx",
+  "sheets": [
+    {
+      "name": "Sheet1",
+      "rows": 97929,
+      "columns": 17,
+      "detected_job_fields": {
+        "job_id": "jobId",
+        "job_title": "title",
+        "company": "companyName",
+        "location": "location",
+        "job_description": "jobDescription",
+        "skills": "tagsAndSkills",
+        "posting_date": "jobUploaded",
+        "experience": "experience",
+        "salary": "salary",
+        "minimum_salary": "minimumSalary",
+        "maximum_salary": "maximumSalary",
+        "minimum_experience": "minimumExperience",
+        "maximum_experience": "maximumExperience"
+      },
+      "selection_score": 26
+    }
+  ],
+  "selected_sheet": "Sheet1",
+  "important_columns": {
+    "job_id": "jobId",
+    "job_title": "title",
+    "company": "companyName",
+    "location": "location",
+    "job_description": "jobDescription",
+    "skills": "tagsAndSkills",
+    "posting_date": "jobUploaded",
+    "experience": "experience",
+    "salary": "salary",
+    "minimum_salary": "minimumSalary",
+    "maximum_salary": "maximumSalary",
+    "minimum_experience": "minimumExperience",
+    "maximum_experience": "maximumExperience"
+  },
+  "quality": {
+    "shape": {
+      "rows": 97929,
+      "columns": 17
+    },
+    "columns": [
+      "title",
+      "jobId",
+      "currency",
+      "jobUploaded",
+      "companyName",
+      "tagsAndSkills",
+      "experience",
+      "salary",
+      "location",
+      "companyId",
+      "ReviewsCount",
+      "AggregateRating",
+      "jobDescription",
+      "minimumSalary",
+      "maximumSalary",
+      "minimumExperience",
+      "maximumExperience"
+    ],
+    "data_types": {
+      "title": "str",
+      "jobId": "int64",
+      "currency": "str",
+      "jobUploaded": "str",
+      "companyName": "str",
+      "tagsAndSkills": "str",
+      "experience": "str",
+      "salary": "str",
+      "location": "str",
+      "companyId": "int64",
+      "ReviewsCount": "float64",
+      "AggregateRating": "float64",
+      "jobDescription": "str",
+      "minimumSalary": "float64",
+      "maximumSalary": "float64",
+      "minimumExperience": "float64",
+      "maximumExperience": "float64"
+    },
+    "missing_values": {
+      "title": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "jobId": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "currency": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "jobUploaded": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "companyName": {
+        "count": 4,
+        "percent": 0.0
+      },
+      "tagsAndSkills": {
+        "count": 571,
+        "percent": 0.58
+      },
+      "experience": {
+        "count": 2105,
+        "percent": 2.15
+      },
+      "salary": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "location": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "companyId": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "ReviewsCount": {
+        "count": 35252,
+        "percent": 36.0
+      },
+      "AggregateRating": {
+        "count": 35252,
+        "percent": 36.0
+      },
+      "jobDescription": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "minimumSalary": {
+        "count": 571,
+        "percent": 0.58
+      },
+      "maximumSalary": {
+        "count": 571,
+        "percent": 0.58
+      },
+      "minimumExperience": {
+        "count": 571,
+        "percent": 0.58
+      },
+      "maximumExperience": {
+        "count": 571,
+        "percent": 0.58
+      }
+    },
+    "duplicate_rows": 247,
+    "duplicate_job_ids": 250,
+    "categorical_values": {
+      "title": [
+        ". Net Developer",
+        ". Net developer PAN India-SP",
+        "..Customer Relationship Executive",
+        "..Inside  Sales Executive",
+        "..Inside Sales - Executive",
+        "..Inside Sales Executive",
+        "..Sales Executive",
+        "..Tele -Sales Executive",
+        "..Tele Sales Executive",
+        "..Tele Sales Representative",
+        "..Telecalling Executive",
+        ".Customer Support Executive..",
+        ".NET & Angular Developer",
+        ".NET + AWS DevOps Engineer",
+        ".NET + Azure + Angular",
+        ".NET + Azure + Angular Professional",
+        ".NET + React + CI/CD + AWS Lambda fn + Oauth 2",
+        ".NET + React JS Professional",
+        ".NET + SPO (SharePoint Online) Professional",
+        ".NET +OpenShift Developer"
+      ],
+      "companyName": [
+        " Astranova Mobility",
+        " Crescent Royale Society",
+        " Etherea Essentia (Yantasiddhi Pvt Ltd)",
+        " KIMS Alshifa Super Specialty Hospital",
+        " KIMS Alshifa Super Specialty Hospital ",
+        " Khoj Information Technology Pvt Ltd",
+        " Magellanic Cloud",
+        " N-LABS.AI PRIVATE LIMITED",
+        " Shyam Dairy (Unit of SBW Udyog Ltd.)",
+        " TUV Nord Group",
+        " Vardhman Probuild Pvt. Ltd.",
+        "(TASC)Total Application Software",
+        ".",
+        "1 Point 1",
+        "1 Source Bpo",
+        "1 point 1",
+        "1%Club",
+        "123Stores E Commerce",
+        "13kbs",
+        "18th Digitech"
+      ],
+      "location": [
+        "Abohar",
+        "Abu Road",
+        "Achalpur",
+        "Achampet",
+        "Adampur, Punjab",
+        "Adilabad",
+        "Adoni",
+        "Adoor",
+        "Agartala",
+        "Agartala, Anantapur, Kurnool",
+        "Agartala, Dharmanagar",
+        "Agartala, Hassan, Sivakasi, Palakkad, Dhanbad",
+        "Agartala, Jabalpur, Central African Republic",
+        "Agartala, Jabalpur, Junagadh",
+        "Agartala, Kolkata, Mumbai (All Areas)",
+        "Agartala, Kolkata, Tinsukia",
+        "Agartala, North Lakhimpur, Barpeta",
+        "Agartala, Puri",
+        "Agartala, Telangana",
+        "Agartala, Tripura"
+      ],
+      "experience": [
+        "0 Yrs",
+        "0-1 Yrs",
+        "0-10 Yrs",
+        "0-11 Yrs",
+        "0-12 Yrs",
+        "0-13 Yrs",
+        "0-14 Yrs",
+        "0-15 Yrs",
+        "0-2 Yrs",
+        "0-3 Yrs",
+        "0-4 Yrs",
+        "0-5 Yrs",
+        "0-6 Yrs",
+        "0-7 Yrs",
+        "0-8 Yrs",
+        "0-9 Yrs",
+        "1 Yrs",
+        "1-10 Yrs",
+        "1-11 Yrs",
+        "1-12 Yrs"
+      ]
+    },
+    "numeric_statistics": {
+      "jobId": {
+        "count": 97929.0,
+        "mean": 206985423051.85724,
+        "std": 99878601476.77155,
+        "min": 10125001764,
+        "median": 250825003714.0,
+        "max": 311224008927
+      },
+      "companyId": {
+        "count": 97929.0,
+        "mean": 27846420.59782087,
+        "std": 49791844.09428957,
+        "min": 3,
+        "median": 2892790.0,
+        "max": 125142239
+      },
+      "ReviewsCount": {
+        "count": 62677.0,
+        "mean": 14662.5902643713,
+        "std": 24744.514682071986,
+        "min": 2.0,
+        "median": 962.0,
+        "max": 104449.0
+      },
+      "AggregateRating": {
+        "count": 62677.0,
+        "mean": 3.6790481356797553,
+        "std": 0.4840961981269993,
+        "min": 1.0,
+        "median": 3.7,
+        "max": 5.0
+      },
+      "minimumSalary": {
+        "count": 97358.0,
+        "mean": 198309.2049138232,
+        "std": 564076.4828153637,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 70000000.0
+      },
+      "maximumSalary": {
+        "count": 97358.0,
+        "mean": 318609.58084595,
+        "std": 841733.6203216175,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 95000000.0
+      },
+      "minimumExperience": {
+        "count": 97358.0,
+        "mean": 3.9577435855296947,
+        "std": 3.5811960860598933,
+        "min": 0.0,
+        "median": 3.0,
+        "max": 30.0
+      },
+      "maximumExperience": {
+        "count": 97358.0,
+        "mean": 7.732646521087122,
+        "std": 4.500160695839153,
+        "min": 0.0,
+        "median": 7.0,
+        "max": 35.0
+      }
+    },
+    "job_description_examples": [
+      "Preferred candidate profile . .",
+      "Ensure active Fire Protection System,such as Fire Hydrant system,Fire extinguishers,Fire Alarm smoke detector system,Sprinkler system keep in good condition",
+      "MBA Marketing (preferred Tier II or III B- School). <br><br>Experience <br><br> 12+ years exp in Digital Marketing with a focus on performance marketing/ content strategy / campaign management along with team handling experience<br><br>Mobility Experience / development of mobile sites / Apps"
+    ],
+    "tags_and_skills_examples": [
+      "Communication,Manpower,Staffing,Convincing Power,Hiring,Recruitment,SR,Communication skills",
+      "Safety Officer Activities,Fire Protection,Fire Safety,Fire Engineering,Fire Prevention,Safety Management,Fire Management,Hazard Analysis",
+      "Performance Marketing,User Acquisition,growth marketing,Paid Marketing,Acquisition,Performance,Usage,Marketing"
+    ],
+    "posting_date_format": {
+      "column": "jobUploaded",
+      "data_type": "str",
+      "sample_values": [
+        "6 Days Ago",
+        "6 Days Ago",
+        "6 Days Ago"
+      ],
+      "parseable_values": 0,
+      "non_null_values": 97929
+    }
+  },
+  "data_dictionary": [
+    {
+      "field": "job_id",
+      "column": "jobId",
+      "data_type": "int64",
+      "description": "Identifier for a job posting; used to assess duplicate postings.",
+      "missing_values": 0,
+      "unique_non_null_values": 97679,
+      "sample_values": [
+        "270925008041",
+        "270925007584",
+        "270925007492"
+      ]
+    },
+    {
+      "field": "job_title",
+      "column": "title",
+      "data_type": "str",
+      "description": "Role title advertised by the employer.",
+      "missing_values": 0,
+      "unique_non_null_values": 55104,
+      "sample_values": [
+        "Sr. HR Recruiter (NON IT)",
+        "Fire And Safety Officer",
+        "Opening For Performance Marketing - Chennai"
+      ]
+    },
+    {
+      "field": "company",
+      "column": "companyName",
+      "data_type": "str",
+      "description": "Employer or hiring organization name.",
+      "missing_values": 4,
+      "unique_non_null_values": 18668,
+      "sample_values": [
+        "Orion",
+        "Apollo Hospitals International Limited, Ahmedabad",
+        "TVS Credit Services Ltd"
+      ]
+    },
+    {
+      "field": "location",
+      "column": "location",
+      "data_type": "str",
+      "description": "Location associated with the role.",
+      "missing_values": 0,
+      "unique_non_null_values": 10066,
+      "sample_values": [
+        "Kolkata(Chinar Park)",
+        "Gandhinagar, Ahmedabad",
+        "Chennai"
+      ]
+    },
+    {
+      "field": "job_description",
+      "column": "jobDescription",
+      "data_type": "str",
+      "description": "Free-text description of duties, requirements, or role context.",
+      "missing_values": 0,
+      "unique_non_null_values": 80679,
+      "sample_values": [
+        "Preferred candidate profile . .",
+        "Ensure active Fire Protection System,such as Fire Hydrant system,Fire extinguishers,Fire Alarm smoke detector system,Sprinkler system keep in good condition",
+        "MBA Marketing (preferred Tier II or III B- School). <br><br>Experience <br><br> 12+ years exp in Digital Marketing with a focus on performance marketing/ content strategy / campaign management along with team handling experience<br><br>Mobility Experience / development of mobile sites / Apps"
+      ]
+    },
+    {
+      "field": "skills",
+      "column": "tagsAndSkills",
+      "data_type": "str",
+      "description": "Tags or skills associated with the role; the future skill-demand pipeline will normalize this field.",
+      "missing_values": 571,
+      "unique_non_null_values": 84307,
+      "sample_values": [
+        "Communication,Manpower,Staffing,Convincing Power,Hiring,Recruitment,SR,Communication skills",
+        "Safety Officer Activities,Fire Protection,Fire Safety,Fire Engineering,Fire Prevention,Safety Management,Fire Management,Hazard Analysis",
+        "Performance Marketing,User Acquisition,growth marketing,Paid Marketing,Acquisition,Performance,Usage,Marketing"
+      ]
+    },
+    {
+      "field": "posting_date",
+      "column": "jobUploaded",
+      "data_type": "str",
+      "description": "Date or timestamp when the posting was uploaded or published.",
+      "missing_values": 0,
+      "unique_non_null_values": 30,
+      "sample_values": [
+        "6 Days Ago",
+        "6 Days Ago",
+        "6 Days Ago"
+      ]
+    },
+    {
+      "field": "experience",
+      "column": "experience",
+      "data_type": "str",
+      "description": "Required candidate experience level or range.",
+      "missing_values": 2105,
+      "unique_non_null_values": 287,
+      "sample_values": [
+        "2-4 Yrs",
+        "6-11 Yrs",
+        "12-18 Yrs"
+      ]
+    },
+    {
+      "field": "salary",
+      "column": "salary",
+      "data_type": "str",
+      "description": "Advertised compensation or salary range.",
+      "missing_values": 0,
+      "unique_non_null_values": 1339,
+      "sample_values": [
+        "2-4 Lacs PA",
+        "3-5 Lacs PA",
+        "Not disclosed"
+      ]
+    },
+    {
+      "field": "minimum_salary",
+      "column": "minimumSalary",
+      "data_type": "float64",
+      "description": "Structured lower salary bound supplied by the source dataset.",
+      "missing_values": 571,
+      "unique_non_null_values": 164,
+      "sample_values": [
+        "200000.0",
+        "300000.0",
+        "0.0"
+      ]
+    },
+    {
+      "field": "maximum_salary",
+      "column": "maximumSalary",
+      "data_type": "float64",
+      "description": "Structured upper salary bound supplied by the source dataset.",
+      "missing_values": 571,
+      "unique_non_null_values": 204,
+      "sample_values": [
+        "400000.0",
+        "500000.0",
+        "0.0"
+      ]
+    },
+    {
+      "field": "minimum_experience",
+      "column": "minimumExperience",
+      "data_type": "float64",
+      "description": "Structured lower experience bound supplied by the source dataset.",
+      "missing_values": 571,
+      "unique_non_null_values": 31,
+      "sample_values": [
+        "2.0",
+        "6.0",
+        "12.0"
+      ]
+    },
+    {
+      "field": "maximum_experience",
+      "column": "maximumExperience",
+      "data_type": "float64",
+      "description": "Structured upper experience bound supplied by the source dataset.",
+      "missing_values": 571,
+      "unique_non_null_values": 33,
+      "sample_values": [
+        "4.0",
+        "11.0",
+        "18.0"
+      ]
+    }
+  ]
+}

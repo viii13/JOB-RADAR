@@ -1,0 +1,437 @@
+{
+  "Python": [
+    "python",
+    "python3",
+    "python 3"
+  ],
+  "Java": [
+    "java"
+  ],
+  "JavaScript": [
+    "javascript",
+    "js",
+    "java script"
+  ],
+  "SQL": [
+    "sql",
+    "structured query language"
+  ],
+  "CSS": [
+    "css",
+    "css3"
+  ],
+  "C": [
+    "c",
+    "c programming",
+    "c language"
+  ],
+  "C#": [
+    "c#",
+    "c sharp",
+    "csharp",
+    "c#.net",
+    "c# dot net"
+  ],
+  "C++": [
+    "c++",
+    "cpp",
+    "c plus plus"
+  ],
+  "HTML": [
+    "html",
+    "html5"
+  ],
+  "SAP": [
+    "sap"
+  ],
+  "REST": [
+    "rest",
+    "rest api",
+    "rest apis",
+    "restful",
+    "restful api"
+  ],
+  "AWS": [
+    "aws",
+    "amazon web services"
+  ],
+  "Microsoft Azure": [
+    "microsoft azure",
+    "azure"
+  ],
+  "React": [
+    "react",
+    "react.js",
+    "reactjs"
+  ],
+  "Angular": [
+    "angular",
+    "angularjs",
+    "angular js"
+  ],
+  "Node.js": [
+    "node.js",
+    "nodejs",
+    "node js"
+  ],
+  ".NET": [
+    ".net",
+    "dotnet",
+    "dot net"
+  ],
+  ".NET Core": [
+    ".net core",
+    "dotnet core"
+  ],
+  "ASP.NET": [
+    "asp.net",
+    "asp .net"
+  ],
+  "ADO.NET": [
+    "ado.net",
+    "ado .net"
+  ],
+  "Spring Boot": [
+    "spring boot",
+    "springboot"
+  ],
+  "Kubernetes": [
+    "kubernetes",
+    "k8s"
+  ],
+  "Docker": [
+    "docker"
+  ],
+  "Machine Learning": [
+    "machine learning",
+    "ml",
+    "machine-learning"
+  ],
+  "Artificial Intelligence": [
+    "artificial intelligence"
+  ],
+  "AI": [
+    "ai"
+  ],
+  "Data Science": [
+    "data science",
+    "data-science"
+  ],
+  "Data Analysis": [
+    "data analysis",
+    "data analytics"
+  ],
+  "Deep Learning": [
+    "deep learning"
+  ],
+  "NLP": [
+    "nlp",
+    "natural language processing"
+  ],
+  "TensorFlow": [
+    "tensorflow",
+    "tensor flow"
+  ],
+  "PyTorch": [
+    "pytorch",
+    "py torch"
+  ],
+  "Power BI": [
+    "power bi",
+    "powerbi"
+  ],
+  "Tableau": [
+    "tableau"
+  ],
+  "Excel": [
+    "excel",
+    "ms excel",
+    "microsoft excel"
+  ],
+  "MongoDB": [
+    "mongodb",
+    "mongo db"
+  ],
+  "MySQL": [
+    "mysql",
+    "my sql"
+  ],
+  "PostgreSQL": [
+    "postgresql",
+    "postgres",
+    "postgre sql"
+  ],
+  "Oracle": [
+    "oracle"
+  ],
+  "Redis": [
+    "redis"
+  ],
+  "Cassandra": [
+    "cassandra"
+  ],
+  "Elasticsearch": [
+    "elasticsearch",
+    "elastic search"
+  ],
+  "GCP": [
+    "gcp",
+    "google cloud",
+    "google cloud (gcp)",
+    "google cloud platform"
+  ],
+  "Salesforce": [
+    "salesforce",
+    "sfdc"
+  ],
+  "Linux": [
+    "linux"
+  ],
+  "Git": [
+    "git"
+  ],
+  "Jenkins": [
+    "jenkins"
+  ],
+  "Terraform": [
+    "terraform"
+  ],
+  "CI/CD": [
+    "ci/cd",
+    "cicd",
+    "ci cd"
+  ],
+  "Ansible": [
+    "ansible"
+  ],
+  "Jira": [
+    "jira"
+  ],
+  "Confluence": [
+    "confluence"
+  ],
+  "Figma": [
+    "figma"
+  ],
+  "AutoCAD": [
+    "autocad",
+    "auto cad"
+  ],
+  "SAP HANA": [
+    "sap hana",
+    "sap s/4hana",
+    "s/4hana"
+  ],
+  "Agile": [
+    "agile"
+  ],
+  "Scrum": [
+    "scrum"
+  ],
+  "DevOps": [
+    "devops",
+    "dev ops"
+  ],
+  "Microservices": [
+    "microservices",
+    "micro services"
+  ],
+  "Django": [
+    "django"
+  ],
+  "Flask": [
+    "flask"
+  ],
+  "Vue.js": [
+    "vue.js",
+    "vuejs",
+    "vue js"
+  ],
+  "TypeScript": [
+    "typescript",
+    "type script"
+  ],
+  "Kotlin": [
+    "kotlin"
+  ],
+  "Swift": [
+    "swift"
+  ],
+  "PHP": [
+    "php"
+  ],
+  "Ruby": [
+    "ruby"
+  ],
+  "Scala": [
+    "scala"
+  ],
+  "Perl": [
+    "perl"
+  ],
+  "Golang": [
+    "golang",
+    "go (golang)",
+    "go language",
+    "go lang",
+    "go programming"
+  ],
+  "Rust": [
+    "rust"
+  ],
+  "R": [
+    "r",
+    "r programming",
+    "r language",
+    "r studio",
+    "rstudio"
+  ],
+  "Hadoop": [
+    "hadoop"
+  ],
+  "Spark": [
+    "spark",
+    "apache spark"
+  ],
+  "Kafka": [
+    "kafka",
+    "apache kafka"
+  ],
+  "Spring": [
+    "spring",
+    "spring framework"
+  ],
+  "Hibernate": [
+    "hibernate"
+  ],
+  "J2EE": [
+    "j2ee",
+    "j2 ee"
+  ],
+  "SOAP": [
+    "soap"
+  ],
+  "Bootstrap": [
+    "bootstrap"
+  ],
+  "WordPress": [
+    "wordpress",
+    "word press"
+  ],
+  "ERP": [
+    "erp",
+    "enterprise resource planning"
+  ],
+  "Continuous Integration": [
+    "continuous integration"
+  ],
+  "Project Management": [
+    "project management",
+    "project management skills"
+  ],
+  "Customer Service": [
+    "customer service",
+    "customer support"
+  ],
+  "Communication Skills": [
+    "communication skills",
+    "communication skill"
+  ],
+  "Troubleshooting": [
+    "troubleshooting",
+    "trouble shooting"
+  ],
+  "Marketing": [
+    "marketing"
+  ],
+  "Accounting": [
+    "accounting"
+  ],
+  "Team Management": [
+    "team management",
+    "team management skills"
+  ],
+  "Networking": [
+    "networking",
+    "computer networking"
+  ],
+  "Software Testing": [
+    "software testing",
+    "software test"
+  ],
+  "Automation Testing": [
+    "automation testing",
+    "automated testing"
+  ],
+  "Digital Marketing": [
+    "digital marketing"
+  ],
+  "Business Analysis": [
+    "business analysis",
+    "business analyst"
+  ],
+  "Debugging": [
+    "debugging"
+  ],
+  "Data Modeling": [
+    "data modeling",
+    "data modelling"
+  ],
+  "Performance Tuning": [
+    "performance tuning",
+    "performance optimization",
+    "performance optimisation"
+  ],
+  "Stakeholder Management": [
+    "stakeholder management",
+    "stakeholder management skills"
+  ],
+  "SQL Server": [
+    "sql server"
+  ],
+  "Snowflake": [
+    "snowflake"
+  ],
+  "Selenium": [
+    "selenium"
+  ],
+  "Playwright": [
+    "playwright"
+  ],
+  "Grafana": [
+    "grafana"
+  ],
+  "FastAPI": [
+    "fastapi"
+  ],
+  "Prometheus": [
+    "prometheus"
+  ],
+  "Postman": [
+    "postman"
+  ],
+  "Next.js": [
+    "next.js"
+  ],
+  "GraphQL": [
+    "graphql"
+  ],
+  "Cypress": [
+    "cypress"
+  ],
+  "Computer Vision": [
+    "computer vision"
+  ],
+  "React Native": [
+    "react native"
+  ],
+  "JMeter": [
+    "jmeter"
+  ],
+  "Flutter": [
+    "flutter"
+  ],
+  "Appium": [
+    "appium"
+  ]
+}

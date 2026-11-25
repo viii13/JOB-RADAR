@@ -1,0 +1,5 @@
+annotation_record_id,source_code,job_id,job_version_id,source_job_id,origin_record_key,title,company,location,description_excerpt,human_verified_role_label,annotation_notes,candidate_target_family,selection_rule
+06a3cf6eefb28db99043,adzuna_india,2,2,a-ds,adzuna_india:record:a-ds,Research Scientist,Example Co,Bengaluru,Runs advanced statistical experiments.,,,data_scientist_advanced_analytics,title=research scientist
+70a95dcedab858f739d4,historical_2025_xlsx,3,3,h-ml,historical_2025_xlsx:record:h-ml,Machine Learning Engineer,Example Co,Bengaluru,Deploys model training pipelines.,,,machine_learning_ai_engineer,title=machine learning
+3a5b59cda359d3f5977f,historical_2025_xlsx,4,4,h-de,historical_2025_xlsx:record:h-de,Data Engineer,Example Co,Bengaluru,Builds ETL data pipelines with Spark.,,,data_engineer_big_data_platform,"title=data engineer; description=data pipeline, etl"
+4c95cde7977691ee1b47,adzuna_india,6,6,a-da,adzuna_india:record:a-da,Business Intelligence Analyst,Example Co,Bengaluru,Creates Tableau KPI reporting.,,,data_analyst_business_intelligence,"title=business intelligence; description=tableau, reporting, kpi"

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Sheet1",
+    "rows": 97929,
+    "columns": 17,
+    "detected_job_fields": {
+      "job_id": "jobId",
+      "job_title": "title",
+      "company": "companyName",
+      "location": "location",
+      "job_description": "jobDescription",
+      "skills": "tagsAndSkills",
+      "posting_date": "jobUploaded",
+      "experience": "experience",
+      "salary": "salary",
+      "minimum_salary": "minimumSalary",
+      "maximum_salary": "maximumSalary",
+      "minimum_experience": "minimumExperience",
+      "maximum_experience": "maximumExperience"
+    },
+    "selection_score": 26
+  }
+]
